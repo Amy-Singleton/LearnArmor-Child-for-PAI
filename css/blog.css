@@ -1,0 +1,1455 @@
+/*--------------------------------------------------------------
+## Blog Page Styles
+--------------------------------------------------------------*/
+.content-area {
+	margin: 8em auto 0;
+}
+header.blog-articles {
+	width: 100%;
+}
+header.blog-articles h1 {
+	
+}
+div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles {
+	font-weight: 900;
+	padding: .65em 0;
+	margin: 1em auto;
+	border: 1px solid #efefef;
+	border-bottom: 5px solid #808080;
+	background-image: url('images/camo-gray-light-200x200.jpg');
+	background-repeat: repeat;
+	text-transform: capitalize;
+	color: #808080;
+	font-weight: 900;
+}
+div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles h1:before {
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	float: left;
+}
+.site-main {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.site-main:after {
+  content: "";
+  flex: auto;
+}
+article {
+	background-color: #ffffff;
+	width: 30%;
+	margin: 15px auto;
+	border: 2px solid  #f3f3f3;
+}
+
+article:hover {
+    border: 2px solid #e3e3e3;
+}
+.hentry {
+	background-color: #f8f8f8;
+}
+
+.entry-header {
+	padding: .5em 0;
+	margin: 0 auto;
+	background-image: url('images/camo-gray-light-200x200.jpg');
+	background-repeat: repeat;
+}
+.entry-meta {
+    display: none;
+}
+h3.entry-title {
+	margin: 0 auto;
+	padding: 15px 15px 0;
+	text-align: center;
+}
+.entry-content p {
+    padding: 15px;
+    text-align: center;
+}
+.entry-content img.attachment-post-thumbnail, .post-thumbnail {
+	margin: 0 auto;
+}
+.category-budget h3.entry-title {
+	border-top: 5px solid #28897c;
+}
+.category-budget .entry-header {
+    border-bottom: 5px solid #28897c;
+}
+.category-credit h3.entry-title {
+    border-top: 5px solid #0178ac;
+}
+.category-credit .entry-header {
+    border-bottom: 5px solid #0178ac;
+}
+.category-debt h3.entry-title {
+    border-top: 5px solid #913031;
+}
+.category-debt .entry-header {
+    border-bottom: 5px solid #913031;
+}
+.category-protection h3.entry-title {
+    border-top: 5px solid #7a9c4c;
+}
+.category-protection .entry-header {
+    border-bottom: 5px solid #7a9c4c;
+}
+.category-investing h3.entry-title {
+    border-top: 5px solid #ffdd00;
+}
+.category-investing .entry-header {
+    border-bottom: 5px solid #ffdd00;
+}
+.category-major-purchases h3.entry-title {
+    border-top: 5px solid #e87200;
+}
+.category-major-purchases .entry-header {
+    border-bottom: 5px solid #e87200;
+}
+.category-savings h3.entry-title {
+    border-top: 5px solid #cab56b;
+}
+.category-savings .entry-header {
+    border-bottom: 5px solid #cab56b;
+}
+.category-paying-for-college h3.entry-title {
+    border-top: 5px solid #95cdf3;
+}
+.category-paying-for-college .entry-header {
+    border-bottom: 5px solid #95cdf3;
+}
+.category-retirement .entry-header {
+    border-bottom: 5px solid #7f588b;
+}
+.category-retirement h3.entry-title {
+    border-top: 5px solid #7f588b;
+}
+.category-resources h3.entry-title {
+    border-top: 5px solid #004f6e;
+}
+.category-resources .entry-header {
+    border-bottom: 5px solid #004f6e;
+}
+.category-infographics h3.entry-title {
+    border-top: 5px solid #004f6e;
+}
+.category-infographics .entry-header {
+    border-bottom: 5px solid #004f6e;
+}
+.category-uncategorized h3.entry-title {
+    border-top: 5px solid #808080;
+}
+.category-uncategorized .entry-header {
+    border-bottom: 5px solid #808080;
+}
+.category-military h3.entry-title {
+    border-top: 5px solid #808080;
+}
+.category-military .entry-header {
+    border-bottom: 5px solid #808080;
+}   
+h2 entry-title {
+    padding-right: 15px;
+}
+.category-budget h2,
+.category-credit h2,
+.category-debt h2,
+.category-protection h2,
+.category-investing h2,
+.category-major-purchases h2,
+.category-savings h2,
+.category-paying-for-college h2,
+.category-retirement h2,
+.category-infographics h2,
+.category-resources h2,
+.category-uncategorized h2,
+.category-military h2 {
+	font-weight: 900;
+	display: flex;
+	text-transform: uppercase;
+}
+.category-budget h2, .category-budget h3 a { color: #28897c;}
+.category-credit h2, .category-credit h3 a { color: #0178ac;}
+.category-debt h2, .category-debt h3 a { color: #913031;}
+.category-protection h2, .category-protection h3 a { color: #7a9c4c;}
+.category-investing h2, .category-investing h3 a { color: #ffdd00;}
+.category-major-purchases h2, .category-major-purchases h3 a { color: #e87200;}
+.category-savings h2, .category-savings h3 a { color: #cab56b;}
+.category-paying-for-college h2, .category-paying-for-college h3 a{ color: #95cdf3;}
+.category-retirement h2, .category-retirement h3 a { color: #7f588b;}
+.category-military h2, .category-military h3 a,
+.category-uncategorized h2, .category-uncategorized h3 a{ color: #808080;}
+.category-infographics h2, .category-infographics h3 a { color: #004f6e;}
+.category-resources h2, .category-resources h3 a { color: #004f6e;}
+
+.category-budget h2:before {
+	content: url('images/budget80x80.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0px 15px;
+	width: 50px;	
+	display: flex;
+	float: left;
+}
+
+
+.category-credit h2:before {
+	content: url('images/credit80x80.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0px 15px;
+	width: 50px;	
+	display: flex;
+	float: left;
+}
+
+.category-debt h2:before {
+	content: url('images/debt80x80.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0px 15px;
+	width: 50px;
+	display: flex;
+	float: left;
+}
+
+
+.category-protection h2:before {
+	content: url('images/insurance80x8.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0px 15px;
+	width: 50px;	
+	display: flex;
+	float: left;
+}
+
+.category-investing h2:before {
+	content: url('images/investing80x80.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0px 15px;
+	display: flex;
+	width: 50px;	
+	float: left;
+}
+
+.category-major-purchases h2:before {
+	content: url('images/major-purchases80x80.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0px 15px;
+	width: 50px;	
+	display: flex;
+	float: left;
+}
+
+
+.category-savings h2:before {
+	content: url('images/savings80x80.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0px 15px;
+	width: 50px;	
+	display: flex;
+	float: left;
+}
+
+
+.category-paying-for-college h2:before {
+	content: url('images/paying-for-college80x80.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0px 15px;
+	width: 50px;	
+	display: flex;
+	float: left;
+}
+
+.category-retirement h2:before {
+	content: url('images/retirement80x80.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0px 15px;
+	width: 50px;	
+	display: flex;
+	float: left;
+}
+.category-resources h2:before {
+	content: url('images/resources80x80.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0px 15px;
+	width: 50px;	
+	display: flex;
+	float: left;
+}
+.category-infographics h2 {
+	color: #004f6e;
+}
+.category-infographics h2:before {
+	content: url('images/infographics80x80.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0px 15px;
+	width: 50px;	
+	display: flex;
+	float: left;
+}
+.category-uncategorized h2:before,
+.category-military h2:before {
+	content: url('images/uncategorized80x80.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0px 15px;
+	width: 50px;	
+	display: flex;
+	float: left;
+}
+#post-812.post-812.post.type-post.status-publish.format-standard.has-post-thumbnail.hentry.category-major-purchases.user-has-not-earned header.entry-header h2.entry-title a {
+    padding-top: 1em;
+}
+
+#secondary {
+    margin-top: 5px;
+}
+/*--------------------------------------------------------------
+##  Media Queries - Desktop 1920px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1920px){
+	.entry-header {
+	    height: auto;
+	}
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1,
+	header.blog-articles h1 {
+		font-size: 60px;
+	}
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1:before,
+	div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles h1:before {
+		content: url('images/uncategorized80x80.png');
+		width: 80px;
+		height: 80px;
+		margin: -10px 15px;
+	}
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-military h2,
+	.category-uncategorized h2,
+	.category-infographics h2,
+	.category-resources h2 {
+		font-size: 24px;
+	}
+	.category-budget h2:before {
+		content: url('images/budget50x50.png');
+	}
+	.category-savings h2:before {
+		content: url('images/savings50x50.png');
+	}
+	.category-credit h2:before {
+		content: url('images/credit50x50.png');
+	}
+	.category-debt h2:before {
+		content: url('images/debt50x50.png');
+	}
+	.category-investing h2:before {
+		content: url('images/investing50x50.png');
+	}
+	.category-major-purchases h2:before {
+		content: url('images/major-purchases50x50.png');
+	}
+	.category-retirement h2:before {
+		content: url('images/retirement50x50.png');
+	}
+	.category-paying-for-college h2:before {
+		content: url('images/paying-for-college50x50.png');
+	}
+	.category-protection h2:before {
+		content: url('images/insurance50x50.png');
+	}
+	.category-military h2:before, .category-uncategorized h2:before {
+		content: url('images/uncategorized50x50.png');
+	}
+	.category-infographics h2:before {
+		content: url('images/infographics50x50.png');
+	}
+	.category-resources h2:before {
+		content: url('images/resources50x50.png');
+	}
+	.category-military h2:before {
+		content: url('images/uncategorized50x50.png');
+	}
+	.category-budget h2:before,
+	.category-credit h2:before,
+	.category-debt h2:before,
+	.category-protection h2:before,
+	.category-investing h2:before,
+	.category-major-purchases h2:before,
+	.category-savings h2:before,
+	.category-paying-for-college h2:before,
+	.category-retirement h2:before,
+	.category-infographics h2:before,
+	.category-resources h2:before,
+	.category-uncategorized h2:before,
+	.category-military h2:before {
+	    margin: -15px 10px;
+	    width: 50px;
+	    height: 50px;
+	}
+	.category-budget h3,
+	.category-credit h3,
+	.category-debt h3,
+	.category-protection h3,
+	.category-investing h3,
+	.category-major-purchases h3,
+	.category-savings h3,
+	.category-paying-for-college h3,
+	.category-retirement h3,
+	.category-military h3,
+	.category-uncategorized h3,
+	.category-resources h3,
+	.category-infographics h3 {
+		font-size: 24px;
+		text-transform: capitalize;
+	}
+	.entry-content {
+	    height: 450px;
+	    overflow: hidden;
+	    margin-bottom: 0;
+	}
+	.entry-content img.attachment-post-thumbnail {
+		height: 175px;
+	}
+	 h3.entry-title {
+		height: 75px;
+	}
+	.entry-content p {
+		padding: 0 30px;
+	}
+	.entry-footer {
+	    margin-bottom: 1em;
+	}
+
+}
+
+/*--------------------------------------------------------------
+##  Media Queries - Desktop 1600px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1600px){
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1:before,
+	div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles h1:before {
+		content: url('images/uncategorized70x70.png');
+		width: 70px;
+		height: 70px;
+		margin: -5px 15px;
+	}
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-military h2,
+	.category-uncategorized h2,
+	.category-infographics h2,
+	.category-resources h2 {
+		font-size: 22px;
+	}
+	.category-budget h2:before {
+		content: url('images/budget50x50.png');
+	}
+	.category-savings h2:before {
+		content: url('images/savings50x50.png');
+	}
+	.category-credit h2:before {
+		content: url('images/credit50x50.png');
+	}
+	.category-debt h2:before {
+		content: url('images/debt50x50.png');
+	}
+	.category-investing h2:before {
+		content: url('images/investing50x50.png');
+	}
+	.category-major-purchases h2:before {
+		content: url('images/major-purchases50x50.png');
+	}
+	.category-retirement h2:before {
+		content: url('images/retirement50x50.png');
+	}
+	.category-paying-for-college h2:before {
+		content: url('images/paying-for-college50x50.png');
+	}
+	.category-protection h2:before {
+		content: url('images/insurance50x50.png');
+	}
+	.category-military h2:before {
+		content: url('images/uncategorized50x50.png');
+	}
+	.category-military h2:before, .category-uncategorized h2:before {
+		content: url('images/uncategorized50x50.png');
+	}
+	.category-infographics h2:before {
+		content: url('images/infographics50x50.png');
+	}
+	.category-resources h2:before {
+		content: url('images/resources50x50.png');
+	}
+	.category-budget h2:before,
+	.category-credit h2:before,
+	.category-debt h2:before,
+	.category-protection h2:before,
+	.category-investing h2:before,
+	.category-major-purchases h2:before,
+	.category-savings h2:before,
+	.category-paying-for-college h2:before,
+	.category-retirement h2:before,
+	.category-infographics h2:before,
+	.category-resources h2:before,
+	.category-uncategorized h2:before,
+	.category-military h2:before {
+	    margin: -15px 10px;
+	    width: 50px;
+	    height: 50px;
+	}
+	.category-budget h3,
+	.category-credit h3,
+	.category-debt h3,
+	.category-protection h3,
+	.category-investing h3,
+	.category-major-purchases h3,
+	.category-savings h3,
+	.category-paying-for-college h3,
+	.category-retirement h3,
+	.category-military h3,
+	.category-uncategorized h3,
+	.category-resources h3,
+	.category-infographics h3 {
+		font-size: 18px;
+	}
+
+}
+/*--------------------------------------------------------------
+##  Media Queries - Desktop 1529px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1529px){
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-military h2,
+	.category-uncategorized h2,
+	.category-resources h2 {
+		font-size: 18px;
+	}
+}
+/*--------------------------------------------------------------
+##  Media Queries - Desktop 1440px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1440px){
+	.category-budget h2:before, .category-credit h2:before,
+	.category-debt h2:before, .category-protection h2:before,
+	.category-investing h2:before, .category-major-purchases h2:before,
+	.category-savings h2:before, .category-paying-for-college h2:before,
+	.category-retirement h2:before, .category-infographics h2:before,
+	.category-resources h2:before, .category-uncategorized h2:before,
+	.category-military h2:before {
+		margin: -15px 5px;
+	}
+	.category-budget h3,
+	.category-credit h3,
+	.category-debt h3,
+	.category-protection h3,
+	.category-investing h3,
+	.category-major-purchases h3,
+	.category-savings h3,
+	.category-paying-for-college h3,
+	.category-retirement h3,
+	.category-military h3,
+	.category-uncategorized h2,
+	.category-infographics h3,
+	.category-resources h3 {
+		font-size: 16px;
+	}
+}
+
+/*--------------------------------------------------------------
+##  Media Queries - Desktop 1366px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1366px){
+	article {
+		width: 46.5%;
+	}
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1,
+	header.blog-articles h1 {
+		font-size: 40px;
+	}
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1::before,
+	div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles h1:before {
+		content: url('images/uncategorized60x60.png');
+		width: 60px;
+		height: 60px;
+		margin: -10px 15px;
+	}
+	.entry-content {
+		height: 400px;
+		overflow: hidden;
+		margin-bottom: 0;
+	}
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-infographics h2,
+	.category-resources h2,
+	.category-uncategorized h2,
+	.category-military h2 {
+		font-size: 28px;
+		
+	}
+	.category-budget h2:before,
+	.category-credit h2:before,
+	.category-debt h2:before,
+	.category-protection h2:before,
+	.category-investing h2:before,
+	.category-major-purchases h2:before,
+	.category-savings h2:before,
+	.category-paying-for-college h2:before,
+	.category-retirement h2:before,
+	.category-infographics h2:before,
+	.category-resources h2:before,
+	.category-military h2:before,
+	.category-uncategorized h2:before {
+		margin: -10px 10px;
+		width: 50px;
+		height: 50px;
+	}
+	.category-budget h3,
+	.category-credit h3,
+	.category-debt h3,
+	.category-protection h3,
+	.category-investing h3,
+	.category-major-purchases h3,
+	.category-savings h3,
+	.category-paying-for-college h3,
+	.category-retirement h3,
+	.category-military h3,
+	.category-uncategorized h3,
+	.category-infographics h3,
+	.category-resources h3 {
+		font-size: 24px;
+	}
+	.entry-content img.attachment-post-thumbnail {
+		height: 188px;
+	}
+	h3.entry-title {
+		height: 60px;
+	}
+	.entry-content p {
+		padding: 15px;
+	}
+}
+
+/*--------------------------------------------------------------
+##  Media Queries - Desktop 1280px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1280px){
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1,
+	div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles h1 {
+		font-size: 40px;
+	}
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1:before,
+	div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles h1:before {
+		content: url('images/uncategorized50x50.png');
+		max-width: 50px;
+		max-height: 50px;
+		margin: -10px 10px;
+	}
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-infographics h2,
+	.category-resources h2,
+	.category-uncategorized h2 {
+		font-size: 26px;
+		
+	}
+	.category-budget h2:before,
+	.category-credit h2:before,
+	.category-debt h2:before,
+	.category-protection h2:before,
+	.category-investing h2:before,
+	.category-major-purchases h2:before,
+	.category-savings h2:before,
+	.category-paying-for-college h2:before,
+	.category-retirement h2:before,
+	.category-infographics h2:before,
+	.category-resources h2:before,
+	.category-military h2:before, .category-uncategorized h2:before {
+		margin: -13px 10px;
+	}
+	.category-budget h3,
+	.category-credit h3,
+	.category-debt h3,
+	.category-protection h3,
+	.category-investing h3,
+	.category-major-purchases h3,
+	.category-savings h3,
+	.category-paying-for-college h3,
+	.category-retirement h3,
+	.category-military h3,
+	.category-uncategorized h3,
+	.category-infographics h3,
+	.category-resources h3 {
+		font-size: 22px;
+	}
+}
+
+/*--------------------------------------------------------------
+##  Media Queries - Tablett 1024px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1024px){
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-infographics h2,
+	.category-resources h2,
+	.category-uncategorized h2 {
+		font-size: 18px;
+		
+	}
+	.category-budget h2:before,
+	.category-credit h2:before,
+	.category-debt h2:before,
+	.category-protection h2:before,
+	.category-investing h2:before,
+	.category-major-purchases h2:before,
+	.category-savings h2:before,
+	.category-paying-for-college h2:before,
+	.category-retirement h2:before,
+	.category-infographics h2:before,
+	.category-resources h2:before,
+	.category-military h2:before, .category-uncategorized h2:before {
+		margin: -18px 10px;
+	}
+	.category-budget h3,
+	.category-credit h3,
+	.category-debt h3,
+	.category-protection h3,
+	.category-investing h3,
+	.category-major-purchases h3,
+	.category-savings h3,
+	.category-paying-for-college h3,
+	.category-retirement h3,
+	.category-military h3,
+	.category-uncategorized h3,
+	.category-infographics h3,
+	.category-resources h3 {
+		font-size: 18px;
+	}
+
+}
+
+/*--------------------------------------------------------------
+##  Media Queries -  Tablet 966px
+--------------------------------------------------------------*/
+@media screen and (max-width: 966px){
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-infographics h2,
+	.category-resources h2,
+	.category-uncategorized h2 {
+		font-size: 16px;
+		
+	}
+	.category-budget h2:before,
+	.category-credit h2:before,
+	.category-debt h2:before,
+	.category-protection h2:before,
+	.category-investing h2:before,
+	.category-major-purchases h2:before,
+	.category-savings h2:before,
+	.category-paying-for-college h2:before,
+	.category-retirement h2:before,
+	.category-infographics h2:before,
+	.category-resources h2:before,
+	.category-military h2:before, .category-uncategorized h2:before {
+		margin: -18px 10px;
+	}
+	.category-budget h3,
+	.category-credit h3,
+	.category-debt h3,
+	.category-protection h3,
+	.category-investing h3,
+	.category-major-purchases h3,
+	.category-savings h3,
+	.category-paying-for-college h3,
+	.category-retirement h3,
+	.category-military h3,
+	.category-uncategorized h3,
+	.category-infographics h3,
+	.category-resources h3 {
+		font-size: 16px;
+	}
+	#secondary ul li a {
+		font-size: 16px;
+	}
+
+}
+
+/*--------------------------------------------------------------
+##  Media Queries - Tablet 800px
+--------------------------------------------------------------*/
+@media screen and (max-width: 800px){
+	.content-area {
+		margin: 0 auto;
+	}
+	.site-main {
+		margin: 0 auto;
+	}
+	article {
+		width: 46%;
+	}	
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-infographics h2,
+	.category-resources h2,
+	.category-uncategorized h2 {
+		font-size: 18px;
+		
+	}
+	.category-budget h2:before,
+	.category-credit h2:before,
+	.category-debt h2:before,
+	.category-protection h2:before,
+	.category-investing h2:before,
+	.category-major-purchases h2:before,
+	.category-savings h2:before,
+	.category-paying-for-college h2:before,
+	.category-retirement h2:before,
+	.category-infographics h2:before,
+	.category-resources h2:before,
+	.category-military h2:before, .category-uncategorized h2:before {
+		margin: -15px 10px;
+	}
+	.category-budget h3,
+	.category-credit h3,
+	.category-debt h3,
+	.category-protection h3,
+	.category-investing h3,
+	.category-major-purchases h3,
+	.category-savings h3,
+	.category-paying-for-college h3,
+	.category-retirement h3,
+	.category-military h3,
+	.category-uncategorized h3,
+	.category-infographics h3,
+	.category-resources h3 {
+		font-size: 18px;
+	}
+   
+}
+
+/*--------------------------------------------------------------
+##  Media Queries - Tablet 768px
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px){
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-infographics h2,
+	.category-resources h2,
+	.category-uncategorized h2 {
+		font-size: 20px;
+	}
+	.category-budget h2:before {
+		content: url('images/budget35x35.png');
+	}
+	.category-savings h2:before {
+		content: url('images/savings35x35.png');
+	}
+	.category-credit h2:before {
+		content: url('images/credit35x35.png');
+	}
+	.category-debt h2:before {
+		content: url('images/debt35x35.png');
+	}
+	.category-investing h2:before {
+		content: url('images/investing35x35.png');
+	}
+	.category-major-purchases h2:before {
+		content: url('images/major-purchases35x35.png');
+	}
+	.category-retirement h2:before {
+		content: url('images/retirement35x35.png');
+	}
+	.category-paying-for-college h2:before {
+		content: url('images/paying-for-college35x35.png');
+	}
+	.category-protection h2:before {
+		content: url('images/insurance35x35.png');
+	}
+	.category-military h2:before {
+		content: url('images/uncategorized35x35.png');		
+	}
+	.category-uncategorized h2:before {
+		content: url('images/uncategorized35x35.png');
+	}
+	.category-infographics h2:before {
+		content: url('images/infographics35x35.png');
+	}
+	.category-resources h2:before {
+		content: url('images/resources35x35.png');
+	}
+	.category-budget h2:before,
+	.category-credit h2:before,
+	.category-debt h2:before,
+	.category-protection h2:before,
+	.category-investing h2:before,
+	.category-major-purchases h2:before,
+	.category-savings h2:before,
+	.category-paying-for-college h2:before,
+	.category-retirement h2:before,
+	.category-infographics h2:before,
+	.category-resources h2:before,
+	.category-uncategorized h2:before,
+	.category-military h2:before {
+	    margin: -10px 5px auto 10px;
+	    width: 35px;
+	    height: 35px;
+	}
+	h3.entry-title {
+		font-size: 20px;
+	}
+	.entry-content {
+		height: 420px;
+	}
+	div.col-sm-12 {
+		width: 100%;
+		margin: 2em auto;
+	}
+}
+/*--------------------------------------------------------------
+##  Media Queries - Mobile 736px
+--------------------------------------------------------------*/
+@media screen and (max-width: 736px){
+
+	.category-budget h3,
+	.category-credit h3,
+	.category-debt h3,
+	.category-protection h3,
+	.category-investing h3,
+	.category-major-purchases h3,
+	.category-savings h3,
+	.category-paying-for-college h3,
+	.category-retirement h3,
+	.category-resources h3,
+	.category-infographics h3,
+	.category-military h3,
+	.category-uncategorized h3{
+		font-size: 18px;
+	}
+}
+/*--------------------------------------------------------------
+##  Media Queries - Mobile 720px
+--------------------------------------------------------------*/
+@media screen and (max-width: 720px){
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-military h2,
+	.category-uncategorized h2,
+	.category-infographics h2,
+	.category-resources h2 {
+		font-size: 18px;
+	}
+	.category-budget h3,
+	.category-credit h3,
+	.category-debt h3,
+	.category-protection h3,
+	.category-investing h3,
+	.category-major-purchases h3,
+	.category-savings h3,
+	.category-paying-for-college h3,
+	.category-retirement h3,
+	.category-military h3,
+	.category-uncategorized h3,
+	.category-resources h3,
+	.category-infographics h3 {
+		font-size: 16px;
+		height: 50px;
+	}
+}
+/*--------------------------------------------------------------
+##  Media Queries - Mobile 667px
+--------------------------------------------------------------*/
+@media screen and (max-width: 667px){
+	.category-budget h2:before,
+	.category-credit h2:before,
+	.category-debt h2:before,
+	.category-protection h2:before,
+	.category-investing h2:before,
+	.category-major-purchases h2:before,
+	.category-savings h2:before,
+	.category-paying-for-college h2:before,
+	.category-retirement h2:before,
+	.category-infographics h2:before,
+	.category-resources h2:before,
+	.category-uncategorized h2:before,
+	.category-military h2:before {
+	    margin: -8px 5px 0 5px;
+	}
+	
+	
+}
+/*--------------------------------------------------------------
+##  Media Queries - Mobile 640px
+--------------------------------------------------------------*/
+@media screen and (max-width: 640px){
+	article {
+		width: 100%;
+	}
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1:before,
+	div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles h1:before {
+		content: url('images/uncategorized50x50.png');
+		max-width: 50px;
+		max-height: 50px;
+		margin: -5px 15px;
+	}
+	.category-budget h2:before {
+		content: url('images/budget50x50.png');
+	}
+	.category-savings h2:before {
+		content: url('images/savings50x50.png');
+	}
+	.category-credit h2:before {
+		content: url('images/credit50x50.png');
+	}
+	.category-debt h2:before {
+		content: url('images/debt50x50.png');
+	}
+	.category-investing h2:before {
+		content: url('images/investing50x50.png');
+	}
+	.category-major-purchases h2:before {
+		content: url('images/major-purchases50x50.png');
+	}
+	.category-retirement h2:before {
+		content: url('images/retirement50x50.png');
+	}
+	.category-paying-for-college h2:before {
+		content: url('images/paying-for-college50x50.png');
+	}
+	.category-protection h2:before {
+		content: url('images/insurance50x50.png');
+	}
+	.category-military h2:before, .category-uncategorized h2:before {
+		content: url('images/uncategorized50x50.png');
+	}
+	.category-infographics h2:before {
+		content: url('images/infographics50x50.png');
+	}
+	.category-resources h2:before {
+		content: url('images/resources50x50.png');
+	}
+	.category-budget h2:before,
+	.category-credit h2:before,
+	.category-debt h2:before,
+	.category-protection h2:before,
+	.category-investing h2:before,
+	.category-major-purchases h2:before,
+	.category-savings h2:before,
+	.category-paying-for-college h2:before,
+	.category-retirement h2:before,
+	.category-infographics h2:before,
+	.category-resources h2:before,
+	.category-uncategorized h2:before,
+	.category-military h2:before {
+		margin: -10px 5px;
+		width: 50px;
+		height:  50px;
+	}
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-infographics h2,
+	.category-resources h2,
+	.category-uncategorized h2 {
+		font-size: 30px;
+		
+	}
+	.category-budget h3,
+	.category-credit h3,
+	.category-debt h3,
+	.category-protection h3,
+	.category-investing h3,
+	.category-major-purchases h3,
+	.category-savings h3,
+	.category-paying-for-college h3,
+	.category-retirement h3,
+	.category-military h3,
+	.category-uncategorized h3,
+	.category-infographics h3,
+	.category-resources h3 {
+		font-size: 26px;
+		height: auto;
+	}
+	
+}
+/*--------------------------------------------------------------
+##  Media Queries - Mobile 568px
+--------------------------------------------------------------*/
+@media screen and (max-width: 568px){
+
+}
+/*--------------------------------------------------------------
+##  Media Queries - Mobile 533px
+--------------------------------------------------------------*/
+@media screen and (max-width: 533px){
+	article {
+		width: 100%;
+	}
+	.entry-header {
+		height: auto;
+	}
+	.entry-content {
+		height: auto;
+	}
+	/*header.blog-articles h1 {
+		font-size: 55px;
+	}*/
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-infographics h2,
+	.category-resources h2,
+	.category-uncategorized h2 {
+		font-size: 26px;
+	}
+	.category-budget h2:before,
+	.category-credit h2:before,
+	.category-debt h2:before,
+	.category-protection h2:before,
+	.category-investing h2:before,
+	.category-major-purchases h2:before,
+	.category-savings h2:before,
+	.category-paying-for-college h2:before,
+	.category-retirement h2:before,
+	.category-infographics h2:before,
+	.category-resources h2:before,
+	.category-military h2:before,
+	.category-uncategorized h2:before {
+	    margin: -10px 10px;
+	    width: 50px;
+	    height: 50px;
+	}
+	.category-budget h3,
+	.category-credit h3,
+	.category-debt h3,
+	.category-protection h3,
+	.category-investing h3,
+	.category-major-purchases h3,
+	.category-savings h3,
+	.category-paying-for-college h3,
+	.category-retirement h3,
+	.category-military h3,
+	.category-uncategorized h3,
+	.category-infographics h3,
+	.category-resources h3 {
+		font-size: 22px;
+		height: auto;
+		margin-bottom: .5em;
+	}
+	.entry-content p {
+		padding: 0 15px;
+	}
+}
+
+/*--------------------------------------------------------------
+##  Media Queries - Mobile 480px
+--------------------------------------------------------------*/
+@media screen and (max-width: 480px){
+	.site-main {
+		margin: 0em auto;
+	}
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1,
+	div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles h1 {
+		font-size: 28px;
+	}
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1:before,
+	div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles h1:before {
+		content: url('images/uncategorized50x50.png');
+		max-width: 50px;
+		max-height: 50px;
+		margin: -10px 10px;
+	}
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-infographics h2,
+	.category-resources h2,
+	.category-uncategorized h2 {
+		font-size: 24px;
+	}
+	.category-budget h2:before,
+	.category-credit h2:before,
+	.category-debt h2:before,
+	.category-protection h2:before,
+	.category-investing h2:before,
+	.category-major-purchases h2:before,
+	.category-savings h2:before,
+	.category-paying-for-college h2:before,
+	.category-retirement h2:before,
+	.category-infographics h2:before,
+	.category-resources h2:before,
+	.category-uncategorized h2:before,
+	.category-military h2:before { 
+		margin: -15px 10px;
+		width: 50px;
+		height: 50px;
+	}
+}
+/*--------------------------------------------------------------
+##  Media Queries - Mobile 414px
+--------------------------------------------------------------*/
+@media screen and (max-width: 414px){
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1,
+	div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles h1 {
+		font-size: 22px;
+	}
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-infographics h2,
+	.category-resources h2,
+	.category-military h2,
+	.category-uncategorized h2 {
+		font-size: 20px;
+	}
+}
+/*--------------------------------------------------------------
+##  Media Queries - Mobile 375px
+--------------------------------------------------------------*/
+@media screen and (max-width: 375px){
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1,
+	div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles h1 {
+		font-size: 20px;
+	}
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-infographics h2,
+	.category-resources h2,
+	.category-uncategorized h2 {
+		font-size: 18px;
+	}
+	.category-budget h2:before {
+		content: url('images/budget35x35.png');
+	}
+	.category-savings h2:before {
+		content: url('images/savings35x35.png');
+	}
+	.category-credit h2:before {
+		content: url('images/credit35x35.png');
+	}
+	.category-debt h2:before {
+		content: url('images/debt35x35.png');
+	}
+	.category-investing h2:before {
+		content: url('images/investing35x35.png');
+	}
+	.category-major-purchases h2:before {
+		content: url('images/major-purchases35x35.png');
+	}
+	.category-retirement h2:before {
+		content: url('images/retirement35x35.png');
+	}
+	.category-paying-for-college h2:before {
+		content: url('images/paying-for-college35x35.png');
+	}
+	.category-protection h2:before {
+		content: url('images/insurance35x35.png');
+	}
+	.category-military h2:before, .category-uncategorized h2:before {
+		content: url('images/uncategorized35x35.png');
+	}
+	.category-infographics h2:before {
+		content: url('images/infographics35x35.png');
+	}
+	.category-resources h2:before {
+		content: url('images/resources35x35.png');
+	}
+	.category-budget h2:before,
+	.category-credit h2:before,
+	.category-debt h2:before,
+	.category-protection h2:before,
+	.category-investing h2:before,
+	.category-major-purchases h2:before,
+	.category-savings h2:before,
+	.category-paying-for-college h2:before,
+	.category-retirement h2:before,
+	.category-infographics h2:before,
+	.category-resources h2:before,
+	.category-uncategorized h2:before,
+	.category-military h2:before {
+	    margin: -8px 10px;
+	    width: 35px;
+	    height: 35px;
+	}
+	
+}
+/*--------------------------------------------------------------
+##  Media Queries - Mobile 360px
+--------------------------------------------------------------*/
+@media screen and (max-width: 360px){
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1:before,
+	div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles h1:before {
+		content: url('images/uncategorized50x50.png');
+		width: 50px;
+		height: 50px;
+		margin: -15px 10px;
+	}
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1,
+	div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles h1 {
+		font-size: 38px;
+	}
+	.category-budget h3,
+	.category-credit h3,
+	.category-debt h3,
+	.category-protection h3,
+	.category-investing h3,
+	.category-major-purchases h3,
+	.category-savings h3,
+	.category-paying-for-college h3,
+	.category-retirement h3,
+	.category-military h3,
+	.category-uncategorized h3,
+	.category-infographics h3,
+	.category-resources h3 {
+		font-size: 22px;
+	}
+	div#secondary h2.widget-title {
+		font-size: 24px;
+	}
+}
+
+/*--------------------------------------------------------------
+##  Media Queries - Mobile 320px
+--------------------------------------------------------------*/
+@media screen and (max-width: 320px){
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1:before,
+	div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles h1:before {
+		content: url('images/uncategorized35x35.png');
+		width: 35px;
+		height: 35px;
+		margin: -8px 10px;
+	}
+	body.search.search-results div#page.site div#content.site-content section#primary.content-area main#main.site-main header.page-header h1,
+	div#primary.content-area main#main.site-main.col-sm-9 header.blog-articles h1 {
+		font-size: 20px
+	}
+	.category-budget h2,
+	.category-credit h2,
+	.category-debt h2,
+	.category-protection h2,
+	.category-investing h2,
+	.category-major-purchases h2,
+	.category-savings h2,
+	.category-paying-for-college h2,
+	.category-retirement h2,
+	.category-infographics h2,
+	.category-resources h2,
+	.category-uncategorized h2 {
+		font-size: 20px;
+	}
+}
