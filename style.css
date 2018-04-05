@@ -11,3 +11,375 @@
  Tags: two-columns, custom-menu, featured-images, post-formats, sticky-post, threaded-comments, translation-ready, editor-style       
  Text Domain:  learnarmor-child
 */
+
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+h2 {
+    font-size: 30px;
+    font-weight: 600;
+}
+h3 {
+    font-size: 24px;
+}
+.txt-align-center {
+    text-align: center;
+}
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a.post-edit-link {
+    color: #0076a9;
+    text-decoration: none;
+    margin-right: 1em;
+}
+a#vc_load-inline-editor {
+    display: none;
+}
+a.post-edit-link:hover {
+    opacity: .75;
+}
+
+a:hover, a:focus, a:active {
+    opacity: .75;
+}
+.navbar-default .navbar-nav > .active > a:focus {
+    background-color: transparent;
+}
+
+/*--------------------------------------------------------------
+## Buttons
+--------------------------------------------------------------*/
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	color: #555555;
+	border: 2px solid #555555;
+	background: #ffffff;
+	margin: .5em 0;
+	box-shadow: none;
+}
+button:hover, input[type="button"]:hover, input[type="reset"]:hover,
+input[type="submit"]:hover {
+    background-color: #555555;
+    color: #ffffff;
+    border-color: #555555;
+    cursor: pointer;
+    box-shadow: none;
+}
+/*--------------------------------------------------------------
+## Forms
+--------------------------------------------------------------*/
+
+/* Jetpack Subscription Form */
+.comment-subscription-form .subscribe-label {
+	display: inline !important;
+	vertical-align: bottom;
+	padding-left: .5em;
+}
+#subscribe-submit input {
+	border: 1px solid #555555;
+}
+
+
+/*--------------------------------------------------------------
+## Tables
+--------------------------------------------------------------*/
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #efefef;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #efefef;
+}
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+## Flex Container
+   @https://www.w3schools.com/css/css3_flexbox.asp
+--------------------------------------------------------------*/
+
+/*.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+}
+*/
+/*--------------------------------------------------------------
+## Breadcrumbs
+--------------------------------------------------------------*/
+
+#breadcrumbs {
+    padding: 0 0 4em;
+}
+/*--------------------------------------------------------------
+## Home Page
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+## About Page
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Contact Page
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Uncanny Owl Course Grid
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Posts
+--------------------------------------------------------------*/
+
+.nav-previous a:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 14px;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: '\f0a8';
+    margin-right: 10px;
+}
+div.nav-links div.nav-previous a,
+div.nav-links div.nav-next a {
+    color: #808080;
+}
+div.nav-links div.nav-previous a:hoveer,
+div.nav-links div.nav-next a:hover,
+.nav-next a:hover:after,
+.nav-previous a:hover:after {
+    opacity: .7;
+}
+.nav-previous a:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 28px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: '\f0a8';
+    margin-left: 10px;
+    color: #808080;
+    vertical-align: top;
+}
+.nav-next a:after {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 28px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: '\f0a9';
+    margin-left: 10px;
+    color: #808080;
+    vertical-align: top;
+}
+
+.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous{
+	float: left;
+	text-align: left;
+	width: 49%;
+}
+.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 49%;
+}
+/*--------------------------------------------------------------
+## Post Categories 
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+## Search Results
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Sidebar Widgets
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+##  Classes
+--------------------------------------------------------------*/
+
+.italic {
+	font-style: italic;
+}
+.txt-align-right {
+	text-align: right;
+}
+.light-font {
+    font-weight: 300;
+}
+.semi-bold-font {
+    font-weight: 500;
+}
+.bold-font {
+    font-weight: 700;
+}
+.super-bold-font {
+    font-weight: 900;
+}
+.text-shadow {
+    text-shadow: 1px 1px 3px rgba(55,55,55, .7);
+}
+/*--------------------------------------------------------------
+##  Media Queries - Desktop 1920px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1920px){
+	
+}
+/*--------------------------------------------------------------
+##  Media Queries - Desktop 1536px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1536px){
+	
+}
+/*--------------------------------------------------------------
+##  Media Queries - Desktop 1440px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1440px){
+	
+}
+/*--------------------------------------------------------------
+##  Media Queries - Desktop 1366px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1366px){
+	
+}
+/*--------------------------------------------------------------
+##  Media Queries - Tablet 1280px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1280px){
+	
+}
+/*--------------------------------------------------------------
+##  Media Queries - Tablet 1024px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1024px){
+	
+}
+/*--------------------------------------------------------------
+##  Media Queries - Tablet 966px
+--------------------------------------------------------------*/
+@media screen and (max-width: 966px){
+
+	
+}
+
+/*--------------------------------------------------------------
+##  Media Queries - Tablet 800px
+--------------------------------------------------------------*/
+@media screen and (max-width: 800px){
+    
+}
+/*--------------------------------------------------------------
+##  Media Queries - Tablet 768px
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px){ 
+   
+}
+/*--------------------------------------------------------------
+##  Media Queries - Handheld Device 736px
+--------------------------------------------------------------*/
+@media screen and (max-width: 736px){
+    
+}
+/*--------------------------------------------------------------
+##  Media Queries - Handheld Device 720px
+--------------------------------------------------------------*/
+@media screen and (max-width: 720px){
+    
+}
+/*--------------------------------------------------------------
+##  Media Queries - Handheld Device 640px
+--------------------------------------------------------------*/
+@media screen and (max-width: 640px){
+  
+}
+/*--------------------------------------------------------------
+##  Media Queries - Handheld Device 568px
+--------------------------------------------------------------*/
+@media screen and (max-width: 568px){
+    
+}
+/*--------------------------------------------------------------
+##  Media Queries - Handheld Device 533px
+--------------------------------------------------------------*/
+@media screen and (max-width: 533px){
+
+}
+/*--------------------------------------------------------------
+##  Media Queries - Handheld Device 480px
+--------------------------------------------------------------*/
+@media screen and (max-width: 480px){
+   
+}
+/*--------------------------------------------------------------
+##  Media Queries - Handheld Device 414px
+--------------------------------------------------------------*/
+@media screen and (max-width: 414px){
+   
+}
+/*--------------------------------------------------------------
+##  Media Queries - Handheld Device 384px
+--------------------------------------------------------------*/
+@media screen and (max-width: 384px){
+	
+}
+/*--------------------------------------------------------------
+##  Media Queries - Handheld Device 375px
+--------------------------------------------------------------*/
+@media screen and (max-width: 375px){
+   
+}
+/*--------------------------------------------------------------
+##  Media Queries - Handheld Device 412px
+--------------------------------------------------------------*/
+@media screen and (max-width: 412px){
+    
+}
+/*--------------------------------------------------------------
+##  Media Queries - Handheld Device 320px
+--------------------------------------------------------------*/
+@media screen and (max-width: 320px){
+    
+}
