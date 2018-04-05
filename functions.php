@@ -112,12 +112,6 @@ function learnarmor_child_custom_login_style() {
 add_action( 'login_head', 'learnarmor_child_custom_login_style', 99 );
 
 /**
- * Load WooCommerce compatibility file.
- */
-if ( class_exists( 'WooCommerce' ) ) {
-    require get_stylesheet_directory() . '/inc/customize-woocommerce.php';
-}
-/**
  * Customize JetPack
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
