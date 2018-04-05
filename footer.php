@@ -24,15 +24,16 @@
 				?>
 			</div><!-- footer-sidebar -->
 		</div><!-- footer-widgets-->
-		<div class="col-sm-12 footer-bottom-container">
-		<div id="copyright" class="col-sm-6">
-			<p>Copyright &copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'title' ); ?></p>
-		</div><!-- #footer -->
-		<div id="legal-nav" class="col-sm-6">
-			<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-links', 'menu_class' => '') ); ?>
-		</div><!-- col-sm-12 -->
+	
 		</div>
 	</footer><!-- #colophon -->
+	<div class="col-sm-12 below-footer-container">
+	<div id="copyright" class="col-sm-6">
+		<p>Copyright &copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'title' ); ?></p>
+	</div><!-- #footer -->
+	<div id="legal-nav" class="col-sm-6">
+		<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-links', 'menu_class' => '') ); ?>
+	</div><!-- col-sm-12 -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
