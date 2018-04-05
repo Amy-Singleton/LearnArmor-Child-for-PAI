@@ -115,6 +115,12 @@ tr:nth-child(even) {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
+.custom-logo {
+    margin-top: .5em;
+}
+.custom-logo.shrink {
+    margin-top: 0;
+}
 
 
 /*--------------------------------------------------------------
@@ -156,6 +162,19 @@ tr:nth-child(even) {
 # Uncanny Owl Course Grid
 --------------------------------------------------------------*/
 
+div.uo-grid-wrapper {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+# BadgeOs
+--------------------------------------------------------------*/
+/* Fix Bad Behavior of BadgeOs Widget CSS */
+.widget {
+	float: left;
+	width: 25%;
+}
 /*--------------------------------------------------------------
 ## Posts
 --------------------------------------------------------------*/
@@ -229,12 +248,52 @@ div.nav-links div.nav-next a:hover,
 ## Sidebar Widgets
 --------------------------------------------------------------*/
 
-
+.widget_ldcourseprogress .widget-title, .widget_sfwd-lessons-widget .widget-title,
+.widget_ldcoursenavigation .widget-title, .widget_ldcourseprogress .widget-title,
+.widget_sfwd-lessons-widget .widget-title, .widget_ldcoursenavigatio .widget-titlen,
+.widget_sfwd-certificates-widget .widget-title, .widget_ldcourseinfo .widget-title,
+.widget_sfwd-courses-widget .widget-title, .widget_sfwd-certificates-widget .widget-title,
+#lds-shortcode .lds-dialog hgroup {
+	border-radius: 0;
+	padding: 0; 
+	font-weight: 300;
+	border: 0px;
+	border-bottom: none;
+}
+.widget-achievements-listing .widget-badgeos-item-title {
+	font-weight: 300;
+}
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
-
-
+.site-footer,
+.below-footer-container {
+	background-color: #1c3a54;
+        color: #ffffff;
+        border-top: 1px solid rgba(255,255,255, .5);
+        padding-top: 1em;
+}
+#footer-sidebar {
+	display: flex;
+	flex-wrap: wrap;
+        padding: 1em 0;
+}
+#footer-sidebar aside {
+    border-left: 1px solid rgba(255,255,255, .5);
+}
+#footer-sidebar aside:first-child {
+    border-left: none;
+}
+#copyright p {
+    text-align: right;
+    color: #ffffff;
+}
+#footer-links li a {
+	color: #ffffff;
+}
+#footer-links li a:hover, #footer-links li a:focus {
+    opacity: .75;
+}
 
 /*--------------------------------------------------------------
 ##  Classes
@@ -369,17 +428,27 @@ div.nav-links div.nav-next a:hover,
 ##  Media Queries - Handheld Device 375px
 --------------------------------------------------------------*/
 @media screen and (max-width: 375px){
+
    
 }
 /*--------------------------------------------------------------
-##  Media Queries - Handheld Device 412px
+##  Media Queries - Handheld Device 360px
 --------------------------------------------------------------*/
-@media screen and (max-width: 412px){
-    
+@media screen and (max-width: 360px){
+        #header-menus {
+            margin-top: 0;
+            padding: 15px 10px;
+            width: 100%;
+        }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Handheld Device 320px
 --------------------------------------------------------------*/
 @media screen and (max-width: 320px){
-    
+    .navbar-brand {
+        width: 75%;
+    }
+    .navbar-toggle {
+            margin-top: 1em;
+    }
 }
