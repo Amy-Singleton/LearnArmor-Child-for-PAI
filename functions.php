@@ -51,17 +51,10 @@ function learnarmor_child_enqueue_styles() {
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css', array(), filemtime(get_stylesheet_directory() .'/style.css'), 'all' );     
     //Enqueue USAAEF Fonts
     wp_enqueue_style( 'learnarmor-child-usaaef-google-font', 'https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet' );
-    //wp_enqueue_style( 'learnarmor-child-usaaef-font', get_template_directory_uri() . '/css/MyFontsWebfontsKit.css' );
-    $woo_parent = 'learnarmor-woocommerce-style';
-    wp_enqueue_style( 'learnarmor-child-woocommerce-style', get_template_directory_uri() . '/css/woocommerce.css', array($woo_parent), filemtime(get_stylesheet_directory() . '/css/woocommerce.css'), 'all');
     wp_enqueue_style( 'dashicons' );
-    $child_style = 'child-style';
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ), filemtime(get_stylesheet_directory() .'/style.css'), 'all' );   
 }
-//add_action( 'widgets_init', 'learnarmor_child_learndash_custom_sidebar' );
-//function learnarmor_child_learndash_custom_sidebar() {
-//
-//}
+
 function learnarmor_child_admin_css() {
     wp_enqueue_style('admin_styles' , get_template_directory_uri().'/css/admin.css');
 }
