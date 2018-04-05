@@ -29,6 +29,10 @@ textarea {
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
     font-size: 16px;
 }
+h1.entry-title {
+    text-align: center;
+    padding-bottom: 1em;
+}
 h2 {
     font-size: 30px;
     font-weight: 600;
@@ -36,9 +40,7 @@ h2 {
 h3 {
     font-size: 24px;
 }
-.txt-align-center {
-    text-align: center;
-}
+
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
@@ -171,10 +173,10 @@ div.uo-grid-wrapper {
 # BadgeOs
 --------------------------------------------------------------*/
 /* Fix Bad Behavior of BadgeOs Widget CSS */
-.widget {
+/*.widget {
 	float: left;
 	width: 25%;
-}
+}*/
 /*--------------------------------------------------------------
 ## Posts
 --------------------------------------------------------------*/
@@ -260,6 +262,31 @@ div.nav-links div.nav-next a:hover,
 	border: 0px;
 	border-bottom: none;
 }
+.textwidget {
+	margin-top: 1em;
+}
+/* Donation Widget */
+.credit-cards {
+    border-bottom: 1px solid rgba(55,55,55, .75);
+    border-top: 1px solid rgba(55,55,55, .75);
+    padding: .5em o;
+    margin-bottom: 1em;
+    
+}
+p.donation {
+    font-size: 18px;
+}
+button.donate {
+	width: 100%;
+	padding: 7px 10px;
+	border-radius: 0;
+	background-color: #fff;
+	border-radius: 3px;
+}
+button.donate:hover {
+    color: #555555;
+    opacity: .9;
+}
 .widget-achievements-listing .widget-badgeos-item-title {
 	font-weight: 300;
 }
@@ -299,8 +326,8 @@ div.nav-links div.nav-next a:hover,
 ##  Classes
 --------------------------------------------------------------*/
 
-.italic {
-	font-style: italic;
+.txt-align-center {
+    text-align: center;
 }
 .txt-align-right {
 	text-align: right;
@@ -316,6 +343,9 @@ div.nav-links div.nav-next a:hover,
 }
 .super-bold-font {
     font-weight: 900;
+}
+.italic-font {
+	font-style: italic;
 }
 .text-shadow {
     text-shadow: 1px 1px 3px rgba(55,55,55, .7);
@@ -342,7 +372,11 @@ div.nav-links div.nav-next a:hover,
 ##  Media Queries - Desktop 1366px
 --------------------------------------------------------------*/
 @media screen and (max-width: 1366px){
-	
+    
+     /*Sidebar Widgets */
+    .widget-title, .widgettitle {
+        font-size: 1.4em;
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Tablet 1280px
