@@ -52,16 +52,16 @@
 		</div>
 		<div id="header-menus" class="collapse in">
 	      	      <?php
-			  wp_nav_menu( array(
-			      'menu'              => 'login',
-			      'theme_location'    => 'login',
-			      'depth'             => 1,
-			      'container'         => 'div',
-			      'container_id'      => 'header-top-menu',
-			      'menu_class'        => 'nav navbar-nav',
-			      'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-			      'walker'            => new WP_Bootstrap_Navwalker())
-			  );
+			  //wp_nav_menu( array(
+			  //    'menu'              => 'login',
+			  //    'theme_location'    => 'login',
+			  //    'depth'             => 1,
+			  //    'container'         => 'div',
+			  //    'container_id'      => 'header-top-menu',
+			  //    'menu_class'        => 'nav navbar-nav',
+			  //    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+			  //    'walker'            => new WP_Bootstrap_Navwalker())
+			  //);
 		      ?>
 		      <?php
 			  wp_nav_menu( array(
