@@ -117,14 +117,35 @@ tr:nth-child(even) {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
+#masthead {
+	height: 5.5em;
+}
+#masthead.shrink {
+	height: 4.5em;
+}
 .custom-logo {
     margin-top: .5em;
 }
 .custom-logo.shrink {
     margin-top: 0;
 }
-
-
+#header-menu-primary {
+    margin-top: 2em;
+}
+#header-menu-primary.shrink {
+        margin-top: 1.5em;
+}
+.navbar-nav > li > a {
+	padding-top: 15px;
+	padding-bottom: 0;
+}
+div#header-menu-primary.shrink ul.nav.navbar-nav.shrink li a {
+	padding: 10px 10px 0 10px;
+	transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+}
 /*--------------------------------------------------------------
 ## Flex Container
    @https://www.w3schools.com/css/css3_flexbox.asp
@@ -284,8 +305,8 @@ button.donate {
 	border-radius: 3px;
 }
 button.donate:hover {
-    color: #555555;
-    opacity: .9;
+        color: #555555;
+        opacity: .9;
 }
 .widget-achievements-listing .widget-badgeos-item-title {
 	font-weight: 300;
