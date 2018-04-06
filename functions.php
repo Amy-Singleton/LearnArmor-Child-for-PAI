@@ -55,7 +55,16 @@ function learnarmor_child_enqueue_styles() {
     wp_enqueue_style( 'dashicons' );
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ), filemtime(get_stylesheet_directory() .'/style.css'), 'all' );   
 }
+add_action( 'after_setup_theme', 'remove_default_menu', 11 );
+function remove_default_menu(){
+unregister_nav_menu('login');
+}
+/**
+ * Remove the Serach Form to the Primary Menu
+ * @link https://bavotasan.com/2011/adding-a-search-bar-to-the-nav-menu-in-wordpress
+ */
 
+remove_filter( 'wp_nav_menu_items','learnarmor_add_search_box', 10, 2 );
 function learnarmor_child_admin_css() {
     wp_enqueue_style('admin_styles' , get_template_directory_uri().'/css/admin.css');
 }
