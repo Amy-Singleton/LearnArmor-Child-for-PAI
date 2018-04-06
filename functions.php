@@ -53,12 +53,47 @@ function learnarmor_child_enqueue_styles() {
    //Enqueue PsychArmor Fonts
     wp_enqueue_style( 'learnarmor-child-google-font', 'https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet' );
     wp_enqueue_style( 'dashicons' );
-    wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ), filemtime(get_stylesheet_directory() .'/style.css'), 'all' );   
+    wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ), filemtime(get_stylesheet_directory() .'/style.css'), 'all' );
+    wp_enqueue_script( 'learnarmor-child-navwalker-script', get_stylesheet_directory_uri() . '/js/bootstrap.js', array(), '20170928', true );
 }
+
 add_action( 'after_setup_theme', 'remove_default_menu', 11 );
 function remove_default_menu(){
-unregister_nav_menu('login');
+    unregister_nav_menu('login');
 }
+
+
+function load_child_walker(){
+    remove_action('after_setup_theme','load_parent_walker' );
+    require_once get_stylesheet_directory() . '/walkermenu.php';
+}
+add_action( 'after_setup_theme', 'load_child_walker' );
+/**
+ *
+ * Make the Menu Support a depth of 3
+ * 
+**/
+add_action ('wp_footer','learnarmor_child_custom_head',1);
+function learnarmor_child_custom_head() { ?> 
+    <script>
+    jQuery(document).ready(function($) {
+           $('.dropdown-submenu a').on('focus', function(e){
+   console.log(e);
+   $('.dropdown > .dropdown-submenu > .dropdown-menu').css('display','block');
+});
+		$('.dropdown-submenu a').on('blur', function(e){
+   console.log(e);
+   $('.dropdown > .dropdown-submenu > .dropdown-menu').css('display','none');
+});
+	$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+                event.preventDefault(); 
+                event.stopPropagation(); 
+                $(this).parent().siblings().removeClass('open');
+                $(this).parent().toggleClass('open');
+            });
+    });
+    </script>
+<?php }
 /**
  * Remove the Serach Form to the Primary Menu
  * @link https://bavotasan.com/2011/adding-a-search-bar-to-the-nav-menu-in-wordpress

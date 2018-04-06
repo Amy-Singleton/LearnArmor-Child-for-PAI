@@ -51,25 +51,15 @@
 			</button>
 		</div>
 		<div id="header-menus" class="collapse in">
-	      	      <?php
-			  //wp_nav_menu( array(
-			  //    'menu'              => 'login',
-			  //    'theme_location'    => 'login',
-			  //    'depth'             => 1,
-			  //    'container'         => 'div',
-			  //    'container_id'      => 'header-top-menu',
-			  //    'menu_class'        => 'nav navbar-nav',
-			  //    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-			  //    'walker'            => new WP_Bootstrap_Navwalker())
-			  //);
-		      ?>
+		  <div id="search-in-header" class="col-sm-4"><?php get_search_form( true ); ?></div>
 		      <?php
 			  wp_nav_menu( array(
 			      'menu'              => 'primary',
 			      'theme_location'    => 'primary',
-			      'depth'             => 2,
+			      'depth'             => 3,
 			      'container'         => 'div',
 			      'container_id'      => 'header-menu-primary',
+			      'container_class'	  => 'header-menu-primary col-sm-8',
 			      'menu_class'        => 'nav navbar-nav',
 			      'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
 			      'walker'            => new WP_Bootstrap_Navwalker())
