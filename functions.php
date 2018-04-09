@@ -70,7 +70,8 @@ function load_child_walker(){
 add_action( 'after_setup_theme', 'load_child_walker' );
 /**
  *
- * Make the Menu Support a depth of 3
+ * Make the Bootstrap 3 Menu Support a depth of 3 
+ * Add support for custom .shrink child menu items
  * 
 **/
 add_action ('wp_footer','learnarmor_child_custom_head',1);
@@ -78,19 +79,24 @@ function learnarmor_child_custom_head() { ?>
     <script>
     jQuery(document).ready(function($) {
            $('.dropdown-submenu a').on('focus', function(e){
-   console.log(e);
-   $('.dropdown > .dropdown-submenu > .dropdown-menu').css('display','block');
-});
-		$('.dropdown-submenu a').on('blur', function(e){
-   console.log(e);
-   $('.dropdown > .dropdown-submenu > .dropdown-menu').css('display','none');
-});
-	$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+                $('.dropdown > .dropdown-submenu > .dropdown-menu').css('display','block');
+            });
+	    $('.dropdown-submenu a').on('blur', function(e){
+                $('.dropdown > .dropdown-submenu > .dropdown-menu').css('display','none');
+            });
+            $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
                 event.preventDefault(); 
                 event.stopPropagation(); 
                 $(this).parent().siblings().removeClass('open');
                 $(this).parent().toggleClass('open');
             });
+         $(window).scroll(function () {
+		if ($(window).scrollTop() > 75 && $(window).width() > 1024) {
+                    $('#search-in-header').addClass('shrink');
+		} else {
+                    $('#search-in-header').removeClass('shrink');
+		}
+	});
     });
     </script>
 <?php }
@@ -116,6 +122,11 @@ add_filter('login_headertitle', 'learnarmor_child_custom_title_on_logo', 99);
  
 function learnarmor_child_custom_login_style() {
         echo '<style type="text/css">
+        .login h1 a {
+            -webkit-background-size: 320px;
+            background-size: 320px;
+            width: auto;
+        }
         .login #login_error, .login .message {
                 border-left: 4px solid #b23232;
         }
