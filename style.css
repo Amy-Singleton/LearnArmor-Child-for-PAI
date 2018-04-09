@@ -147,6 +147,16 @@ tr:nth-child(even) {
 	padding: 15px 30px;
 	height: auto;
 }
+.custom-logo {
+    margin-top: 0;
+}
+.custom-logo.shrink {
+    margin-top: 0;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
 #header-menus {
 	width: 75%;
 	float: left;
@@ -171,21 +181,18 @@ div#search-in-header.col-sm-4 form.search-form label input.search-field {
 .search-submit {
 	display: inline-block;
         border: none;
+        margin: 0 auto;
+        padding: 12px;
 }
 .search-submit:hover {
     background: #ffffff;
     color: #1c3a54;
     opacity: .5;
 }
-.custom-logo {
-    margin-top: 0;
-}
-.custom-logo.shrink {
-    margin-top: 0;
-    transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
+.dashicons-search {
+	color: #1c3a54;
+	font-size: 24px;
+	vertical-align: top;
 }
 #header-menu-primary {
     margin-top: .5em;
@@ -271,6 +278,7 @@ ul#menu-primary li.uo-login-logout-menu-item {
 }
 ul#menu-primary li.uo-login-logout-menu-item a {
     color: #ffffff;
+    text-align: center;
 }
 ul#menu-primary li.uo-login-logout-menu-item a:hover {
     opacity: .7;
@@ -543,21 +551,144 @@ button.donate:hover {
 ##  Media Queries - Tablet 1024px
 --------------------------------------------------------------*/
 @media screen and (max-width: 1024px){
+    .navbar-brand {
+	float: left;
+	padding: 15px 30px;
+	height: auto;
+	margin-top: .75em;
+    }
+      .search-form label {
+        width: 90%;
+    }
+    .search-submit {
+	width: 10%;
+	float: right;
+    }
 	
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Tablet 966px
 --------------------------------------------------------------*/
 @media screen and (max-width: 966px){
-
-	
+    .navbar-brand {
+	margin-top: .25em;
+    }
+    #search-in-header {
+        margin-top: 0;
+        width: 32.25%;
+    }
+    .search-form label {
+	padding: 0;
+    }
+    div#search-in-header.col-sm-4 form.search-form label input.search-field {
+	padding-left: 5px;
+	width: 100%;
+    }
+    .search-submit {
+        padding: 0;
+        display: inline-block;
+    }
+    .dashicons-search {
+        font-size: 24px;
+        vertical-align: text-bottom;
+        padding: 10px;
+        width: 24px;
+        height: 24px;
+    }
+    #header-menu-primary {
+	width: 67.75%;
+        margin-top: 0;
+    }
+    .nav > li > a {
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+	padding: 10px;
+    }
+    ul#menu-primary li.uo-login-logout-menu-item {
+	padding-bottom: 0px;
+    }
 }
 
 /*--------------------------------------------------------------
 ##  Media Queries - Tablet 800px
 --------------------------------------------------------------*/
 @media screen and (max-width: 800px){
-   
+    #header-menus {
+	width: 85%;
+	float: none;
+	padding: 0; 
+	margin: 0 auto;
+    }
+    .navbar-brand {
+	width: 85%;
+        padding: 15px 0;
+    }
+    .navbar-toggle {
+	margin-top: 2.75em;
+	margin-right: 0;
+        display: block;
+    }
+    #header-menu-primary,
+    #menu-primary,
+    #search-in-header {
+	width: 100%;
+    }
+    #search-in-header {
+	border-top: 1px solid #efefef;
+        border-bottom: 1px solid #efefef;
+        padding: 5px 0;
+        margin: 5px 0;
+    }
+    .search-form {
+	text-align: left;
+    }
+    .search-form label {
+        width: 92%;
+    }
+    div#search-in-header.col-sm-4 form.search-form label input.search-field {
+	width: 100%;
+    }
+    .search-submit {
+	width: 8%;
+	float: right;
+    }
+    .dashicons-search {
+	float: none;
+    }
+    .navbar-nav > li {
+        padding-bottom: 5px;
+	border-bottom: 1px solid #efefef;
+    }
+    ul#menu-primary li.uo-login-logout-menu-item {
+	margin: 15px;
+	width: 47.5%;
+	float: left;
+    }
+    .register {
+        margin-left: 0;
+    }
+    ul#menu-primary li.uo-login-logout-menu-item.register {
+	margin: 15px 0;
+    }
+    ul#menu-primary li.uo-login-logout-menu-item.login-logout {
+	margin-right: 0px;
+        float: right;
+    }
+    .caret {
+	display: inline-block;
+    }
+    .navbar-nav .open .dropdown-menu > li > a, .navbar-nav .open .dropdown-menu .dropdown-header {
+        padding: 5px 15px 5px 25px;
+        width: 100%;
+    }
+    /* Content */
+    .content-area {
+	width: 85%;
+	margin: 0 auto;
+	background-color: #FFFFFF;
+	background-color: rgb(255,255,255);
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Tablet 768px
@@ -581,7 +712,12 @@ button.donate:hover {
 ##  Media Queries - Handheld Device 640px
 --------------------------------------------------------------*/
 @media screen and (max-width: 640px){
-  
+    .navbar-header {
+	width: 85%;
+    }
+    .navbar-toggle {
+            margin-top: 2.5em;
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Handheld Device 568px
@@ -602,9 +738,15 @@ button.donate:hover {
    
 }
 /*--------------------------------------------------------------
-##  Media Queries - Handheld Device 414px
+##  Media Queries - Handheld Device 412px
 --------------------------------------------------------------*/
-@media screen and (max-width: 414px){
+@media screen and (max-width: 412px){
+    .navbar-brand {
+	width: 75%;
+    }
+    .navbar-toggle {
+        margin-top: 2em;
+    }
    
 }
 /*--------------------------------------------------------------
@@ -624,20 +766,21 @@ button.donate:hover {
 ##  Media Queries - Handheld Device 360px
 --------------------------------------------------------------*/
 @media screen and (max-width: 360px){
-        #header-menus {
-            margin-top: 0;
-            padding: 15px 10px;
-            width: 100%;
-        }
+    #header-menus {
+        margin-top: 0;
+        padding: 15px 10px;
+        width: 80%;
+    }
+    .navbar-toggle {
+	margin-top: 1.75em;
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Handheld Device 320px
 --------------------------------------------------------------*/
 @media screen and (max-width: 320px){
-    .navbar-brand {
-        width: 75%;
-    }
+
     .navbar-toggle {
-            margin-top: 1em;
+        margin-top: 2em;
     }
 }
