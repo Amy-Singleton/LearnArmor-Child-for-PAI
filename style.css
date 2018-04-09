@@ -81,6 +81,13 @@ input[type="submit"]:hover {
     cursor: pointer;
     box-shadow: none;
 }
+button:focus, input[type="button"]:focus,
+input[type="reset"]:focus, input[type="submit"]:focus, button:active,
+input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active {
+	border-color: #aaa #bbb #bbb;
+	box-shadow: none; 
+	border: 1px dotted;
+}
 /*--------------------------------------------------------------
 ## Forms
 --------------------------------------------------------------*/
@@ -156,11 +163,19 @@ div#search-in-header.shrink form.search-form label input.search-field {
 	padding: 10px;
 }
 div#search-in-header.col-sm-4 form.search-form label input.search-field {   
-    padding: 12px
+    padding: 12px;
+    border: 1px solid #efefef;
+    border-radius: 2px;
+    font-weight: normal;
 }
 .search-submit {
 	display: inline-block;
-	content: "f179";
+        border: none;
+}
+.search-submit:hover {
+    background: #ffffff;
+    color: #1c3a54;
+    opacity: .5;
 }
 .custom-logo {
     margin-top: 0;
@@ -219,7 +234,15 @@ div#header-menu-primary.shrink ul.nav.navbar-nav.shrink li a {
     max-width: 325px;
 }
 .dropdown-submenu>a:after{
-    margin-right:-5px;
+    display:block;content:" ";
+    float:right;
+    width:0;
+    height:0;
+    border-color:transparent;
+    border-style:solid;
+    border-width:5px 0 5px 5px;
+    border-left-color:#cccccc;
+    margin-top:5px;margin-right:-5px;
 }
 .dropdown-submenu:active>a:after{
     border-left-color:#ffffff;
@@ -534,7 +557,7 @@ button.donate:hover {
 ##  Media Queries - Tablet 800px
 --------------------------------------------------------------*/
 @media screen and (max-width: 800px){
-    
+   
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Tablet 768px
