@@ -718,6 +718,9 @@ button.donate:hover {
     .navbar-toggle {
             margin-top: 2.5em;
     }
+    .dashicons-search {
+	float: left;
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Handheld Device 568px
@@ -735,7 +738,12 @@ button.donate:hover {
 ##  Media Queries - Handheld Device 480px
 --------------------------------------------------------------*/
 @media screen and (max-width: 480px){
-   
+    ul#menu-primary li.uo-login-logout-menu-item.login-logout,
+    ul#menu-primary li.uo-login-logout-menu-item.register { 
+        margin: 7.5px auto;
+        float: left;
+        width: 100%;
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Handheld Device 412px
@@ -779,8 +787,10 @@ button.donate:hover {
 ##  Media Queries - Handheld Device 320px
 --------------------------------------------------------------*/
 @media screen and (max-width: 320px){
-
+    .navbar-brand {
+        margin-top: 0;
+    }
     .navbar-toggle {
-        margin-top: 2em;
+        margin-top: 1.5em;
     }
 }
