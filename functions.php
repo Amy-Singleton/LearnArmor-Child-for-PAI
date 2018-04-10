@@ -54,7 +54,7 @@ function learnarmor_child_enqueue_styles() {
     wp_enqueue_style( 'learnarmor-child-google-font', 'https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet' );
     wp_enqueue_style( 'dashicons' );
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ), filemtime(get_stylesheet_directory() .'/style.css'), 'all' );
-    wp_enqueue_script( 'learnarmor-child-navwalker-script', get_stylesheet_directory_uri() . '/js/bootstrap.js', array(), '20170928', true );
+    wp_enqueue_script( 'learnarmor-child-navwalker-script', get_template_directory_uri() . '/js/bootstrap-nav-walker.js', array(), '20170928', true );
 }
 
 add_action( 'after_setup_theme', 'remove_default_menu', 11 );
