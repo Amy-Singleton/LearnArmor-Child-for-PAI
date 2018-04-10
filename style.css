@@ -236,7 +236,9 @@ div#header-menu-primary.shrink ul.nav.navbar-nav.shrink li a {
     top:0;
     left:100%;
 }
-.dropdown-submenu:active>.dropdown-menu {
+
+.dropdown-submenu:active>.dropdown-menu,
+.dropdown-submenu:hover>.dropdown-menu{
     display: block;
     max-width: 325px;
 }
@@ -689,6 +691,9 @@ button.donate:hover {
     .dropdown.open:hover> .dropdown-menu,
 .dropdown-submenu.open:hover> .dropdown-menu {
     display: block;
+}
+.dropdown-submenu:hover>.dropdown-menu{
+    display: none;
 }
     /* Content */
     .content-area {
