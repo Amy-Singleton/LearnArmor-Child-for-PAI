@@ -600,9 +600,6 @@ button.donate:hover {
         margin-top: 0;
     }
     .nav > li > a {
-	position: relative;
-	display: block;
-	padding: 10px 15px;
 	padding: 10px;
     }
     ul#menu-primary li.uo-login-logout-menu-item {
@@ -619,6 +616,9 @@ button.donate:hover {
 	float: none;
 	padding: 0; 
 	margin: 0 auto;
+    }
+    #masthead > .navbar {
+	margin: 0 auto 1em;
     }
     .navbar-brand {
 	width: 85%;
