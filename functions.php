@@ -30,6 +30,8 @@ endif;
  * @link https://wordpress.stackexchange.com/questions/189985/how-to-properly-dequeue-scripts-and-styles-in-child-theme
  *
  **/
+
+add_action( 'wp_print_styles', 'learnarmor_child_dequeue_unnecessary_styles' );
 function learnarmor_child_dequeue_unnecessary_styles() {
     wp_dequeue_style( 'learnarmor-bootstrap-style' );
     wp_deregister_style( 'learnarmor-bootstrap-style' );
@@ -40,10 +42,17 @@ function learnarmor_child_dequeue_unnecessary_styles() {
     wp_dequeue_style( 'learnarmor-martel-google-fonts');
     wp_deregister_style( 'learnarmor-martel-google-fonts');  
 }
-add_action( 'wp_print_styles', 'learnarmor_child_dequeue_unnecessary_styles' );
 
-add_action( 'wp_enqueue_scripts', 'learnarmor_child_enqueue_styles' );
-function learnarmor_child_enqueue_styles() {
+add_action( 'wp_print_styles', 'learnarmor_child_dequeue_parent_scripts' );
+function learnarmor_child_dequeue_parent_scripts() {
+    wp_dequeue_script( 'learnarmor-bootstrap-script' );
+    wp_deregister_script( 'learnarmor-bootstrap-script' );
+    wp_dequeue_script( 'learnarmor-navigation' );
+    wp_deregister_script( 'learnarmor-navigation');
+}
+
+add_action( 'wp_enqueue_scripts', 'learnarmor_child_enqueue_scripts' );
+function learnarmor_child_enqueue_scripts() {
     // Bootstrap Styles
     $bootstrap_style = 'learnarmor-child-bootstrap-style';
     wp_enqueue_style( 'learnarmor-child-bootstrap-style', get_template_directory_uri() . '/css/bootstrap.css', '20172410');
@@ -54,7 +63,8 @@ function learnarmor_child_enqueue_styles() {
     wp_enqueue_style( 'learnarmor-child-google-font', 'https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet' );
     wp_enqueue_style( 'dashicons' );
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ), filemtime(get_stylesheet_directory() .'/style.css'), 'all' );
-    wp_enqueue_script( 'learnarmor-child-navwalker-script', get_template_directory_uri() . '/js/bootstrap-nav-walker.js', array(), '20170928', true );
+    wp_enqueue_script( 'learnarmor-child-bootstrap-js', get_stylesheet_directory_uri() . '/js/bootstrap.js', array(), '20180411', true );
+    //wp_enqueue_script( 'learnarmor-child-navwalker-script', get_template_directory_uri() . '/js/bootstrap-nav-walker.js', array(), '20170928', true );
 }
 
 add_action( 'after_setup_theme', 'remove_default_menu', 11 );
