@@ -147,6 +147,9 @@ tr:nth-child(even) {
 	padding: 15px 30px;
 	height: auto;
 }
+.navbar-brand .shrink {
+	width: 85%;
+        }
 .custom-logo {
     margin-top: 0;
 }
@@ -194,8 +197,9 @@ div#search-in-header.col-sm-4 form.search-form label input.search-field {
 	font-size: 24px;
 	vertical-align: top;
 }
+
 #header-menu-primary {
-    margin-top: .5em;
+    margin-top: 0em;
     width: auto;
     padding: 0;
 }
@@ -206,11 +210,19 @@ div#search-in-header.col-sm-4 form.search-form label input.search-field {
         -webkit-transition: all 0.5s ease-in-out;
         -o-transition: all 0.5s ease-in-out;
 }
+ul#menu-primary.nav.navbar-nav.shrink {
+	margin-top: 0;
+}
 .navbar-nav > li > a {
 	padding-top: .75em;
 	padding-bottom: 0;
 }
-
+.dropdown-menu > li > a {
+	display: block;
+	padding: 3px 20px;
+	clear: both;
+	font-weight: normal;
+}
 div#header-menu-primary.shrink ul.nav.navbar-nav.shrink li a {
 	padding: 10px 10px 0 10px;
 	transition: all 0.5s ease-in-out;
@@ -263,6 +275,7 @@ div#header-menu-primary.shrink ul.nav.navbar-nav.shrink li a {
     left:-100%;
     margin-left:10px;
 }
+
 .dropdown-menu > li > a,
 .dropdown-submenu > li a {
 	white-space: normal;
@@ -473,6 +486,10 @@ button.donate:hover {
 #footer-sidebar aside {
     border-left: 1px solid rgba(255,255,255, .5);
 }
+#footer p,
+.menu-footer-container {
+	text-aling:center;
+}
 #footer-sidebar aside:first-child {
     border-left: none;
 }
@@ -613,6 +630,10 @@ button.donate:hover {
 ##  Media Queries - Tablet 800px
 --------------------------------------------------------------*/
 @media screen and (max-width: 800px){
+    .navbar-toggle {
+	    margin-top: 0;
+	    display: block;
+    }
     #header-menus {
 	width: 85%;
 	float: none;
@@ -692,9 +713,9 @@ button.donate:hover {
         width: 100%;
     }
     .dropdown.open:hover> .dropdown-menu,
-.dropdown-submenu.open:hover> .dropdown-menu {
-    display: block;
-}
+    .dropdown-submenu.open:hover> .dropdown-menu {
+        display: block;
+    }
 .dropdown-submenu:hover>.dropdown-menu{
     display: none;
 }
