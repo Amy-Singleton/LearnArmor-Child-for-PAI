@@ -505,6 +505,47 @@ button.donate:hover {
 }
 
 /*--------------------------------------------------------------
+##  Footer Widgets
+--------------------------------------------------------------*/
+
+.glyphicons-chevron-up:before {
+	width: 40px;
+	height: 40px;
+	font-size: 2.5em;
+        font-weight: lighter;
+	margin-right: .5em;
+	content:"\e113";
+}
+.back-to-top {
+	background: transparent none repeat scroll 0% 0%;
+	position: fixed;
+	width: 33px;
+	bottom: .75em;
+	right: 2em;
+	z-index: 100;
+	display: none;
+	text-decoration: none;
+}
+.dashicons-arrow-up-alt2::before {
+	width: 40px;
+	height: 40px;
+	font-size: 1.75em;
+	line-height: 1.5;
+	margin-right: .5em;
+	content: "\f343";
+	border: 1px solid #ffffff;
+        border: 1px solid rgba(255,255,255, .7);
+	border-radius: 3px;
+	padding: 3px 5px;
+	color: #ffffff;
+        color: rgba(255,255,255, .7);
+	background-color: #1c3a54;
+}
+.dashicons.dashicons-arrow-up-alt2 {
+        display: inline;
+}
+
+/*--------------------------------------------------------------
 ##  Classes
 --------------------------------------------------------------*/
 

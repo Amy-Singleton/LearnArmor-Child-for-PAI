@@ -107,6 +107,9 @@ function learnarmor_child_custom_head() { ?>
                     $('#search-in-header').removeClass('shrink');
 		}
 	});
+        $('a.back-to-top > span.glyphicon').removeClass('glyphicon-circle-arrow-up');
+        $('a.back-to-top > span.glyphicon').removeClass('glyphicon');
+        $('a.back-to-top > span').addClass('dashicons dashicons-arrow-up-alt2');
     });
     </script>
 <?php }
