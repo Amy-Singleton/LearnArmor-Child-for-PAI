@@ -640,9 +640,6 @@ button.donate:hover {
 	padding: 0; 
 	margin: 0 auto;
     }
-    #header-menus.collapse.in {
-        //max-height: 9999px !important;
-    }
     #masthead > .navbar {
 	margin: 0 auto 1em;
     }
