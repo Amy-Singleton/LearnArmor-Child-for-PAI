@@ -30,18 +30,21 @@
 			<div class="navbar-brand">
 				<?php
 			       
-			       if ( the_custom_logo()) : 
+			       if( function_exists( 'the_custom_logo' ) ){ 
 					the_custom_logo();  
-			        else : ?>
+			       }
+			       else {
+				?>
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			       <?php
-			       endif;
-       
-			       $description = get_bloginfo( 'description', 'display' );
-			       if ( $description || is_customize_preview() ) : ?>
-				       <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			       <?php
-			       endif; ?>
+				<?php
+					$description = get_bloginfo( 'description', 'display' );
+					if ( $description || is_customize_preview() ) {
+				?>
+					  <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+				<?php
+					}
+			       }
+				?>
 		        </div>
 			 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-menus">
 				<span class="sr-only">Toggle navigation</span>
