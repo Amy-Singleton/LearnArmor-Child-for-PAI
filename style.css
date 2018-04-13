@@ -362,6 +362,32 @@ div.ld-course-list-content > div.flex-container.ld-course-list-items > div.row >
 ## Posts
 --------------------------------------------------------------*/
 
+div.sharedaddy h3 {
+	color: #1c3a54;
+}
+div.sharedaddy h3.sd-title:before {
+	border-top: 1px solid #1c3a54!important;
+}
+#main #sharing_email .sharing_send,
+#main .sd-content ul li .option a.share-ustom,
+#main .sd-content ul li a.sd-button,
+#main .sd-content ul li.advanced a.share-more,
+#main .sd-content ul li.preview-item div.option.option-smart-off a,
+#main .sd-social-icon .sd-content ul li a.sd-button,
+#main .sd-social-icon-text .sd-content ul li a.sd-button,
+#main .sd-social-official .sd-content > ul > li .digg_button > a,
+#main .sd-social-official .sd-content > ul > li > a.sd-button,
+#main .sd-social-text .sd-content ul li a.sd-button {
+	color: #fff !important;
+        background: #1c3a54;
+        border: 1px solid #1c3a54;
+
+}
+.sd-social .sd-button .share-count {
+	background: #ffffff !important;
+	color: #1c3a54 !important;
+}
+
 .nav-previous a:before {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
