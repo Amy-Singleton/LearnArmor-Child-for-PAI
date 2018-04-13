@@ -507,8 +507,9 @@ button.donate:hover {
         color: #ffffff;
         padding: 2.25em 0;
 }
-#legal-nav div.menu-footer-container {
+#footer-links {
      padding: 2.25em 0;
+     float: left;
 }
 #footer-sidebar .widget_nav_menu li a,
 #footer-sidebar .widget_nav_menu li a:hover,
