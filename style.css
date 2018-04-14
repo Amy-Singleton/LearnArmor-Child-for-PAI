@@ -210,6 +210,20 @@ div#search-in-header.col-sm-4 form.search-form label input.search-field {
         -webkit-transition: all 0.5s ease-in-out;
         -o-transition: all 0.5s ease-in-out;
 }
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+	border-color: #1c3a54;
+}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+	background-color: #1c3a54;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #1c3a54;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+	color: #1c3a54;
+        opacity: 1;
+}
 ul#menu-primary.nav.navbar-nav {
 	margin-top: .75em;
 }
