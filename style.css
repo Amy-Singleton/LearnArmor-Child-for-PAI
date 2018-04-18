@@ -26,7 +26,7 @@ button,
 input,
 select,
 textarea {
-    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
 h1.entry-title {
@@ -40,7 +40,6 @@ h2 {
 h3 {
     font-size: 24px;
 }
-
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
@@ -340,8 +339,70 @@ ul#menu-primary li.uo-login-logout-menu-item a:hover {
 /*--------------------------------------------------------------
 ## Home Page
 --------------------------------------------------------------*/
+.page-template-home-page .content-area {
+	margin-top: 6em;
+}
+.page-template-home-page .entry-content {
+    margin-bottom: 0;
+}
+.page-template-home-page .entry-footer {
+    display: none;
+}
+.page-template-home-page h1,
+.page-template-home-page #introduction p {
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+    text-shadow: 1px 0px 0px rgba(55,55,55, .7);
+}
+.page-template-home-page h1 {
+    font-size: 26px;
+}
+.page-template-home-page h2 {
+    font-family: "Roboto Slab", serif;
+}
+.page-template-home-page #introduction p,
+.page-template-home-page #statistics p,
+.page-template-home-page #metrics p { 
+    font-size: 22px;
+}
+.page-template-home-page #metrics p {
+    font-family: 'Roboto Slab', serif;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: lowercase;
+    font-size: 20px;
+}
+div.user-specific-links {
+    padding: 0;    
+}
 
+div.user-specific-links ul.navbar-nav {
+	float: right;
+	margin: 2em 0;
+}
+div.user-specific-links ul.navbar-nav > li {
+	float: right;
+	margin-left: 1em;
+}
 
+div.user-specific-links ul.navbar-nav > li > a {
+	color: #ffffff;
+	padding: .5em;
+	border: 2px solid #ffffff;
+	border-radius: 3px;
+	text-align: center;
+}
+
+div.user-specific-links ul.nav > li > a:hover, 
+div.user-specific-links ul.nav > li > a:focus {
+	text-decoration: none;
+	background-color: #ffffff;
+        border: 2px solid #ffffff;
+	color: #1c3a54;
+}
+#statistics p {
+    font-size: 22px;
+}
 /*--------------------------------------------------------------
 ## About Page
 --------------------------------------------------------------*/
@@ -888,6 +949,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     }
     #guidestar p img {
         margin: .5em auto;
+    }
+    #legal-nav {
+        display: inline;
     }
      #footer-links {
 	padding: 2.75em 0;
