@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package learnarmor
+ * @package learnarmor-child
  */
 
 get_header(); ?>
@@ -29,7 +29,7 @@ get_header(); ?>
 				echo $custom_likes->post_likes( '' );
 			}
 
-			if ( !is_singular( array( 'sfwd-lessons' ) ) || is_singular( array( 'posts', 'product', 'sfwd-courses' ) ) || get_post_type( get_the_ID() ) == 'sfwd-courses' && class_exists( 'Jetpack_RelatedPosts' ) ) {
+			if ( !is_singular( array( 'sfwd-lessons' ) ) || is_singular( array( 'posts', 'sfwd-courses' ) ) || get_post_type( get_the_ID() ) == 'sfwd-courses' && class_exists( 'Jetpack_RelatedPosts' ) ) {
 			    echo do_shortcode( '[jetpack-related-posts]' );
 			}
 
