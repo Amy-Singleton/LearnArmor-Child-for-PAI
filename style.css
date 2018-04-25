@@ -525,7 +525,8 @@ div.shrm-course p.shrm-course-duration {
 .course-button {
         margin-top: 2em;
 }
-.shrm-course > div.course-button > a {
+.shrm-course > div.course-button > a,
+div.course-button > a{
     color: #1c3a54;
     font-weight: 500;
     padding: .5em;

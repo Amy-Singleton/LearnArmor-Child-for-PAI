@@ -194,4 +194,17 @@ function learnarmor_child_new_mail_from_name($old) {
 return 'PsychArmor Institute';
 }
 
+/* SHRM */
+add_action( 'loop_start', 'shrm_page_hide_buttons' );
+function shrm_page_hide_buttons(){
+        if(is_page(95515) && !is_user_logged_in()){?>
+              <script>
+                jQuery(document).ready(function($) {
+                        $('div.course-button').remove();
+                        $( '.shrm-course-group-reg' ).remove();
+                });
+              </script>
+        <?php }
+}
+
 ?>
