@@ -114,6 +114,24 @@ function learnarmor_child_custom_head() { ?>
     });
     </script>
 <?php }
+
+/**
+ * 
+ * Add Aria lables to drip links and input fields
+ *
+ **/
+add_action ('wp_footer','learnarmor_child_accessibility',1);
+function learnarmor_child_accessibility() {
+?>
+<script>
+	jQuery(document).ready(function($) {
+            $('div.drip-powered-by a').attr('aria-label','drip newsletter developer external site link');
+            $('.drip-text-field').attr('aria-label', 'email');
+	});
+</script>
+
+<?php 
+}
 /**
  * Remove the Serach Form to the Primary Menu
  * @link https://bavotasan.com/2011/adding-a-search-bar-to-the-nav-menu-in-wordpress
