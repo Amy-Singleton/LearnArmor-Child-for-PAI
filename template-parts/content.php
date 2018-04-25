@@ -12,25 +12,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
-		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			// in the loop
-			$category = get_the_category();
-			$currentcat = $category[0]->cat_ID;
-			$currentcatname = $category[0]->cat_name;
-			$currentcatslug = $category[0]->slug;
-			echo '<h2 class="entry-title">' . $category[0]->cat_name . '</h2>';
-		endif;
-
-		if ( 'post' === get_post_type() ) : ?>
-		<!-- <div class="entry-meta"> -->
-			<?php
-				//learnarmor_posted_on();
-			?>
-		<!-- </div> .entry-meta -->
-		<?php
-		endif; ?>
+		?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -84,8 +67,8 @@
 	<footer class="entry-footer">
 		
 		<?php
-		if (!is_home()){
+		//if (!is_home()){
 			learnarmor_entry_footer();
-		}?>
+		//}?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
