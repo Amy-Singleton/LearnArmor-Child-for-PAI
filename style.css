@@ -29,6 +29,10 @@ textarea {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
+h1, h2, h3, h4, h5, h6 {
+	margin: 20px 0 10px;
+	text-transform: none; 
+}
 h1.entry-title {
     padding-bottom: 1em;
 }
@@ -489,6 +493,51 @@ div.user-specific-links ul.nav > li > a:focus {
 ## Contact Page
 --------------------------------------------------------------*/
 
+/*--------------------------------------------------------------
+## SHRM Page
+--------------------------------------------------------------*/
+.shrm {
+    margin: 1.5em auto;
+}
+.shrm-course {
+    margin: 3em auto;
+    background-color: #efefef;
+    padding: 10px 30px 30px;
+}
+.shrm-course h2 {
+    margin-bottom: 1em;
+    color: #1c3a54;
+}
+
+.shrm-course > div.col-sm-7 {
+    padding: 0 30px 0 0;
+}
+.shrm-course > p {
+    font-weight: 300;
+    font-size: 18px;
+    color: #1c3a54;
+}
+div.shrm-course p.shrm-course-duration {
+    font-weight: 500;
+    font-size: 22px;
+    color: #1c3a54;
+}
+.course-button {
+        margin-top: 2em;
+}
+.shrm-course > div.course-button > a {
+    color: #1c3a54;
+    font-weight: 500;
+    padding: .5em;
+    background-color: rgba(255,255,255, 0);
+    border: 2px solid #1c3a54;
+    border-radius: 3px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.shrm-link {
+    color: #4a8bc3;
+}
 /*--------------------------------------------------------------
 # Uncanny Owl Course Grid
 --------------------------------------------------------------*/
@@ -1045,6 +1094,27 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	background-color: #FFFFFF;
 	background-color: rgb(255,255,255);
     }
+    /* SHRM */
+    .shrm-course h2 {
+	text-align: left;
+        font-size: 28px;
+    }
+    div.shrm-img {
+        padding: 30px 15px;
+        background-color: rgba(55,55,55, .5);
+        width: auto;
+        display: flex;
+    }
+    .shrm-course div.shrm-img img {
+	float: none;
+	margin: 0 auto;
+	display: block;
+        padding: 15px;
+        background-color: rgba(255,255,255, .9);
+    }
+    div.shrm-course p.shrm-course-duration {
+	margin-top: 15px;
+    }
     /* Footer */
     .below-footer-container #copyright p,
     .below-footer-container #footer-links li a {
@@ -1203,6 +1273,19 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         float: left;
         width: 100%;
     }
+    /* SHRM */
+    .shrm-course h2 {
+        font-size: 28px;
+    }
+    .shrm-course > p {
+	font-weight: 300;   
+	font-size: 16px;
+	color: #1c3a54;
+    }
+    .shrm-course > div.course-button > a {
+        width: 100%;
+        display: block;
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Handheld Device 412px
@@ -1215,7 +1298,6 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .navbar-toggle {
         margin-top: 2em;
     }
-   
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Handheld Device 384px
@@ -1244,6 +1326,20 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     }
     .navbar-toggle {
 	margin-top: 1.75em;
+    }
+    /* SHRM */
+    .shrm-course h2 {
+	margin-bottom: 1em;
+	color: #1c3a54;
+	text-align: left;
+	font-size: 20px;
+    }
+    div.shrm-img {
+	padding: 15px;
+    }
+    div.shrm-course p.shrm-course-duration {
+	font-size: 16px;
+	color: #1c3a54;
     }
     /* Footer */
     a.sow-social-media-button{
