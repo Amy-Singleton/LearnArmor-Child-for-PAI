@@ -11,9 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		?>
+		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -21,7 +19,6 @@
 		if (is_home()) {
 			if ( has_post_thumbnail()) {
 				echo '<div class="post-thumbnail">' . the_post_thumbnail() . '</div>';
-				the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			} 
 			the_excerpt(35);
 		} else {

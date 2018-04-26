@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package learnarmor-child
+ * @package learnarmor
  */
 
 get_header(); ?>
@@ -17,20 +17,22 @@ get_header(); ?>
 
 			<header class="page-header">
 				<?php
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="archive-description">', '</div>' );
+					
+					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 				?>
 			</header><!-- .page-header -->
 
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
-				if ( is_category() || is_tag() || is_archive() || is_home() || is_search() || is_page('blog') {
-					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				if ( is_category() || is_archive() || is_home()) {
 					// check if the post or page has a Featured Image assigned to it.
 					if ( has_post_thumbnail() ) {
 					    the_post_thumbnail();
 					}
-					the_excerpt(35);
+					the_excerpt(55);
 				    } else {
 					/*
 					* Include the Post-Format-specific template for the content.
@@ -53,6 +55,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
 <?php
 get_sidebar();
 get_footer();
