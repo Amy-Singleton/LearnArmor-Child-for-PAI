@@ -67,8 +67,7 @@
 	<footer class="entry-footer">
 		
 		<?php
-		//if (!is_home()){
 			learnarmor_entry_footer();
-		//}?>
+		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
