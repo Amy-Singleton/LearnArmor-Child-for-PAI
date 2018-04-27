@@ -18,9 +18,7 @@ get_header(); ?>
 			<header class="page-header">
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-					
-					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+					the_archive_description( '<div class="archive-description">', '</div>' );					
 				?>
 			</header><!-- .page-header -->
 
@@ -29,12 +27,14 @@ get_header(); ?>
 			while ( have_posts() ) : the_post();
                             if (is_category()) {
                         ?>
-                            <div class="entry-summary">
+                        <div class="entry-summary">
+                            <?php    the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );?>
                             <div class="post-thumbnail"><?php if ( has_post_thumbnail() ) {
                                     the_post_thumbnail();
                             } ?>
+                             <?php the_excerpt(35); ?>
                         </div>
-                        <?php the_excerpt(35); ?>
+                       
                         <footer class="entry-footer">
                                                 <?php learnarmor_entry_footer(); ?>
                                         </footer><!-- .entry-footer -->
