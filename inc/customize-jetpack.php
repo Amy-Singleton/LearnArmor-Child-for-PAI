@@ -51,7 +51,7 @@ function jetpackme_add_pages_to_related( $post_type, $post_id ) {
     }
  
     // Add pages
-    $search_types[] = 'page';
+    $search_types[] = array('page','sfwd-courses');
     return $search_types;
 }
 add_filter( 'jetpack_relatedposts_filter_post_type', 'jetpackme_add_pages_to_related', 10, 2 );
