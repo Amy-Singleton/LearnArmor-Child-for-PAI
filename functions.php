@@ -225,4 +225,32 @@ function shrm_page_hide_buttons(){
         <?php }
 }
 
+/**
+ * Customize Archive Pages
+ * @link https://premium.wpmudev.org/blog/add-custom-post-types-to-tags-and-categories-in-wordpress/
+ *
+ */
+
+function learnarmor_child_add_custom_types_to_tax( $query ) {
+if (( is_tag() || is_category() ) && $query->is_main_query() && empty( $query->query_vars['suppress_filters'] )) {
+
+    // Get all your post types
+    $post_types = get_post_types();
+    
+    $query->set( 'post_type', $post_types );
+    return $query;
+    }
+}
+add_filter( 'pre_get_posts', 'learnarmor_child_add_custom_types_to_tax' );
+function learnarmor_child_search_filter($query) {
+    
+    remove_action('pre_get_posts','learnarmor_search_filter');
+  if ( !is_admin() && $query->is_main_query() ) {
+    if ($query->is_search) {
+      $query->set('post_type', array( 'post', 'sfwd-courses' ) );
+    }
+  }
+}
+
+add_action('pre_get_posts','learnarmor_child_search_filter');
 ?>
