@@ -253,4 +253,11 @@ function learnarmor_child_search_filter($query) {
 }
 
 add_action('pre_get_posts','learnarmor_child_search_filter');
+
+if (class_exists( 'SFWD_LMS')) { 
+    function learnarmor_child_add_excerpt_support_for_cpt() {
+     add_post_type_support( 'sfwd-courses', 'excerpt' );
+    }
+    add_action( 'init', 'learnarmor_child_add_excerpt_support_for_cpt' );
+}
 ?>
