@@ -127,7 +127,7 @@ function learnarmor_child_accessibility() {
 	jQuery(document).ready(function($) {
             $('div.drip-powered-by a').attr('aria-label','drip newsletter developer external site link');
             $('.drip-text-field').attr('aria-label', 'email');
-	});
+        });
 </script>
 
 <?php 
@@ -260,4 +260,28 @@ if (class_exists( 'SFWD_LMS')) {
     }
     add_action( 'init', 'learnarmor_child_add_excerpt_support_for_cpt' );
 }
+//Add a login/logout link to Primary navigation menu
+
+add_filter('wp_nav_menu_items', 'add_login_logout_link', 10, 2);
+function add_login_logout_link($items, $args) {
+     if($args->theme_location == 'primary') {
+        ob_start();
+        wp_loginout('index.php');
+        $loginoutlink = ob_get_contents();
+        ob_end_clean();
+        $items .= '<li id="in-out"class="login-logout">'. $loginoutlink .'</li>';
+     }
+     if(!is_user_logged_in()){
+        ?>
+        <script>
+                jQuery(document).ready(function($) {
+                    $('.login-logout>a').attr('data-toggle', 'modal');
+                    $('.login-logout>a').attr('href','#login-modal');
+                });
+        </script>
+        <?php
+     }
+    return $items;
+}
+
 ?>

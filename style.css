@@ -304,21 +304,92 @@ div#header-menu-primary.shrink ul.nav.navbar-nav.shrink li a {
 }
 
 /*--------------------------------------------------------------
-## Uncanny Login/Logout
+## Login/Logout
 --------------------------------------------------------------*/
-ul#menu-primary li.uo-login-logout-menu-item {
+.page-template-home-page div.login h2 {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+}
+
+ul#menu-primary li.login-logout,
+ul#menu-primary li.register {
 	background-color: #1c3a54;
 	padding-bottom: 10px;
 	color: #ffffff;
 	border-radius: 2px;
 	margin-left: 15px;
 }
-ul#menu-primary li.uo-login-logout-menu-item a {
+ul#menu-primary li.login-logout a,
+ul#menu-primary li.register a{
     color: #ffffff;
     text-align: center;
 }
-ul#menu-primary li.uo-login-logout-menu-item a:hover {
+ul#menu-primary li.login-logout a:hover,
+ul#menu-primary li.register a:hover {
     opacity: .7;
+}
+
+/* Login Modal */
+.modal-header {
+    border-bottom: none;
+}
+.modal-body {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1em;
+}
+.modal-body h2 {
+    color: #1c3a54;
+    text-transform: uppercase;
+}
+div.modal form {
+    width: 85%;
+    margin: 0 auto;
+}
+div.modal form div.form-field{
+    margin: 15px auto;
+    height: 4.5em;
+}
+.center-button button.btn-primary {
+    width: 33%;
+    margin: 2em auto;
+    display: block;
+    background-color: #ffffff;
+    color: #1c3a54;
+    border-radius: 3px;
+    border: 2px solid #1c3a54;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 900;
+
+}
+.center-button button.btn-primary:hover,
+.modal-header .close:hover {
+    background-color: #1c3a54;
+    color: #ffffff;
+}
+.center-button button.btn-primary:focus,
+.modal-header .close:focus {
+    background-color: #1c3a54;
+    color: #ffffff;
+}
+.modal-header .close {
+	margin-top: -2px;
+	padding: 7px 15px;
+	border: 2px solid #1c3a54;
+	border-radius: 3px;
+	opacity: 1;
+}
+.modal-footer {
+	 border-top: none; 
+}
+span.fa.fa-sign-in:before {
+	font: normal normal normal 16px/1 FontAwesome;
+	width: 20px;
+	height: 20px;
+	text-rendering: auto;
+	content: "\f090";
+	margin-right: 5px;
 }
 /*--------------------------------------------------------------
 ## Flex Container
@@ -1056,18 +1127,20 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         padding-bottom: 5px;
 	border-bottom: 1px solid #efefef;
     }
-    ul#menu-primary li.uo-login-logout-menu-item {
-	margin: 15px;
+    ul#menu-primary li.register,
+    ul#menu-primary li.login-logout {
+	margin: 15px 0;
 	width: 47.5%;
 	float: left;
+        padding-bottom: 0;
     }
     .register {
         margin-left: 0;
     }
-    ul#menu-primary li.uo-login-logout-menu-item.register {
+    ul#menu-primary li.login-logou.register {
 	margin: 15px 0;
     }
-    ul#menu-primary li.uo-login-logout-menu-item.login-logout {
+    ul#menu-primary li.login-logout {
 	margin-right: 0px;
         float: right;
     }
@@ -1261,15 +1334,26 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 ##  Media Queries - Handheld Device 533px
 --------------------------------------------------------------*/
 @media screen and (max-width: 533px){
-
+    /* Login Modal */
+    div.modal form {
+	width: 75%;
+    }
+    div.modal form div.form-field {
+	margin: 15px auto;
+	height: auto;
+    }
+    .center-button button.btn-primary {
+        margin-top: 0;
+        width: 100%;
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Handheld Device 480px
 --------------------------------------------------------------*/
 @media screen and (max-width: 480px){
     /* Masthead */
-    ul#menu-primary li.uo-login-logout-menu-item.login-logout,
-    ul#menu-primary li.uo-login-logout-menu-item.register { 
+    ul#menu-primary li.login-logout,
+    ul#menu-primary li.register { 
         margin: 7.5px auto;
         float: left;
         width: 100%;
@@ -1310,6 +1394,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 ##  Media Queries - Handheld Device 375px
 --------------------------------------------------------------*/
 @media screen and (max-width: 375px){
+    /* Login Modal */
+    .center-button button.btn-primary {
+	width: 100%;
+    }
     /* Footer */
     .back-to-top {
             bottom: 11em;
@@ -1328,6 +1416,7 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .navbar-toggle {
 	margin-top: 1.75em;
     }
+    
     /* SHRM */
     .shrm-course h2 {
 	margin-bottom: 1em;
