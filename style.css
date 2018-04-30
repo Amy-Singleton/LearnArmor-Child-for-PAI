@@ -422,6 +422,7 @@ span.fa.fa-sign-in:before {
 }
 
 .page-template-home-page #introduction,
+.page-template-home-page #featured-categories,
 .page-template-home-page #featured-content,
 .page-template-home-page #statistics,
 .page-template-home-page #metrics,
@@ -454,8 +455,45 @@ span.fa.fa-sign-in:before {
 .page-template-home-page #introduction h1 {
     font-size: 26px;
 }
+.page-template-home-page div.banner-search {
+    margin-top: 2em;
+}
+.page-template-home-page div.banner-search,
+.page-template-home-page div.banner-search div{
+    padding-right: 0;
+}
+.page-template-home-page #searchform {
+    padding-right: 0;
+    float: right;
+}
+.page-template-home-page #search-field {
+    padding: 10px;
+    border: 2px solid #e3e3e3;
+    border-radius: 3px;
+    background-color: rgba(255,255,255, .75);
+    color: #333333;
+}
+.page-template-home-page #search-submit-banner {
+    padding: 8px 0;
+    margin: 0 0 0 15px;
+    border: 2px solid #ffffff;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #ffffff;
+    background: transparent;
+    width: 30%;
+}
+.page-template-home-page #search-submit-banner:hover,
+.page-template-home-page #search-submit-banner:focus {
+    opacity: .75;
+}
 .page-template-home-page div h2 {
     font-family: "Roboto Slab", serif;
+}
+.page-template-home-page #featured-categories {
+    background-color: #ffffff;
+    background-repeat: repeat;
 }
 #featured-content > div > .nav-tabs.nav-justified {
 	width: 85%;
@@ -466,16 +504,16 @@ span.fa.fa-sign-in:before {
 #featured-content > div > .nav-tabs > li.active > a,
 #featured-content > div > .nav-tabs > li.active > a:hover,
 #featured-content > div > .nav-tabs > li.active > a:focus,
-#featured-content > div > .nav-tabs > li.active > a {
-	border: none !important;
+#featured-content > div > .nav-tabs > li.active > a {    
+    background-color: #e3e3e3;
+    border: none !important;
 }
 #featured-content > div > .nav-tabs > li a:hover,
 #featured-content > div > .nav-tabs > li a:focus {
     color: #1c3a54;
-    background-color: #ffffff;
     opacity: .5;
 }
-.page-template-home-page #statistics,
+.page-template-home-page #featured-content,
 .page-template-home-page #sponsors{
     background-color: #e3e3e3;
 }
@@ -497,9 +535,11 @@ div.user-specific-links {
 }
 
 div.user-specific-links ul.navbar-nav {
-    float: right;
-    margin: 2em 0;
-    list-style: none;
+	float: none;
+	margin: 5em auto;
+	list-style: none;
+	display: block;
+        width: 70%;
 }
 div.user-specific-links ul.navbar-nav > li {
     float: left;
@@ -510,19 +550,35 @@ div.user-specific-links ul.navbar-nav > li > a {
     color: #1c3a54;
     font-weight: 500;
     padding: .5em;
-    background-color: rgba(255,255,255, .7);
-    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    border: 2px solid #1c3a54;
     border-radius: 3px;
     text-align: center;
     text-transform: uppercase;
 }
-
+div.user-specific-links ul.navbar-nav > li.caregivers > a {
+    color: #f79648;
+    border: 2px solid #f79648;
+}
+div.user-specific-links ul.navbar-nav > li.employers > a {
+    color: #609FD5;
+    border: 2px solid #609FD5;
+}
+div.user-specific-links ul.navbar-nav > li.educators > a {
+    color: #9DCF80;
+    border: 2px solid #9DCF80;
+}
+div.user-specific-links ul.navbar-nav > li.healthcare-providers > a {
+    color: #F75D59;
+    border: 2px solid #F75D59;
+}
+div.user-specific-links ul.navbar-nav > li.volunteers > a {
+    color: #8083bf;
+    border: 2px solid #8083bf;
+}
 div.user-specific-links ul.nav > li > a:hover, 
 div.user-specific-links ul.nav > li > a:focus {
-    text-decoration: none;
-    background-color: rgba(255,255,255, .5);
-    border: 2px solid #ffffff;
-    color: #1c3a54;
+    opacity: .75;
 }
 #statistics .col-sm-6,
 #metrics .col-sm-4 {
@@ -610,6 +666,10 @@ div.course-button > a{
 .shrm-link {
     color: #4a8bc3;
 }
+/*--------------------------------------------------------------
+# Courses
+--------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Uncanny Owl Course Grid
 --------------------------------------------------------------*/
@@ -953,6 +1013,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .page-template-home-page #metrics,
     .page-template-home-page #sponsors {
         height: 500px;
+    }
+    
+    .page-template-home-page #featured-categories {
+        height: 300px;        
     }
     .page-template-home-page #introduction p {
         padding-left: 7em;
