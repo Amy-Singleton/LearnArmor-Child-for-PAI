@@ -28,9 +28,9 @@
 	  	<div class="modal-dialog">
 		    <div class="modal-content">
 			  	<div class="modal-header">
-			    	      <button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
+			    	      <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
 			    	      <div class="login">
-					<h2>Login Form</h2>
+					<h2 class="text-align-center">Login Form</h2>
 				      </div>
 				      
 			  	</div>
@@ -39,16 +39,16 @@
 					
 				    <form action="<?php echo site_url( 'wp-login.php'); ?>" method="post" name="loginform">
 					  	<div class="form-field">
-					  		<label class="col-sm-12">Username:</label>
-					  		<input type="text" class="login-username col-sm-12" name="log" />
+					  		<label id="login" class="col-sm-12">Username:</label>
+					  		<input type="text" class="login-username col-sm-12" name="login" aria-labelledby="login"/>
 					  	</div>
 					  	<div class="form-field">
-					  		<label class="col-sm-12">Password:</label>
-					  		<input type="password" class="login-password col-sm-12" name="pwd" />
+					  		<label id="pwd"class="col-sm-12">Password:</label>
+					  		<input type="password" class="login-password col-sm-12" name="pwd" aria-labelledby="pwd"//>
 					  	</div>
 					  	<div class="form-field">
-							<label for="rememberme" class="mm-remember-me col-sm-12">
-								<input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever">
+							<label id="checkbox" for="rememberme" class="mm-remember-me col-sm-12">
+								<input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever" aria-labelledby="checkbox"/>
 								Remember me
 							</label>
 						</div>
