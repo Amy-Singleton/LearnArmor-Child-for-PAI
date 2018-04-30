@@ -40,7 +40,7 @@
 				    <form action="<?php echo site_url( 'wp-login.php'); ?>" method="post" name="loginform">
 					  	<div class="form-field">
 					  		<label id="login" class="col-sm-12">Username:</label>
-					  		<input type="text" class="login-username col-sm-12" name="login" aria-labelledby="login"/>
+					  		<input type="text" class="login-username col-sm-12" name="log" aria-labelledby="login"/>
 					  	</div>
 					  	<div class="form-field">
 					  		<label id="pwd"class="col-sm-12">Password:</label>
