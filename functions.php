@@ -269,7 +269,7 @@ function add_login_logout_link($items, $args) {
         wp_loginout('index.php');
         $loginoutlink = ob_get_contents();
         ob_end_clean();
-        $items .= '<li id="in-out"class="login-logout">'. $loginoutlink .'</li>';
+        $items .= '<li id="in-out" class="login-logout">'. $loginoutlink .'</li>';
      }
      if(!is_user_logged_in()){
         ?>
@@ -283,5 +283,19 @@ function add_login_logout_link($items, $args) {
      }
     return $items;
 }
+
+
+function learnarmor_child_searchform( $form ) {
+ 
+    $form = '<div class="col-sm-12"><form role="search" method="get" id="searchform" class="col-sm-6" action="' . home_url( '/' ) . '" >
+    <label class="screen-reader-text" for="s">' . __('Search for:') . '</label>
+    <input type="text" value="' . get_search_query() . '" name="s" id="search-field" class="col-sm-8" placeholder="What would you like to learn about?"/>
+    <input type="submit" id="search-submit-banner" class="col-sm-3" value="'. esc_attr__('Search') .'" />
+    </form></div>';
+ 
+    return $form;
+}
+ 
+add_shortcode('wp_search', 'learnarmor_child_searchform');
 
 ?>
