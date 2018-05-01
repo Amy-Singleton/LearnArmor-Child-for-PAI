@@ -43,7 +43,7 @@
 					  		<input type="text" class="login-username col-sm-12" name="log" aria-labelledby="login"/>
 					  	</div>
 					  	<div class="form-field">
-					  		<label id="pwd"class="col-sm-12">Password:</label>
+					  		<label id="pwd" class="col-sm-12">Password:</label>
 					  		<input type="password" class="login-password col-sm-12" name="pwd" aria-labelledby="pwd"//>
 					  	</div>
 					  	<div class="form-field">
