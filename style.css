@@ -348,7 +348,7 @@ div.modal form {
 }
 div.modal form div.form-field{
     margin: 15px auto;
-    height: 4.5em;
+    height: 3.5em;
 }
 .center-button button.btn-primary {
     width: 33%;
@@ -390,6 +390,9 @@ span.fa.fa-sign-in:before {
 	text-rendering: auto;
 	content: "\f090";
 	margin-right: 5px;
+}
+.wp-social-login-widget {
+	padding: 0 15px;
 }
 /*--------------------------------------------------------------
 ## Flex Container
@@ -473,6 +476,18 @@ span.fa.fa-sign-in:before {
     background-color: rgba(255,255,255, .75);
     color: #333333;
 }
+#search-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #333333;
+    opacity: 1; /* Firefox */
+}
+
+#search-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #333333;
+}
+
+#search-field::-ms-input-placeholder { /* Microsoft Edge */
+    color: #333333;
+}
 .page-template-home-page #search-submit-banner {
     padding: 8px 0;
     margin: 0 0 0 15px;
@@ -504,9 +519,11 @@ span.fa.fa-sign-in:before {
 #featured-content > div > .nav-tabs > li.active > a,
 #featured-content > div > .nav-tabs > li.active > a:hover,
 #featured-content > div > .nav-tabs > li.active > a:focus,
-#featured-content > div > .nav-tabs > li.active > a {    
-    background-color: #e3e3e3;
-    border: none !important;
+#featured-content > div > .nav-tabs > li.active > a {
+	background-color: #e3e3e3;
+	border: 2px solid #1c3a54;
+	margin-right: 15px;
+	border-radius: 3px;
 }
 #featured-content > div > .nav-tabs > li a:hover,
 #featured-content > div > .nav-tabs > li a:focus {
@@ -536,10 +553,10 @@ div.user-specific-links {
 
 div.user-specific-links ul.navbar-nav {
 	float: none;
-	margin: 5em auto;
+	margin: 1.5em auto 0;
 	list-style: none;
 	display: block;
-        width: 70%;
+        width: 65%;
 }
 div.user-specific-links ul.navbar-nav > li {
     float: left;
@@ -547,11 +564,9 @@ div.user-specific-links ul.navbar-nav > li {
 }
 
 div.user-specific-links ul.navbar-nav > li > a {
-    color: #1c3a54;
     font-weight: 500;
     padding: .5em;
     background-color: #ffffff;
-    border: 2px solid #1c3a54;
     border-radius: 3px;
     text-align: center;
     text-transform: uppercase;
@@ -578,7 +593,7 @@ div.user-specific-links ul.navbar-nav > li.volunteers > a {
 }
 div.user-specific-links ul.nav > li > a:hover, 
 div.user-specific-links ul.nav > li > a:focus {
-    opacity: .75;
+    opacity: .65;
 }
 #statistics .col-sm-6,
 #metrics .col-sm-4 {
@@ -920,7 +935,8 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	border-radius: 3px;
 	color: #1c3a54;
 }
-#subscribe-submit input:hover {
+#subscribe-submit input:hover,
+#subscribe-submit input:focus {
         background-color: transparent;
         color: #ffffff;
 }
@@ -1057,6 +1073,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 ##  Media Queries - Tablet 1280px
 --------------------------------------------------------------*/
 @media screen and (max-width: 1280px){
+    /* Home Page */
+    div.user-specific-links ul.navbar-nav {
+	width: 69%;
+    }
 	
 }
 /*--------------------------------------------------------------
@@ -1125,7 +1145,8 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .nav > li > a {
         padding: 10px;
     }
-    ul#menu-primary li.uo-login-logout-menu-item {
+    ul#menu-primary li.login-logout,
+    ul#menu-primary li.register {
         padding-bottom: 0px;
     }
 }
@@ -1137,6 +1158,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .navbar-toggle {
 	    margin-top: 0;
 	    display: block;
+    }
+    .navbar-header {
+	padding-bottom: 0em;
     }
     #header-menus {
 	width: 85%;
@@ -1232,6 +1256,43 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	background-color: #FFFFFF;
 	background-color: rgb(255,255,255);
     }
+    /* Home */
+    .page-template-home-page #introduction,
+    .page-template-home-page #featured-categories,
+    .page-template-home-page #featured-content,
+    .page-template-home-page #statistics,
+    .page-template-home-page #metrics,
+    .page-template-home-page #sponsors {
+        height: auto;
+    }
+    #introduction div.col-sm-6:nth-child(even) {
+	padding: 0;
+	width: 100%;
+	float: right;
+        margin: 15px auto;
+        background-color: rgba(255,255,255, .75);
+        border-radius: 3px;
+    }
+    .page-template-home-page #introduction h1 {
+        color: #1c3a54;
+        padding: 0 15px 15px 0;
+    }
+    .page-template-home-page #introduction p {
+	padding: 15px;
+        color: #1c3a54;
+    }
+    #searchform.col-sm-6 {
+        width: 100%;
+    }
+    div.user-specific-links > ul.navbar-nav > li {
+	padding-bottom: 5px;
+	border-bottom: none;
+	float: left;
+	margin: .5em auto auto auto;
+    }
+    div.user-specific-links ul.navbar-nav > li > a {
+        padding: 15px 8px;
+    }
     /* SHRM */
     .shrm-course h2 {
 	text-align: left;
@@ -1278,6 +1339,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 ##  Media Queries - Tablet 768px
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px){
+    /* Masthead */
+    .navbar-header {
+	padding-bottom: 0;
+    }
     /* Footer */
     #copyright p {
 	padding: 3em 0;
@@ -1344,6 +1409,97 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .dashicons-search {
 	float: left;
     }
+        
+   /* Home */
+    .page-template-home-page #introduction div.col-sm-6:nth-child(even) {
+        background: rgba(255,255,255, .75);
+        border-radius: 3px;
+        
+    }
+    .page-template-home-page #introduction { 
+        padding: 0 12.5%;
+        margin: 0;
+    }
+    .page-template-home-page #introduction, .page-template-home-page #featured-content, .page-template-home-page #statistics,
+    .page-template-home-page #metrics, .page-template-home-page #sponsors {
+	height: auto;
+    }
+    .page-template-home-page #introduction h1 {
+	font-size: 24px;
+	text-align: center;
+        color: #1c3a54;
+        padding: 15px 0;
+    }
+    .page-template-home-page #introduction p {
+	padding: 15px;
+	font-size: 18px;
+        text-align: left;
+        color: #1c3a54;
+        border-radius: 3px;
+    }
+    .page-template-home-page div.banner-search,
+    .page-template-home-page div.banner-search div {
+        padding: 0;
+    }
+    .page-template-home-page #searchform {
+        padding: 0;
+        float: none;
+    }
+    .page-template-home-page #search-field {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 8px;
+    }
+    .page-template-home-page #search-submit-banner {
+        margin: 2em auto;
+        width: 100%;
+	background-color: #1c3a54;
+    }
+    .page-template-home-page #search-submit-banner:hover {
+	background-color: #ffffff;
+        color: #1c3a54;
+    }
+    div.user-specific-links {
+        padding: 0;
+        margin-bottom: 0;
+        height: auto;
+        display: block;
+    }
+    div.user-specific-links ul.navbar-nav {
+        width: 100%;
+	margin: 1.5em auto;
+    }
+    div.user-specific-links h2,
+    div.user-specific-links > ul.navbar-nav li {
+        width: 100%;
+    }
+    div.user-specific-links > ul.navbar-nav > li {
+        padding-bottom: 5px;
+        border-bottom: none; 
+	float: left;
+	margin: .5em auto auto auto;
+    }
+    /* Home Page Topics */
+    #featured-content > div > .nav-tabs.nav-justified {
+	width: 85%;
+	border-bottom: 0;
+	margin: 2em auto;
+    }
+    #featured-content > div#topic-navigation > .nav-tabs.nav-justified {
+	width: 100%;
+	margin: 2em auto;
+    }
+    #featured-content > div#topic-navigation > .nav-tabs.nav-justified > li {
+	float: left;
+	width: 50%;
+    }
+    #featured-content > div > .nav-tabs > li a,
+    #featured-content > div > .nav-tabs > li.active > a,
+    #featured-content > div > .nav-tabs > li.active > a:hover,
+    #featured-content > div > .nav-tabs > li.active > a:focus,
+    #featured-content > div > .nav-tabs > li.active > a {
+	margin: 7px 15px; 
+    }
     /* Footer */
     .back-to-top {
             bottom: 11em;
@@ -1398,6 +1554,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 ##  Media Queries - Handheld Device 533px
 --------------------------------------------------------------*/
 @media screen and (max-width: 533px){
+    .navbar-header {
+	padding-bottom: 0; 
+    }
     /* Login Modal */
     div.modal form {
 	width: 75%;
