@@ -72,8 +72,15 @@
 
 <div class="learndash_content"><?php echo $content; ?></div>
 
-<?php if ( ! $has_access ) : ?>
-	<?php echo learndash_payment_buttons( $post ); ?>
+<?php if ( ! $has_access ) : 
+	if(!is_user_logged_in()){
+		?>
+	<div class="col-sm-12 reg-login-msg">
+		<p class="light-font">If you are not a registered user, please take the time to <a class="bold-font" href="">Register</a> now. Regeistering will allow you to take this course or any of our other <span class="bold-font">Free</span> courses. Already a registered user? <a class="bold-font" rel="nofollow" href="#login-modal" data-toggle="modal">Log In</a> to take this course. </p>
+	</div>
+<?php } else {
+	echo learndash_payment_buttons( $post );
+} ?>
 <?php endif; ?>
 
 <?php if ( ( isset( $materials ) ) && ( ! empty( $materials ) ) ) : ?>
@@ -121,26 +128,22 @@
 			<?php endif; ?>
 
 			<div id="learndash_lessons" class="learndash_lessons">
-
 				<div id="lesson_heading">
-						<span><?php echo LearnDash_Custom_Label::get_label( 'lessons' ); ?></span>
-					<span class="right"><?php esc_html_e( 'Status', 'learndash' ); ?></span>
-				</div>
+						<div class="col-sm-6"><?php echo LearnDash_Custom_Label::get_label( 'lessons' ); ?></div>
+					<div class="colo-sm-6 text-align-right status"><?php esc_html_e( 'Status', 'learndash' ); ?></div>
 
 				<div id="lessons_list" class="lessons_list">
-
+				
 					<?php foreach ( $lessons as $lesson ) : ?>
-						<div class='post-<?php echo esc_attr( $lesson['post']->ID ); ?> <?php echo esc_attr( $lesson['sample'] ); ?>'>
+						<div class="col-sm-12 post-<?php echo esc_attr( $lesson['post']->ID ); ?> <?php echo esc_attr( $lesson['sample'] ); ?>">
 
 							<div class="col-sm-1">
 								<?php echo $lesson['sno']; ?>
 							</div>
 
-							<span class="col-sm-11">
-								<a class='<?php echo esc_attr( $lesson['status'] ); ?>' href='<?php echo esc_attr( learndash_get_step_permalink( $lesson['post']->ID, $course_id ) ); ?>'><?php echo $lesson['post']->post_title; ?></a>
-								
-
-
+							<span class="col-sm-11 course-lesson-link">
+								<a class='col-sm-11 <?php echo esc_attr( $lesson['status'] ); ?>' href='<?php echo esc_attr( learndash_get_step_permalink( $lesson['post']->ID, $course_id ) ); ?>'><?php echo $lesson['post']->post_title; ?></a>
+								<span class="<?php echo esc_attr( $lesson['status'] ); ?> col-sm-1 glyphicon" aria-hidden="true"></span>		
 								<?php
 								/**
 								 * Not available message for drip feeding lessons
@@ -178,11 +181,12 @@
 												<?php $odd_class       = empty( $odd_class ) ? 'nth-of-type-odd' : ''; ?>
 												<?php $completed_class = empty( $topic->completed ) ? 'topic-notcompleted' : 'topic-completed'; ?>												
 												<li class='<?php echo esc_attr( $odd_class ); ?>'>
-													<span class="topic_item">
-														<a class='<?php echo esc_attr( $completed_class ); ?>' href='<?php echo esc_attr( learndash_get_step_permalink( $topic->ID, $course_id ) ); ?>' title='<?php echo esc_attr( $topic->post_title ); ?>'>
-															<span><?php echo $topic->post_title; ?></span>
+													<span class="topic_item col-sm-12">
+														<a class='topic-lesson-link <?php echo esc_attr( $completed_class ); ?>' href='<?php echo esc_attr( learndash_get_step_permalink( $topic->ID, $course_id ) ); ?>' title='<?php echo esc_attr( $topic->post_title ); ?>'>
+															<span class="col-sm-11"><?php echo $topic->post_title; ?></span>
 														</a>
 													</span>
+													<span class="<?php echo esc_attr( $completed_class ); ?> col-sm-1 glyphicon glyphicon-unchecked" aria-hidden="true"></span>
 												</li>
 											<?php endforeach; ?>
 										</ul>
@@ -230,17 +234,19 @@
 			if ( $show_course_quizzes == true ) {
 				if ( ! empty( $quizzes ) ) { ?>
 					<div id="learndash_quizzes" class="learndash_quizzes">
-						<div id="quiz_heading">
-								<span><?php echo LearnDash_Custom_Label::get_label( 'quizzes' ); ?></span><span class="right"><?php esc_html_e( 'Status', 'learndash' ); ?></span>
+						<div id="quiz_heading" class="col-sm-12">
+								<div class="col-sm-6"><?php echo LearnDash_Custom_Label::get_label( 'quizzes' ); ?></div>
+								<div class="col-sm-6 text-align-right status"><?php esc_html_e( 'Status', 'learndash' ); ?></span>
 						</div>
-						<div id="quiz_list" class=“quiz_list”>
+						<div id="quiz_list" class="quiz_list">
 
 							<?php foreach ( $quizzes as $quiz ) : ?>
-								<div id='post-<?php echo esc_attr( $quiz['post']->ID ); ?>' class='<?php echo esc_attr( $quiz['sample'] ); ?>'>
-									<div class="list-count"><?php echo $quiz['sno']; ?></div>
-									<h4>
-										<a class='<?php echo esc_attr( $quiz['status'] ); ?>' href='<?php echo esc_attr( learndash_get_step_permalink( $quiz['post']->ID, $course_id ) ); ?>'><?php echo $quiz['post']->post_title; ?></a>
-									</h4>
+								<div id='post-<?php echo esc_attr( $quiz['post']->ID ); ?>' class='col-sm-12 <?php echo esc_attr( $quiz['sample'] ); ?>'>
+									<div class="list-count col-sm-1"><?php echo $quiz['sno']; ?></div>
+									<span class="col-sm-11 course-quiz-link">
+										<a class="col-sm-11 <?php echo esc_attr( $quiz['status'] ); ?>" href='<?php echo esc_attr( learndash_get_step_permalink( $quiz['post']->ID, $course_id ) ); ?>'><?php echo $quiz['post']->post_title; ?></a>
+										<span class="<?php echo esc_attr( $quiz['status'] ); ?> col-sm-1 glyphicon" aria-hidden="true"></span>
+									</span>
 								</div>						
 							<?php endforeach; ?>
 

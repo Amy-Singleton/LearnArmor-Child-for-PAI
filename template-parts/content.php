@@ -11,22 +11,35 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<?php 
+		if ( is_singular() ) {
+			the_title( '<h1 class="entry-title">', '</h1>' );
+		}
+		else {
+			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+		}
+		?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php
 		if (is_home()) {
 			if ( has_post_thumbnail()) {
-				echo '<div class="post-thumbnail">' . the_post_thumbnail() . '</div>';
+				echo '<div class="post-thumbnail">';
+					the_post_thumbnail();
+				echo '</div>';
 			} 
 			the_excerpt(35);
 		} else {
 			if (class_exists( 'SFWD_LMS' ) && is_singular('sfwd-courses')) {
 				if ( has_post_thumbnail()) {
-					echo '<div class="post-thumbnail">' . the_post_thumbnail() . '</div>';
-				} 
-				the_excerpt();
+					echo '<div class="col-sm-12 course-description"><div class="course-thumbnail col-sm-6">';
+						the_post_thumbnail();
+					echo '</div>';
+				}
+				echo '<div class="course-excerpt col-sm-6">';
+					the_excerpt();
+				echo '</div></div>';
 			the_content( sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */

@@ -684,21 +684,303 @@ div.course-button > a{
 /*--------------------------------------------------------------
 # Courses
 --------------------------------------------------------------*/
+.single-sfwd-courses h1 {
+    font-size: 30px;
+    color: #1c3a54;
+}
+.reg-login-msg {
+    background-color: #f3f3f3;
+    padding: 15px;
+    margin-bottom: 30px;
+    border-left: 5px solid rgba(28,58,84, .75);
+}
+div.course-description {
+    padding: 0;
+    margin: 0 auto 2em;
+    background-color: #f3f3f3;
+    padding: 15px;
+}
+div.course-excerpt {
+    padding: 15px;
+}
+div.course-excerpt > div.excerpt > p {
+    padding: 0 15px;
+    font-weight: 300;
+    font-size: .95em;
+}
+div.course-excerpt > div.excerpt > p > a {
+    color: #1c3a54 !important;
+    font-weight: 500;
+}
+div.course-excerpt > div.excerpt > p > a:hover {
+    opacity: .75;
+}
+.course-thumbnail {
+	padding: 15px;
+	background-color: rgba(255,255,255, .7);
+	margin: 0 auto;
+}
+.course-thumbnail img.attachment-post-thumbnail {
+	margin: 0 auto;
+}
 
+.status {
+    padding-right: 30px;
+}
+body #learndash_lessons #lesson_heading,
+body #learndash_profile.dashboard .learndash_profile_heading,
+body #learndash_quizzes #quiz_heading,
+body #learndash_lesson_topics_list div > strong {
+	font-size: 16px;
+	border-radius: 0;
+        border: 0;
+	padding: 0;
+}
+#lessons_list > div,
+#quiz_list > div,
+.learndash_profile_quizzes > div,
+#learndash_lesson_topics_list ul > li,
+.learndash_navigation_lesson_topics_list > div {
+    display: inline-flex;
+    border-bottom: 1px solid #e3e3e3;
+    border-radius: 0;
+}
+#quiz_list > div:nth-child(odd) {
+    background-color: #ffffff;
+}
+#quiz_list > div:nth-child(even) {
+    border-top: 1px solid #e3e3e3;
+    background-color: rgba(255,255,255, .05);
+}
+#learndash_lessons > div > div, #learndash_quizzes > div > div{
+    font-size: 18px;
+    border-radius: 0;
+    padding: 10px 15px;
+}
+#lesson_heading > div.col-sm-6:nth-child(odd),
+#quiz_heading > div.col-sm-6:nth-child(odd){
+    border-right: none;
+    background-color: #1c3a54;
+    color: #ffffff;
+    padding-top: 15px;
+    padding-bottom: 15px;    
+}
+#lesson_heading > div.status,
+#quiz_heading > div.status {
+    border-left: none;
+    background-color: #1c3a54;
+    color: #ffffff;
+    padding-top: 15px;
+    padding-bottom: 15px;  
+}
+#lessons_list > div > div, #course_list > div > div, #quiz_list > div > div,
+.single-sfwd-lessons #learndash_lesson_topics_list ul > li > span.sn,
+.singular-sfwd-lessons #learndash_lesson_topics_list ul > li > span.sn {
+    display: table-cell;
+    border-top: none;
+    width: auto;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 53px;
+    
+}
+#lessons_list > div > div,
+#quiz_list > div > div { 
+    padding: 0 30px;
+}
+#lessons_list > div:nth-child(odd),
+#quiz_list > div:nth-child(odd){
+    background-color: #ffffff;
+    padding: 0;
+}
+#lessons_list > div:nth-child(even),
+#quiz_list > div:nth-child(even){
+    background-color: rgba(255,255,255, .35);
+    padding: 0;
+}
+#learndash_lessons a,
+#learndash_quizzes a,
+.expand_collapse a,
+.learndash_topic_dots a,
+.learndash_topic_dots a > span,
+#learndash_lesson_topics_list span a,
+#learndash_profile a,
+#learndash_profile a span {
+    color: #1c3a54 !important;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.course-lesson-link,
+.course-quiz-link { 
+    border-left: 1px solid #f3f3f3;
+    padding-left: 15px;
+    padding-right: 0;
+}
+.learndash .notcompleted, #learndash_profile .notcompleted,
+.learndash .completed, #learndash_profile .completed {
+    background-image: none;
+    padding: 0;
+}
+div.lessons_list > div > span.course-lesson-link span.col-sm-1, 
+div.quiz_list > div > span.course-quiz-link span.col-sm-1 { 
+    text-align: center;
+    line-height: 2.5;   
+}
+
+
+/*--------------------------------------------------------------
+# LearnDash User Profile i.e. My Dashboard
+--------------------------------------------------------------*/
+div.course-button > a.learndash-resume-button {
+    border: none;
+}
+#learndash_profile .list_arrow.collapse {
+	background-position: center;
+	padding: 0 15px;
+}
+#learndash_profile .list_arrow.expand{
+	background-position: center;
+}
+#course_list > div {
+    border-bottom: 1px solid #cccccc;
+}
+#course_list > div:nth-child(odd) {
+    bcackground-color: #ffffff;
+}
+#course_list > div:nth-child(even) {
+    background-color: #f3f3f3;
+}
+div.flip {
+	clear: both;
+	background-color: rgba(55,55,55, .25);
+	border-radius: 3px;
+	padding: 15px;
+        margin-bottom: 15px;
+}
+#learndash_lessons #lesson_heading,
+#learndash_profile .learndash_profile_heading,
+#learndash_quizzes #quiz_heading,
+#learndash_lesson_topics_list div > strong {
+	background-color: #f3f3f3;
+	color: #333333;
+	padding: 1% 2%;
+	padding: 1% 3%\9;
+	font-weight: normal;
+	margin: 0;
+	display: block;
+	border-radius: 3px;
+}
+#learndash_profile .learndash-course-link {
+	width: 88%;
+}
+#learndash_profile .learndash-course-certificate {
+	width: auto;
+	float: left;
+	text-align: center;
+	margin: 0;
+        min-width: 5%;
+}
+div.learndash-course-status > span.glyphicon {
+    padding: 0 15px;
+    font-family: 16px;
+}
+.certificate_icon_large {
+	width: 40px;
+	height: 40px;
+	margin: auto;
+	background-size: 40px;
+}
+#learndash_profile .learndash-course-status {
+	width: 53px;
+	float: right;
+	margin: 0;
+}
+div.learndash-course-status > span.glyphicon {
+	font-size: 16px;
+        padding-top: 5px;
+}
+div.col-sm-1.learndash-course-certificate {
+    padding: 0;
+}
+/*--------------------------------------------------------------
+# Lessons
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Videos
+--------------------------------------------------------------*/
+.player .vp-controls .play-bar button:focus,
+.js-prefs:focus {
+	border: 1px dotted;
+}
+
+.player-a11c3cbe-d4ab-4abf-bee3-4cff76bff17e .play-bar a:hover .fill,
+.player-a11c3cbe-d4ab-4abf-bee3-4cff76bff17e .play-bar button:not(.toggle):hover .fill,
+.player-a11c3cbe-d4ab-4abf-bee3-4cff76bff17e .controls-outro a:hover .fill,
+.player-a11c3cbe-d4ab-4abf-bee3-4cff76bff17e .play-bar a:focus .fill,
+.player-a11c3cbe-d4ab-4abf-bee3-4cff76bff17e .play-bar button:not(.toggle):focus .fill,
+.player-a11c3cbe-d4ab-4abf-bee3-4cff76bff17e .controls-outro a:focus .fill{
+	fill: #ffffff;
+        border: 1px dotted;
+}
+/*--------------------------------------------------------------
+# Uncanny Transcripts
+--------------------------------------------------------------*/
+
+span.primary-text-color {
+	color: #1c3a54;
+	opacity: .75;
+}
+#uo-t-print-button {
+	color: #ffffff;
+	background: #1c3a54;
+	border: 2px solid #1c3a54;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	margin-left: 5px;
+	color: #1c3a54 !important; 
+	border: 2px solid #1c3a54;
+	border-radius: 3px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #ffffff !important;
+    border: 2px solid #1c3a54;
+    background-color: #1c3a54 !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #1c3a54 !important;
+    border: 2px solid #1c3a54;
+    background-color: #ffffff !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+	margin-left: 5px;
+	color: #ffffff !important;
+	border: 2px solid #1c3a54;
+        background-color: #1c3a54;
+	border-radius: 3px;
+        opacity: 1;
+}
+
+span > a.paginate_button:hover,
+#uo-transcript-table_next.paginate_button:hover{
+    background: #1c3a54 !important;
+    color: #ffffff;
+    border-color: #1c3a54 !important;
+}
 /*--------------------------------------------------------------
 # Uncanny Owl Course Grid
 --------------------------------------------------------------*/
-
 div.uo-grid-wrapper {
 	margin-left: 0;
 	margin-right: 0;
 }
-
-
 div.ld-course-list-content > div.flex-container.ld-course-list-items > div.row > div.ld_course_grid > article.sfwd-courses {
 	height: 100%;
 }
-
 /*--------------------------------------------------------------
 # BadgeOs
 --------------------------------------------------------------*/
