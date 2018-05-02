@@ -303,4 +303,26 @@ function learnarmor_child_searchform( $form ) {
     return $form;
 }
 add_shortcode('wp_search', 'learnarmor_child_searchform');
+
+/**
+ *
+ * Add Post and Page IDs if is admin Admin
+ * @link https://premium.wpmudev.org/blog/display-wordpress-post-page-ids/
+ *
+ */
+
+if (is_admin()){
+    function learnarmor_child_post_id_column( $columns ) {
+       $columns['revealid_id'] = 'ID';
+       return $columns;
+    }
+    add_filter( 'manage_posts_columns', 'learnarmor_child_post_id_column', 5 );
+    
+    function learnarmor_child_post_id_column_content( $column, $id ) {
+      if( 'revealid_id' == $column ) {
+        echo $id;
+      }
+    }
+    add_action( 'manage_posts_custom_column', 'learnarmor_child_post_id_column_content', 5, 2 );
+}
 ?>
