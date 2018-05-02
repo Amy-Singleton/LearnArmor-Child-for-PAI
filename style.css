@@ -931,19 +931,19 @@ div.col-sm-1.learndash-course-certificate {
 --------------------------------------------------------------*/
 
 span.primary-text-color {
-	color: #1c3a54;
-	opacity: .75;
+    color: #1c3a54;
+    opacity: .75;
 }
 #uo-t-print-button {
-	color: #ffffff;
-	background: #1c3a54;
-	border: 2px solid #1c3a54;
+    color: #ffffff;
+    background: #1c3a54;
+    border: 2px solid #1c3a54;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button {
-	margin-left: 5px;
-	color: #1c3a54 !important; 
-	border: 2px solid #1c3a54;
-	border-radius: 3px;
+    margin-left: 5px;
+    color: #1c3a54 !important; 
+    border: 2px solid #1c3a54;
+    border-radius: 3px;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
@@ -970,6 +970,71 @@ span > a.paginate_button:hover,
     background: #1c3a54 !important;
     color: #ffffff;
     border-color: #1c3a54 !important;
+}
+/*--------------------------------------------------------------
+# Groups
+--------------------------------------------------------------*/
+div#group-main {
+	max-width: 85%;
+	margin: 4.5em auto;
+	padding: 0 5px;
+}
+#left-area.content-area {
+    width: 70%;
+    margin: 3.5em auto;
+}
+article.groups p {
+    font-weight: 300;
+    text-align: center;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+#left-area .table.form-table {
+    width: 100%;
+    max-width: 480px;
+    margin: 2em auto;
+    border: 1px solid #e3e3e3;
+}
+
+div#left-area .table.form-table td.label {
+    font-weight: normal;
+    width: 40%;
+    max-width: 120px;
+    color: #1c3a53;
+    border: none;
+    font-size: 16px;
+    padding: 15px 0;
+}
+td.label > label {
+    font-weight: normal;
+}
+#left-area .table.form-table td.input {
+    width: 60%;
+    max-width: 360px;
+    border: none;
+}
+div#right-area {
+	margin-top: 2.5em;
+}
+#right-area #uo-widgets {
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    margin-top: 0;
+    padding: 0 30px;
+    background-color: #efefef;
+}
+div#right-area #uo-widgets .widget-title {
+    font-weight: bold;
+    color: #333333;
+    font-size: 22px;
+    padding: 5px 0;
+    width: 95%;
+    margin: 1em auto;
+    text-transform: uppercase;
+}
+form#uncanny-pro-toolkit-login-form {
+    width: 95%;
+    margin: 0 auto;
 }
 /*--------------------------------------------------------------
 # Uncanny Owl Course Grid
