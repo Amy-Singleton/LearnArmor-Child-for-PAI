@@ -30,8 +30,6 @@ endif;
  * @link https://wordpress.stackexchange.com/questions/189985/how-to-properly-dequeue-scripts-and-styles-in-child-theme
  *
  **/
-
-add_action( 'wp_print_styles', 'learnarmor_child_dequeue_unnecessary_styles' );
 function learnarmor_child_dequeue_unnecessary_styles() {
     wp_dequeue_style( 'learnarmor-bootstrap-style' );
     wp_deregister_style( 'learnarmor-bootstrap-style' );
@@ -42,38 +40,49 @@ function learnarmor_child_dequeue_unnecessary_styles() {
     wp_dequeue_style( 'learnarmor-martel-google-fonts');
     wp_deregister_style( 'learnarmor-martel-google-fonts');  
 }
+add_action( 'wp_print_styles', 'learnarmor_child_dequeue_unnecessary_styles' );
 
-add_action( 'wp_print_styles', 'learnarmor_child_dequeue_parent_scripts' );
 function learnarmor_child_dequeue_parent_scripts() {
     wp_dequeue_script( 'learnarmor-bootstrap-script' );
     wp_deregister_script( 'learnarmor-bootstrap-script' );
     wp_dequeue_script( 'learnarmor-navigation' );
     wp_deregister_script( 'learnarmor-navigation');
 }
+add_action( 'wp_print_styles', 'learnarmor_child_dequeue_parent_scripts' );
 
-add_action( 'wp_enqueue_scripts', 'learnarmor_child_enqueue_scripts' );
 function learnarmor_child_enqueue_scripts() {
     // Bootstrap Styles
     $bootstrap_style = 'learnarmor-child-bootstrap-style';
     wp_enqueue_style( 'learnarmor-child-bootstrap-style', get_template_directory_uri() . '/css/bootstrap.css', '20172410');
     $parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css', array(), filemtime(get_stylesheet_directory() .'/style.css'), 'all' );     
-    //Enqueue USAAEF Fonts
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css', array(), filemtime(get_stylesheet_directory() .'/style.css'), 'all' );
    //Enqueue PsychArmor Fonts
     wp_enqueue_style( 'learnarmor-child-google-font', 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet' );
-    
     wp_enqueue_style( 'dashicons' );
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ), filemtime(get_stylesheet_directory() .'/style.css'), 'all' );
     wp_enqueue_script( 'learnarmor-child-bootstrap-js', get_stylesheet_directory_uri() . '/js/bootstrap.js', array(), '20180411', true );
-    //wp_enqueue_script( 'learnarmor-child-navwalker-script', get_template_directory_uri() . '/js/bootstrap-nav-walker.js', array(), '20170928', true );
+    if (is_page('my-dashboard') || get_post_type() == 'sfwd-courses') {
+        wp_enqueue_script( 'learnarmor-child-ld-customizations', get_stylesheet_directory_uri() . '/js/custom-learndash-scripts.js', array(), '20180501', true );
+    }
+    if(is_page(95515) && !is_user_logged_in()){
+        wp_enqueue_script( 'learnarmor-child-ld-shrm', get_stylesheet_directory_uri() . '/js/shrm-scripts.js', array(), '20180501', true );
+    }
 }
-
-add_action( 'after_setup_theme', 'remove_default_menu', 11 );
+add_action( 'wp_enqueue_scripts', 'learnarmor_child_enqueue_scripts' );
+/**
+ *
+ * Remove Parent Theme Login Menu
+ * 
+ */
 function remove_default_menu(){
     unregister_nav_menu('login');
 }
-
-
+add_action( 'after_setup_theme', 'remove_default_menu', 11 );
+/**
+ *
+ * Add Bootstrap 3 Child Theme Menu
+ * 
+ */
 function load_child_walker(){
     remove_action('after_setup_theme','load_parent_walker' );
     require_once get_stylesheet_directory() . '/walkermenu.php';
@@ -84,7 +93,7 @@ add_action( 'after_setup_theme', 'load_child_walker' );
  * Make the Bootstrap 3 Menu Support a depth of 3 
  * Add support for custom .shrink child menu items
  * 
-**/
+ */
 add_action ('wp_footer','learnarmor_child_custom_head',1);
 function learnarmor_child_custom_head() { ?> 
     <script>
@@ -133,11 +142,13 @@ function learnarmor_child_accessibility() {
 <?php 
 }
 /**
- * Remove the Serach Form to the Primary Menu
- * @link https://bavotasan.com/2011/adding-a-search-bar-to-the-nav-menu-in-wordpress
+ *
+ * Remove the Serach Form from the Primary Menu
+ * 
  */
 
 remove_filter( 'wp_nav_menu_items','learnarmor_add_search_box', 10, 2 );
+
 function learnarmor_child_admin_css() {
     wp_enqueue_style('admin_styles' , get_template_directory_uri().'/css/admin.css');
 }
@@ -198,32 +209,19 @@ add_action( 'login_head', 'learnarmor_child_custom_login_style', 99 );
 if ( defined( 'JETPACK__VERSION' ) ) {
     require get_stylesheet_directory() . '/inc/customize-jetpack.php';
 }
-/* Fix the From Name and Email Address for Emails */
-add_filter('wp_mail_from', 'learnarmor_child_new_mail_from');
-add_filter('wp_mail_from_name', 'learnarmor_child_new_mail_from_name');
+
 /**
  * Change the Wordpress Default From Name and Email Address for Emails
  * @link https://www.daretothink.co.uk/change-default-wordpress-email-address/
  */ 
 function learnarmor_child_new_mail_from($old) {
-return 'info@psycharmor.org';
+    return 'info@psycharmor.org';
 }
+add_filter('wp_mail_from', 'learnarmor_child_new_mail_from');
 function learnarmor_child_new_mail_from_name($old) {
-return 'PsychArmor Institute';
+    return 'PsychArmor Institute';
 }
-
-/* SHRM */
-add_action( 'loop_start', 'shrm_page_hide_buttons' );
-function shrm_page_hide_buttons(){
-        if(is_page(95515) && !is_user_logged_in()){?>
-              <script>
-                jQuery(document).ready(function($) {
-                        $('div.course-button').remove();
-                        $( '.shrm-course-group-reg' ).remove();
-                });
-              </script>
-        <?php }
-}
+add_filter('wp_mail_from_name', 'learnarmor_child_new_mail_from_name');
 
 /**
  * Customize Archive Pages
@@ -242,28 +240,31 @@ if (( is_tag() || is_category() ) && $query->is_main_query() && empty( $query->q
     }
 }
 add_filter( 'pre_get_posts', 'learnarmor_child_add_custom_types_to_tax' );
-function learnarmor_child_search_filter($query) {
+
+if (class_exists( 'SFWD_LMS')) {
+    function learnarmor_child_search_filter($query) {
     
     remove_action('pre_get_posts','learnarmor_search_filter');
-  if ( !is_admin() && $query->is_main_query() ) {
-    if ($query->is_search) {
-      $query->set('post_type', array( 'post', 'sfwd-courses' ) );
+        if ( !is_admin() && $query->is_main_query() ) {
+            if ($query->is_search) {
+              $query->set('post_type', array( 'post', 'sfwd-courses' ) );
+            }
+        }
     }
-  }
-}
+    add_action('pre_get_posts','learnarmor_child_search_filter');
 
-add_action('pre_get_posts','learnarmor_child_search_filter');
-
-if (class_exists( 'SFWD_LMS')) { 
     function learnarmor_child_add_excerpt_support_for_cpt() {
-     add_post_type_support( 'sfwd-courses', 'excerpt' );
+        add_post_type_support( 'sfwd-courses', 'excerpt' );
     }
     add_action( 'init', 'learnarmor_child_add_excerpt_support_for_cpt' );
 }
-//Add a login/logout link to Primary navigation menu
 
-add_filter('wp_nav_menu_items', 'add_login_logout_link', 10, 2);
-function add_login_logout_link($items, $args) {
+/**
+ *
+ * Add a login/logout link to Primary navigation menu
+ * 
+ */
+function learndash_child_add_login_logout_link($items, $args) {
      if($args->theme_location == 'primary') {
         ob_start();
         wp_loginout('index.php');
@@ -283,7 +284,13 @@ function add_login_logout_link($items, $args) {
      }
     return $items;
 }
+add_filter('wp_nav_menu_items', 'learndash_child_add_login_logout_link', 10, 2);
 
+/**
+ *
+ * Shortcode to show a custom search form in the Introduction section of the home page
+ * 
+ */
 
 function learnarmor_child_searchform( $form ) {
  
@@ -295,7 +302,5 @@ function learnarmor_child_searchform( $form ) {
  
     return $form;
 }
- 
 add_shortcode('wp_search', 'learnarmor_child_searchform');
-
 ?>
