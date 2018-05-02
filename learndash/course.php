@@ -76,7 +76,7 @@
 	if(!is_user_logged_in()){
 		?>
 	<div class="col-sm-12 reg-login-msg">
-		<p class="light-font">If you are not a registered user, please take the time to <a class="bold-font" href="">Register</a> now. Regeistering will allow you to take this course or any of our other <span class="bold-font">Free</span> courses. Already a registered user? <a class="bold-font" rel="nofollow" href="#login-modal" data-toggle="modal">Log In</a> to take this course. </p>
+		<p class="light-font">If you are not a registered user, please take the time to <a class="bold-font" href="">Register</a> now. Registering will allow you to take this course or any of our other <span class="bold-font">Free</span> courses. Already a registered user? <a class="bold-font" rel="nofollow" href="#login-modal" data-toggle="modal">Log In</a> to take this course. </p>
 	</div>
 <?php } else {
 	echo learndash_payment_buttons( $post );
