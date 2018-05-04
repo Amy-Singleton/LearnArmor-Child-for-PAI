@@ -44,7 +44,7 @@ get_header(); ?>
 		?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
+
 <?php
 if ( get_post_type( get_the_ID() ) == 'sfwd-courses' || get_post_type( get_the_ID() ) == 'sfwd-lessons'|| get_post_type( get_the_ID() ) == 'sfwd-topics' ) {
     //if is true
@@ -56,5 +56,7 @@ if ( get_post_type( get_the_ID() ) == 'sfwd-courses' || get_post_type( get_the_I
 }
 else {
 	get_sidebar();
-}
+} ?>
+	</div><!-- #primary -->
+<?php 	
 get_footer();
