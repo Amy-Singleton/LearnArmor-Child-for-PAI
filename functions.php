@@ -152,64 +152,13 @@ remove_filter( 'wp_nav_menu_items','learnarmor_add_search_box', 10, 2 );
 function learnarmor_child_admin_css() {
     wp_enqueue_style('admin_styles' , get_template_directory_uri().'/css/admin.css');
 }
-
-add_action('admin_head', 'learnarmor_child_admin_css');
-function learnarmor_child_custom_title_on_logo() {
-	return 'PsychArmor Institute';
-}
-add_filter('login_headertitle', 'learnarmor_child_custom_title_on_logo', 99);
-
-/**
- * WordPress Custom Login Styles
- */
- 
-function learnarmor_child_custom_login_style() {
-        echo '<style type="text/css">
-        .login h1 a {
-            -webkit-background-size: 320px;
-            background-size: 320px;
-            width: auto;
-        }
-        .login #login_error, .login .message {
-                border-left: 4px solid #b23232;
-        }
-        .login form .input {
-            background: #eeeeee;
-            color: #555555 !important;
-        }
-        .login form .input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-            color: #555555!important;
-        }
-        .login form .input::-moz-placeholder { /* Firefox 19+ */
-            color: #555555!important;
-        }
-        .login form .input:-ms-input-placeholder { /* IE 10+ */
-            color: #555555!important;
-        }
-        .login form .input:-moz-placeholder { /* Firefox 18- */
-                    color: #555555!important;
-        }
-        .login form .forgetmenot input[type="checkbox"] {
-             opacity: 1;
-        }
-        .wp-core-ui .button-primary {
-             text-shadow: none;
-        }
-        #login form p.submit input {
-             background-color: #1c3a54 !important;
-        }
-
-         </style>';
-}
-add_action( 'login_head', 'learnarmor_child_custom_login_style', 99 );
-
 /**
  * Customize JetPack
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
     require get_stylesheet_directory() . '/inc/customize-jetpack.php';
 }
-
+require get_stylesheet_directory() . '/inc/login-registration.php';
 /**
  * Change the Wordpress Default From Name and Email Address for Emails
  * @link https://www.daretothink.co.uk/change-default-wordpress-email-address/
@@ -261,33 +210,6 @@ if (class_exists( 'SFWD_LMS')) {
 
 /**
  *
- * Add a login/logout link to Primary navigation menu
- * 
- */
-function learndash_child_add_login_logout_link($items, $args) {
-     if($args->theme_location == 'primary') {
-        ob_start();
-        wp_loginout('index.php');
-        $loginoutlink = ob_get_contents();
-        ob_end_clean();
-        $items .= '<li id="in-out" class="login-logout">'. $loginoutlink .'</li>';
-     }
-     if(!is_user_logged_in()){
-        ?>
-        <script>
-                jQuery(document).ready(function($) {
-                    $('.login-logout>a').attr('data-toggle', 'modal');
-                    $('.login-logout>a').attr('href','#login-modal');
-                });
-        </script>
-        <?php
-     }
-    return $items;
-}
-add_filter('wp_nav_menu_items', 'learndash_child_add_login_logout_link', 10, 2);
-
-/**
- *
  * Shortcode to show a custom search form in the Introduction section of the home page
  * 
  */
@@ -325,4 +247,5 @@ if (is_admin()){
     }
     add_action( 'manage_posts_custom_column', 'learnarmor_child_post_id_column_content', 5, 2 );
 }
+
 ?>
