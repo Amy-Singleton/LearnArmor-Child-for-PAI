@@ -55,7 +55,7 @@
 						 <?php do_action( 'wordpress_social_login' ); ?>
 					  	<div class="center-button col-sm-12">
 					  		<button type="submit" name="wp-submit" class="btn btn-primary btn-block" tabindex="0">
-								<span class="fa fa-sign-in" aria-hidden="true"> Log In</span>
+								<span class="fa fa-sign-in" aria-hidden="true"></span> Log In
 							</button>
 							<input type="hidden" name="redirect_to" value="<?php echo esc_attr($_SERVER['REQUEST_URI']); ?>" />
 					  	</div>
