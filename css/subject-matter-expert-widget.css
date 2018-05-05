@@ -1,0 +1,5 @@
+.widget-content > p,
+.widget-content > p > label,
+.widget-content > p > input {
+    width: 100%;
+}

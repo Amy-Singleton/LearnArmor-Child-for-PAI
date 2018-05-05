@@ -158,7 +158,21 @@ function learnarmor_child_admin_css() {
 if ( defined( 'JETPACK__VERSION' ) ) {
     require get_stylesheet_directory() . '/inc/customize-jetpack.php';
 }
+/**
+ * Customize Login and Registration
+ */
 require get_stylesheet_directory() . '/inc/login-registration.php';
+
+
+/**
+ * Subject Matter Expert Widget
+ */
+require get_stylesheet_directory() . '/inc/subject-matter-expert.php';
+/**
+ * Subject Matter Expert Widget
+ */
+require get_stylesheet_directory() . '/inc/sponsored-by.php';
+
 /**
  * Change the Wordpress Default From Name and Email Address for Emails
  * @link https://www.daretothink.co.uk/change-default-wordpress-email-address/
