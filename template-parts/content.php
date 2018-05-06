@@ -33,7 +33,8 @@
 		} else {
 			if (class_exists( 'SFWD_LMS' ) && is_singular('sfwd-courses')) {
 				if ( has_post_thumbnail()) {
-					echo '<div class="col-sm-12 course-description"><div class="course-thumbnail col-sm-6">';
+					echo '<div class="col-sm-12 course-description">
+					<div class="course-thumbnail col-sm-6">';
 						the_post_thumbnail();
 					echo '</div>';
 				}
