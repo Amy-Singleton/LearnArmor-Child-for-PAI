@@ -143,7 +143,20 @@
 
 							<span class="col-sm-11 course-lesson-link">
 								<a class='col-sm-11 <?php echo esc_attr( $lesson['status'] ); ?>' href='<?php echo esc_attr( learndash_get_step_permalink( $lesson['post']->ID, $course_id ) ); ?>'><?php echo $lesson['post']->post_title; ?></a>
-								<span class="<?php echo esc_attr( $lesson['status'] ); ?> col-sm-1 glyphicon" aria-hidden="true"></span>		
+								<span class="<?php echo esc_attr( $lesson['status'] ); ?> col-sm-1 glyphicon" aria-hidden="true"></span>
+							<div class="lesson-info col-sm-11">
+								<hr>
+								<p>
+									<span class="dashicons dashicons-video-alt3"></span>
+									<span class="bold-font"></span>Video<span class="dashicons dashicons-clock"></span>Duration
+										<?php
+											$value = 'learnarmor_duration_video_duration';
+											echo get_post_meta( $lesson['post']->ID, $value, true );
+										?>
+								</p>
+							</div>
+							<div class="lesson-info col-sm-1">
+							</div>
 								<?php
 								/**
 								 * Not available message for drip feeding lessons

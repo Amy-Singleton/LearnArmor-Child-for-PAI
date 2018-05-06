@@ -395,8 +395,16 @@ span.fa.fa-sign-in:before {
 	padding: 0 15px;
 }
 /*--------------------------------------------------------------
-## Flex Container
-   @https://www.w3schools.com/css/css3_flexbox.asp
+ *
+ * Registration Form
+ * 
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+ *
+ * ## Flex Container
+ * @https://www.w3schools.com/css/css3_flexbox.asp
+ * 
 --------------------------------------------------------------*/
 
 /*.flex-container {
@@ -819,6 +827,31 @@ body #learndash_lesson_topics_list div > strong {
     padding-left: 15px;
     padding-right: 0;
 }
+div.lesson-info {
+    padding:0;
+}
+div.lesson-info > hr {
+	margin: 0 0 15px;
+}
+div.lesson-info > p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #1c3a54;
+    margin: 0 0 15px;
+}
+div.lesson-info > p > span:before {
+    color: #1c3a54;
+}
+div.lesson-info > p > span.dashicons-video-alt3 {
+    margin: 0 5px 0 0;
+}
+div.lesson-info > p > span.dashicons-clock{
+        margin: 0 5px 0 10px;
+}
+div.lesson-info > p > span.dashicons-clock:before {
+    vertical-align: bottom;
+    font-size: inherit;
+}
 .learndash .notcompleted, #learndash_profile .notcompleted,
 .learndash .completed, #learndash_profile .completed {
     background-image: none;
@@ -829,7 +862,13 @@ div.quiz_list > div > span.course-quiz-link span.col-sm-1 {
     text-align: center;
     line-height: 2.5;   
 }
+/*--------------------------------------------------------------
+# LearnDash User Profile i.e. My Dashboard
+--------------------------------------------------------------*/
 
+.sfwd-lessons .entry-header h1 {
+	margin-bottom: 0;
+}
 
 /*--------------------------------------------------------------
 # LearnDash User Profile i.e. My Dashboard
@@ -1159,14 +1198,14 @@ div.nav-links div.nav-next a:hover,
 .widget_sfwd-certificates-widget .widget-title, .widget_ldcourseinfo .widget-title,
 .widget_sfwd-courses-widget .widget-title, .widget_sfwd-certificates-widget .widget-title,
 #lds-shortcode .lds-dialog hgroup {
-	border-radius: 0;
-	padding: 0; 
-	font-weight: 300;
-	border: 0px;
-	border-bottom: none;
+    border-radius: 0;
+    padding: 0; 
+    font-weight: 300;
+    border: 0px;
+    border-bottom: none;
 }
 .textwidget {
-	margin-top: 1em;
+    margin-top: 1em;
 }
 /* Donation Widget */
 .credit-cards {
@@ -1180,18 +1219,110 @@ p.donation {
     font-size: 18px;
 }
 button.donate {
-	width: 100%;
-	padding: 7px 10px;
-	border-radius: 0;
-	background-color: #fff;
-	border-radius: 3px;
+    width: 100%;
+    padding: 7px 10px;
+    border-radius: 0;
+    background-color: #fff;
+    border-radius: 3px;
 }
 button.donate:hover {
-        color: #555555;
-        opacity: .9;
+    color: #555555;
+    opacity: .9;
 }
 .widget-achievements-listing .widget-badgeos-item-title {
-	font-weight: 300;
+    ont-weight: 300;
+}
+/*--------------------------------------------------------------
+## Course, Lessons, Topic Sidebar Widgets
+--------------------------------------------------------------*/
+
+/* Course Navigation */
+#course-sidebar {
+    padding: 0 15px;
+    margin-top: 5.75em;
+}
+#course-sidebar section {
+    background-color: #f3f3f3;
+    border:  1px solid #ddd;
+    padding: 15px;
+    display: inline-block;
+    width: 100%;
+}
+#course-sidebar section h2 {
+    font-weight: 500;
+    padding-bottom: 10px;
+    border-bottom:  1px solid #ddd;
+}
+.widget_ldcourseprogress .widget-title,
+.widget_sfwd-lessons-widget .widget-title,
+.widget_ldcoursenavigation .widget-title,
+.widget_ldcourseprogress .widget-title,
+.widget_sfwd-lessons-widget .widget-title,
+.widget_ldcoursenavigatio .widget-titlen,
+.widget_sfwd-certificates-widget .widget-title,
+.widget_ldcourseinfo .widget-title,
+.widget_sfwd-courses-widget .widget-title,
+.widget_sfwd-certificates-widget .widget-title,
+#lds-shortcode .lds-dialog hgroup {
+    font-weight: 500;
+}
+div.lesson_incomplete.list_arrow.collapse {
+    padding: 5px;
+}
+.learndash_navigation_lesson_topics_list .list_arrow.collapse {
+    background-position: right;
+}
+div.list_lessons > div > a {
+    font-weight: 400;
+    font-size: 14px;
+    color: #3e81bb;
+}
+.course_navigation .learndash-current-menu-item a {
+    font-weight: 500;
+}
+.widget_course_return {
+    font-weight: 500;
+    padding-left: 5px;
+}
+.course_navigation .widget_course_return {
+    font-size: 14px;
+}
+.course_navigation .widget_course_return a {
+    font-weight: 300;
+    font-size: 13px;
+    width: 100%;
+    float: none;
+    display: block;
+    color: #1c3a54;
+}
+.list_arrow.collapse:not(.flippable) {
+    opacity: 1;
+}
+.learndash_navigation_lesson_topics_list > div {
+    border-bottom: none;
+}
+div.lesson  learndash-current-menu-item > a {
+    color: #1c3a54;
+}
+div.sme {
+    padding-left: 0;
+    padding-right: 0;
+}
+div.sme > p:first-child {
+    padding-top: 10px;
+}
+p.sme {
+    font-size: 16px;
+    line-height: .75;
+    color: #1c3a54;
+}
+.sme-author-img {
+    padding: 3px;
+    border-radius: 50%;
+    background-color: #ddd;
+}
+.sme-author-img > img {
+    border-radius: 50%;
 }
 /*--------------------------------------------------------------
 ## Footer
@@ -1219,6 +1350,9 @@ button.donate:hover {
 }
 #footer-sidebar aside:nth-child(3) {
         padding-left: 30px;
+}
+ #footer-sidebar h2 {
+	font-family: "Roboto", sans-serif;
 }
 #footer p,
 .menu-footer-container {
