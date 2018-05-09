@@ -17,7 +17,7 @@ get_header(); ?>
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'learnarmor' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
-
+			<div class="facetwp-template">
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -31,6 +31,7 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; ?>
+			</div>
 
 			<?php learnarmor_content_nav(); ?>
 
