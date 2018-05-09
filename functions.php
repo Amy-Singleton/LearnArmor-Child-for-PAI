@@ -162,29 +162,27 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Customize Login and Registration
  */
 require get_stylesheet_directory() . '/inc/login-registration.php';
-
+/**
+ * LearnDash Vidoe Duration
+ */
+require get_stylesheet_directory() . '/inc/learndash-video-duration.php';
 
 /**
  * Subject Matter Expert Widget
  */
 require get_stylesheet_directory() . '/inc/subject-matter-expert.php';
 /**
- * Subject Matter Expert Widget
+ * Sponsored By Widget
  */
 require get_stylesheet_directory() . '/inc/sponsored-by.php';
-
 /**
- * Change the Wordpress Default From Name and Email Address for Emails
- * @link https://www.daretothink.co.uk/change-default-wordpress-email-address/
- */ 
-function learnarmor_child_new_mail_from($old) {
-    return 'info@psycharmor.org';
-}
-add_filter('wp_mail_from', 'learnarmor_child_new_mail_from');
-function learnarmor_child_new_mail_from_name($old) {
-    return 'PsychArmor Institute';
-}
-add_filter('wp_mail_from_name', 'learnarmor_child_new_mail_from_name');
+ * Change WP Default From Name and Email Address for Emails
+ */
+require get_stylesheet_directory() . '/inc/wp-from-email-address.php';
+/**
+ * Change WP Default From Name and Email Address for Emails
+ */
+require get_stylesheet_directory() . '/inc/home-page-banner-searchform.php';
 
 /**
  * Customize Archive Pages
@@ -222,23 +220,6 @@ if (class_exists( 'SFWD_LMS')) {
     add_action( 'init', 'learnarmor_child_add_excerpt_support_for_cpt' );
 }
 
-/**
- *
- * Shortcode to show a custom search form in the Introduction section of the home page
- * 
- */
-
-function learnarmor_child_searchform( $form ) {
- 
-    $form = '<div class="col-sm-12"><form role="search" method="get" id="searchform" class="col-sm-6" action="' . home_url( '/' ) . '" >
-    <label id="s" class="screen-reader-text" for="s">' . __('Search for:') . '</label>
-    <input type="text" value="' . get_search_query() . '" name="s" id="search-field" class="col-sm-8" placeholder="What would you like to learn about?" aria-labelledby="searchform s" />
-    <input type="submit" id="search-submit-banner" class="col-sm-3" value="'. esc_attr__('Search') .'" />
-    </form></div>';
- 
-    return $form;
-}
-add_shortcode('wp_search', 'learnarmor_child_searchform');
 
 /**
  *
@@ -261,5 +242,7 @@ if (is_admin()){
     }
     add_action( 'manage_posts_custom_column', 'learnarmor_child_post_id_column_content', 5, 2 );
 }
+
+
 
 ?>
