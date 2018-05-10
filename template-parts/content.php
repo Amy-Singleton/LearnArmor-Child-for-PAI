@@ -32,15 +32,17 @@
 			the_excerpt(35);
 		} else {
 			if (class_exists( 'SFWD_LMS' ) && is_singular('sfwd-courses')) {
-				if ( has_post_thumbnail()) {
-					echo '<div class="col-sm-12 course-description">
-					<div class="course-thumbnail col-sm-6">';
-						the_post_thumbnail();
-					echo '</div>';
-				}
-				echo '<div class="course-excerpt col-sm-6">';
-					the_excerpt();
-				echo '</div></div>';
+				if ( has_post_thumbnail()) {?>
+					<div class="col-sm-12 course-description">
+						<div class="course-thumbnail col-sm-6">
+							<?php the_post_thumbnail(); ?>
+						</div>
+				<?php } ?>
+						<div class="course-excerpt col-sm-6">
+							<?php the_excerpt(); ?>
+						</div>
+					</div>
+				<?php 
 			the_content( sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
@@ -76,9 +78,8 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		
-		<?php
-			learnarmor_entry_footer();
-		?>
+	<?php
+		learnarmor_entry_footer();
+	?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
