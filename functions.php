@@ -163,6 +163,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 require get_stylesheet_directory() . '/inc/login-registration.php';
 /**
+ * Featured Content Shortcode by Taxonomy 
+ */
+require get_stylesheet_directory() . '/inc/featured-content-shortcode.php';
+
+
+/**
  * LearnDash Vidoe Duration
  */
 require get_stylesheet_directory() . '/inc/learndash-video-duration.php';
@@ -242,7 +248,6 @@ if (is_admin()){
     }
     add_action( 'manage_posts_custom_column', 'learnarmor_child_post_id_column_content', 5, 2 );
 }
-
 
 
 ?>
