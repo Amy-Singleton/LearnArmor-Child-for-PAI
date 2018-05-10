@@ -29,7 +29,7 @@ get_header(); ?>
 				echo $custom_likes->post_likes( '' );
 			}
 
-			if ( !is_singular( array( 'sfwd-lessons' ) ) || is_singular( array( 'posts', 'sfwd-courses' ) ) || get_post_type( get_the_ID() ) == 'sfwd-courses' && class_exists( 'Jetpack_RelatedPosts' ) ) {
+			if ( !is_singular( array( 'sfwd-lessons' ) ) || is_singular( array( 'post', 'sfwd-courses' ) ) || get_post_type( get_the_ID() ) == 'sfwd-courses' && class_exists( 'Jetpack_RelatedPosts' ) ) {
 			    echo do_shortcode( '[jetpack-related-posts]' );
 			}
 
@@ -46,12 +46,12 @@ get_header(); ?>
 		</main><!-- #main -->
 
 <?php
-if ( get_post_type( get_the_ID() ) == 'sfwd-courses' || get_post_type( get_the_ID() ) == 'sfwd-lessons'|| get_post_type( get_the_ID() ) == 'sfwd-topics' ) {
+if ( get_post_type( get_the_ID() ) == 'sfwd-courses' || get_post_type( get_the_ID() ) == 'sfwd-lessons'|| get_post_type( get_the_ID() ) == 'sfwd-topic' ) {
     //if is true
 	if ( is_active_sidebar( 'ld-sidebar' ) ) : ?>
 	<div id="course-sidebar" class="widget-area col-sm-3" role="complementary">
 		<?php dynamic_sidebar( 'ld-sidebar' ); ?>
-		</aside><!-- #secondary -->
+		</div><!-- #secondary -->
 	<?php	endif; 
 }
 else {
