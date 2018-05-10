@@ -1,6 +1,6 @@
 /*
  Theme Name:   LearnArmor Child
- Theme URI:    https://www.acmethemes.com/themes/education-base
+ Theme URI:    https://learnarmor.com
  Description:  Education Base Child Theme by LearnArmor Institute
  Author:       LearnArmor
  Author URI:   https://learnarmor.com
@@ -518,17 +518,29 @@ span.fa.fa-sign-in:before {
     background-color: #ffffff;
     background-repeat: repeat;
 }
+#featured-content {
+    height: auto;
+}
 #featured-content > div > .nav-tabs.nav-justified {
-	width: 85%;
-	border-bottom: 0;
-	margin: 2em auto;
+    width: 85%;
+    border-bottom: 0;
+    margin: 2em auto;
+}
+#featured-content > div#topic-navigation > div.tab-content {
+    height: 400px;
+}
+#featured-content > div.tab-content > h3 {
+    margin-bottom: 30px;   
+}
+#featured-content > div.tab-content > p {
+    padding: 15px 0;
 }
 #featured-content > div > .nav-tabs > li a,
 #featured-content > div > .nav-tabs > li.active > a,
 #featured-content > div > .nav-tabs > li.active > a:hover,
 #featured-content > div > .nav-tabs > li.active > a:focus,
 #featured-content > div > .nav-tabs > li.active > a {
-	background-color: #e3e3e3;
+	background-color: transparent;
 	border: 2px solid #1c3a54;
 	margin-right: 15px;
 	border-radius: 3px;
@@ -540,7 +552,61 @@ span.fa.fa-sign-in:before {
 }
 .page-template-home-page #featured-content,
 .page-template-home-page #sponsors{
-    background-color: #e3e3e3;
+    background-color: #efefef;
+}
+.ld_course_grid_price {
+    display: none;
+}
+#featured-content div.tab-pane {
+    margin-top: 3em;
+}
+#featured-content .home-featured {
+    padding: 0;
+    background-color: #ffffff;
+    border: 2px solid transparent;
+    border-radius: 3px;
+}
+#featured-content .home-featured:hover {
+    border: 2px solid rgba(55,55,55, .35);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+div.home-featured > div.post-thumbnail {
+    margin: 0 auto;
+    width: 100%;
+}
+div.home-featured > div.post-thumbnail > a > img.attachment-post-thumbnail {
+    margin: 0em auto;
+}
+div.home-featured > div.post-thumbnail > a > img.attachment-post-thumbnail:hover {
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+div.home-featured > div.post-thumbnail > a > img.attachment-post-thumbnail:hover {
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+div.home-featured > div.post-thumbnail > a:focus > img.attachment-post-thumbnail {
+    opacity: .75;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+div.home-featured > div.post-thumbnail > a:focus {
+    border: none;
+}
+div.home-featured div.wrap-text {
+    padding: 15px;
+}
+div.home-featured > div.wrap-text > h3 {
+    margin-top:0;
+    font-size: 20px;
 }
 .page-template-home-page #introduction p,
 .page-template-home-page #statistics p,
@@ -804,7 +870,7 @@ body #learndash_lesson_topics_list div > strong {
 }
 #lessons_list > div:nth-child(even),
 #quiz_list > div:nth-child(even){
-    background-color: rgba(255,255,255, .35);
+    background-color: #efefef;
     padding: 0;
 }
 #learndash_lessons a,
@@ -861,6 +927,20 @@ div.lessons_list > div > span.course-lesson-link span.col-sm-1,
 div.quiz_list > div > span.course-quiz-link span.col-sm-1 { 
     text-align: center;
     line-height: 2.5;   
+}
+
+.embed-responsive .embed-responsive-item, .embed-responsive iframe, .embed-responsive embed, .embed-responsive object, .embed-responsive video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	height: 100% !important;
+	width: 100% !important;
+	border: 0;
+}
+iframe {
+    width: 100% !important;
+    height: 100% !important;
 }
 /*--------------------------------------------------------------
 # LearnDash User Profile i.e. My Dashboard
@@ -1310,10 +1390,11 @@ div.sme {
 }
 div.sme > p:first-child {
     padding-top: 10px;
+    margin-bottom: 3px;
 }
 p.sme {
     font-size: 16px;
-    line-height: .75;
+    line-height: 1.25;
     color: #1c3a54;
 }
 .sme-author-img {
@@ -1505,13 +1586,15 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	margin-top: 6em;
     }
     .page-template-home-page #introduction,
-    .page-template-home-page #featured-content,
     .page-template-home-page #statistics,
     .page-template-home-page #metrics,
     .page-template-home-page #sponsors {
         height: 500px;
     }
     
+    .page-template-home-page #featured-content {
+        height: auto;
+    }
     .page-template-home-page #featured-categories {
         height: 300px;        
     }
