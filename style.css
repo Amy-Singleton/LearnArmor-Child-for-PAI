@@ -608,10 +608,21 @@ div.home-featured > div.wrap-text > h3 {
     margin-top:0;
     font-size: 20px;
 }
+.page-template-home-page #featured-content {
+    //background-image: url(css/images/dust_scratches.png);
+    //background-repeat: repeat;
+    
+}
+.page-template-home-page #statistics {
+    //background-image: url(css/images/business.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .page-template-home-page #introduction p,
 .page-template-home-page #statistics p,
 .page-template-home-page #metrics p { 
     font-size: 22px;
+    opacity: 1;
 }
 .page-template-home-page #metrics p {
     font-family: 'Roboto Slab', serif;
@@ -673,20 +684,56 @@ div.user-specific-links ul.nav > li > a:focus {
 #metrics .col-sm-4 {
     margin-top: 2em;
 }
+#statistics div#piechart ,
+#statistics div#piechart2 {
+	width: 80%;
+	margin: 0 auto;
+}
+
 #statistics p {
     font-size: 22px;
 }
-#metrics .col-sm-4 .col-sm-6 {
-    padding-top: 3.5em;
+.page-template-home-page #metrics {
+	padding: 3em 12%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#metrics .col-sm-4 .col-sm-7 {
+    padding: 4.75em 0 1.5em;
+}
+#metrics .col-sm-4 .col-sm-5  {
+    padding-top: 4.95em;
     padding-bottom: 1.5em;
 }
+
 #metrics .clear {
     clear: both;
 }
 .metrics-image {
-    background-color: #e3e3e3;
+    //background-color: #e3e3e3;
     width: 100%;
-    height: 300px;
+    //height: 300px;
+}
+.metrics-image img {
+    margin: 0 auto;
+}
+#metrics .dashicons {
+    vertical-align: middle;
+    font-size: 30px;
+    background-color: #b23232;
+    border-radius: 50%;
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    padding: 8px 10px;
+}
+#metrics p span.dashicons {
+    margin-right: 0px;
+    margin-left: 15px;
+}
+#metrics p.text-align-right span.dashicons {
+    margin-right: 15px;
+    margin-left: 0;
 }
 #sponsors div .col-sm-10 {
     margin-top: 2em;
@@ -1586,13 +1633,13 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	margin-top: 6em;
     }
     .page-template-home-page #introduction,
-    .page-template-home-page #statistics,
     .page-template-home-page #metrics,
     .page-template-home-page #sponsors {
         height: 500px;
     }
     
-    .page-template-home-page #featured-content {
+    .page-template-home-page #featured-content,
+    .page-template-home-page #statistics {
         height: auto;
     }
     .page-template-home-page #featured-categories {
