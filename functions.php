@@ -142,9 +142,7 @@ function learnarmor_child_accessibility() {
 <?php 
 }
 /**
- *
  * Remove the Serach Form from the Primary Menu
- * 
  */
 
 remove_filter( 'wp_nav_menu_items','learnarmor_add_search_box', 10, 2 );
@@ -152,6 +150,26 @@ remove_filter( 'wp_nav_menu_items','learnarmor_add_search_box', 10, 2 );
 function learnarmor_child_admin_css() {
     wp_enqueue_style('admin_styles' , get_template_directory_uri().'/css/admin.css');
 }
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function learnarmor_child_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar Search', 'learnarmor' ),
+		'id'            => 'sidebar-search',
+		'description'   => esc_html__( 'Add search widgets here.', 'learnarmor-child' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+        //Search Sidebar Widget Area
+
+}
+add_action( 'widgets_init', 'learnarmor_child_widgets_init' );
 /**
  * Customize JetPack
  */
