@@ -435,7 +435,6 @@ span.fa.fa-sign-in:before {
 .page-template-home-page #introduction,
 .page-template-home-page #featured-categories,
 .page-template-home-page #featured-content,
-.page-template-home-page #statistics,
 .page-template-home-page #metrics,
 .page-template-home-page #sponsors {
 	padding: 3em 12.5%;
@@ -526,9 +525,6 @@ span.fa.fa-sign-in:before {
     border-bottom: 0;
     margin: 2em auto;
 }
-#featured-content > div#topic-navigation > div.tab-content {
-    height: 400px;
-}
 #featured-content > div.tab-content > h3 {
     margin-bottom: 30px;   
 }
@@ -560,27 +556,35 @@ span.fa.fa-sign-in:before {
 #featured-content div.tab-pane {
     margin-top: 3em;
 }
-#featured-content .home-featured {
-    padding: 0;
-    background-color: #ffffff;
-    border: 2px solid transparent;
-    border-radius: 3px;
+div.home-featured {
+	display: inline-flex;
+	margin-bottom: 30px;
 }
-#featured-content .home-featured:hover {
+div.home-featured h3 {
+    margin-top: 0;
+}
+#featured-content div.post-wrap {
+	padding: 0;
+	width: 100%;
+	background-color: #ffffff;
+        border: 2px solid transparent;
+        border-radius: 3px;
+        height: 400px;
+}
+#featured-content div.post-wrap:hover {
     border: 2px solid rgba(55,55,55, .35);
     transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
+    cursor: pointer;
 }
-div.home-featured > div.post-thumbnail {
+#featured-content div.post-wrap div.post-thumbnail {
     margin: 0 auto;
     width: 100%;
 }
-div.home-featured > div.post-thumbnail > a > img.attachment-post-thumbnail {
-    margin: 0em auto;
-}
-div.home-featured > div.post-thumbnail > a > img.attachment-post-thumbnail:hover {
+#featured-content div.post-wrap div.post-thumbnail img:hover {
+    opacity: .75;
     transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
@@ -614,9 +618,27 @@ div.home-featured > div.wrap-text > h3 {
     
 }
 .page-template-home-page #statistics {
-    //background-image: url(css/images/business.jpg);
+    background-image: url(css/images/business.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.page-template-home-page #statistics {
+    padding: 0 12.5%;
+    margin: 0 auto;
+    display: flex;
+}
+.page-template-home-page #statistics div.stats {
+    background-color: rgba(255,255,255, .7);
+    display: block;
+    background-size: cover;
+    width: 130%;
+    margin-left: -15%;
+    margin-right: -15%;
+    padding-bottom: 3em;
+}
+div.stats h2 {
+    margin-top: 3em;
 }
 .page-template-home-page #introduction p,
 .page-template-home-page #statistics p,
@@ -646,6 +668,9 @@ div.user-specific-links ul.navbar-nav {
 div.user-specific-links ul.navbar-nav > li {
     float: left;
     margin-left: 1em;
+}
+div.user-specific-links ul.navbar-nav > li:first-child {
+    margin-left: 7px;
 }
 
 div.user-specific-links ul.navbar-nav > li > a {
@@ -1648,18 +1673,31 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .page-template-home-page #introduction p {
         padding-left: 7em;
     }
+    div.user-specific-links ul.navbar-nav {
+        width: 44.5%;
+        margin: 4.5em auto;        
+    }
+    #statistics div#piechart, #statistics div#piechart2 {
+	margin: 0 30%;
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Desktop 1536px
 --------------------------------------------------------------*/
 @media screen and (max-width: 1536px){
-	
+    /* Home Page */
+    div.user-specific-links ul.navbar-nav {
+	width: 56%;
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Desktop 1440px
 --------------------------------------------------------------*/
 @media screen and (max-width: 1440px){
-	
+    /* Home Page */
+    div.user-specific-links ul.navbar-nav {
+	width: 59.5%;
+    }    
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Desktop 1366px
@@ -1674,6 +1712,17 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     }
     .page-template-home-page #introduction p {
         padding-left: 5em;
+    }
+    div.user-specific-links ul.navbar-nav {
+        width: 63%;
+        margin: 4.5em auto;
+    }
+    #featured-content div.post-wrap {
+	height: 375px;
+    }
+    #statistics div#piechart,
+    #statistics div#piechart2 {
+	margin: 0 2 0%;
     }
      /* Sidebar Widgets */
     .widget-title, .widgettitle {
