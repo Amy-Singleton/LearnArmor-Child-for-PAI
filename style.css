@@ -1334,12 +1334,143 @@ div.nav-links div.nav-next a:hover,
 /*--------------------------------------------------------------
 ## Post Categories 
 --------------------------------------------------------------*/
-
+body.archive.category main,
+body.archive.tag main {
+    margin-bottom: 4em;
+}
 
 /*--------------------------------------------------------------
 ## Search Results
 --------------------------------------------------------------*/
-
+.search header.page-header {
+    margin-top: 0;
+    padding-bottom: 20px;
+}
+search header.page-header h1  {
+    margin-bottom: 30px;
+    
+}
+article.search {
+    padding: 0;
+    margin-bottom: 30px;
+}
+article.search div.wrap-search {
+    background-color: #f3f3f3;
+    border: 2px solid #efefef;
+    border-radius: 3px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+article.search div.wrap-search:hover {
+    opacity: .75;
+}
+article.search header div.post-thumbnail {
+    margin: 0em auto;
+    width: 100%;
+}
+article.search.badges div header div.post-thumbnail a img {
+    width: 67%;
+    margin: 0 auto;
+    display: block;
+}
+article.search header div.post-thumbnail a img {
+    width: 100%;
+}
+article.search header  h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 0;
+    padding: 0 15px;
+    height: 115px;
+}
+article.search div.entry-summary,
+article.search footer.entry-footer {
+    padding: 0 15px;
+}
+article.search div.entry-summary p {
+    padding: 15px 0;
+    border-bottom: 1px solid #e3e3e3;
+    height: 200px;
+}
+article.search footer.entry-footer {
+    height: 60px;
+    margin-bottom: 1em;
+    font-size: 14px;
+}
+article.search footer.entry-footer span {
+    padding: 0;
+}
+.comments-links {
+    font-weight: 400;
+    color: #777777;
+}
+.comments-link:before {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: bottom;
+    font-family: "Dashicons";
+    -webkit-font-smoothing: antialiased;
+    color: #777777;
+    font-weight: 400;
+    content: "\f101";
+    font-size: inherit;
+    width: 16px;
+    height: 16px;
+    vertical-align: top;
+}
+.cat-links p {
+    padding-left: 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.comments-link a {
+    margin-left: 0;
+    text-transform: lowercase;
+}
+.course-type-video {
+    font-weight: 400;
+    color: #777777;
+}
+.course-type-video:before {
+	display: inline-block;
+	margin-right: 5px;
+	vertical-align: bottom;
+	font-family: "Dashicons";
+	-webkit-font-smoothing: antialiased;
+	color: #777777;
+	font-weight: 700;
+	content: "\f236";
+	font-size: inherit;
+	width: 16px;
+	height: 16px;
+	vertical-align: top;
+}
+.course-type-video-link a {
+	margin-left: 0;
+}
+.course-duration {
+    font-weight: 400;
+    color: #777777;
+    padding-left: 0;
+}
+.course-duration:before {
+	display: inline-block;
+	margin-right: 5px;
+	vertical-align: bottom;
+	font-family: "Dashicons";
+	-webkit-font-smoothing: antialiased;
+	color: #777777;
+	font-weight: 400;
+	content: "\f469";
+	font-size: inherit;
+	width: 16px;
+	height: 16px;
+	vertical-align: top;
+}
+.course-duration-link a {
+	margin-left: 0;
+}
 /*--------------------------------------------------------------
 ## Sidebar Widgets
 --------------------------------------------------------------*/
@@ -1662,7 +1793,6 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .page-template-home-page #sponsors {
         height: 500px;
     }
-    
     .page-template-home-page #featured-content,
     .page-template-home-page #statistics {
         height: auto;
@@ -1679,6 +1809,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     }
     #statistics div#piechart, #statistics div#piechart2 {
 	margin: 0 30%;
+    }
+    /* Search */
+    article.search header div.post-thumbnail a img {
+        height: 273px;
     }
 }
 /*--------------------------------------------------------------
@@ -1724,6 +1858,17 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     #statistics div#piechart2 {
 	margin: 0 2 0%;
     }
+        /* Search Results */
+    article.search header div.post-thumbnail a img {
+        height: 182px;
+    }
+    article.search div.entry-summary p {
+	height: 250px;
+        font-size: 14px;
+    }
+    article.search footer.entry-footer {
+	height: 65px;
+    }
      /* Sidebar Widgets */
     .widget-title, .widgettitle {
         font-size: 1.4em;
@@ -1737,7 +1882,6 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     div.user-specific-links ul.navbar-nav {
 	width: 69%;
     }
-	
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Tablet 1024px
