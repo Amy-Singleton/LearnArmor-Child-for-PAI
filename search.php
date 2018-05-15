@@ -43,7 +43,14 @@ get_header(); ?>
 
 		</main><!-- #main -->
 <?php
-get_sidebar(); ?>
+if ( is_active_sidebar( 'sidebar-search' ) ) { ?>
+	<div id="course-sidebar" class="widget-area col-sm-3" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-search' ); ?>
+		</aside><!-- #secondary -->
+	
+<?php }
+
+?>
 </div><!-- #primary -->
 <?php
 get_footer();
