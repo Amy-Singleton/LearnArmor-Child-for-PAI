@@ -1,5 +1,16 @@
 <?php
-
+/**
+ *
+ * Exclude an entire category from ever appearing among Related Posts results
+ * 
+ */
+function jetpackme_filter_exclude_category( $filters ) {
+    $filters[] = array( 'not' =>
+      array( 'term' => array( 'taxonomy.ld_course_category.slug' => 'branded' ) )
+    );
+    return $filters;
+}
+add_filter( 'jetpack_relatedposts_filter_filters', 'jetpackme_filter_exclude_category');
 /**
  * Remove Jetpack sharing so we can move it below the course list for:
  * boss-child/boss-learndash/course.php and boss-child/content.php
@@ -35,10 +46,18 @@ function jetpackme_remove_rp() {
  **/
 add_filter( 'jetpack_relatedposts_filter_headline', 'jetpackme_related_posts_headline',20 );
 function jetpackme_related_posts_headline( $headline ) {
-$headline = sprintf(
-            '<h3 class="jp-relatedposts-headline"><em>%s</em></h3>',
-            esc_html( 'Additional Information' )
-            );
+   if(is_singular( 'sfwd-courses')) {
+        $headline = sprintf(
+        '<h3 class="jp-relatedposts-headline"><em>%s</em></h3>',
+        esc_html( 'Suggested Courses' )
+        );
+    } else {
+        $headline = sprintf(
+        '<h3 class="jp-relatedposts-headline"><em>%s</em></h3>',
+        esc_html( 'Additional Info' )
+        );
+        
+    }
     
         return $headline;
 }
@@ -51,15 +70,17 @@ function jetpackme_add_pages_to_related( $post_type, $post_id ) {
     }
  
     // Add pages
-    $search_types[] = array('page','sfwd-courses');
+    $search_types[] = array('page','sfwd-courses','posts');
     return $search_types;
 }
 add_filter( 'jetpack_relatedposts_filter_post_type', 'jetpackme_add_pages_to_related', 10, 2 );
 
-//function jetpackme_allow_pages_for_relatedposts( $enabled ) {
-//    if ( is_page('budget-videos') ) {
-//        $enabled = true;
-//    }
-//    return $enabled;
-//}        
-//add_filter( 'jetpack_relatedposts_filter_enabled_for_request', 'jetpackme_allow_pages_for_relatedposts' );
+
+/**
+ * Add theme support for Responsive Videos.
+ */
+function learnarmor_child_remove_jetpackme_responsive_videos_setup() {
+    remove_action( 'after_setup_theme', 'jetpackme_responsive_videos_setup' );
+}
+add_action( 'after_setup_theme', 'learnarmor_child_remove_jetpackme_responsive_videos_setup', 1 );
+
