@@ -18,6 +18,14 @@ function learnarmor_duration_get_meta( $value ) {
 }
 
 function learnarmor_duration_add_meta_box() {
+        add_meta_box(
+		'learnarmor_duration-learnarmor-duration',
+		__( 'Video Duration', 'learnarmor_duration' ),
+		'learnarmor_duration_html',
+		'sfwd-courses',
+		'side',
+		'high'
+	);
 	add_meta_box(
 		'learnarmor_duration-learnarmor-duration',
 		__( 'Video Duration', 'learnarmor_duration' ),
