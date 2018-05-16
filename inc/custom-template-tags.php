@@ -46,10 +46,13 @@ if ( ! function_exists( 'learnarmor_entry_footer' ) ) :
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function learnarmor_child_entry_footer() {
-		if ( 'sfwd-courses' === get_post_type() ) {
+		if ( 'sfwd-courses' === get_post_type() && !is_single() || is_category() && !is_single() || is_tag() && !is_single() || is_archive() && !is_single() ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="course-type-video col-sm-5">' . 'Video' . '</span>' ); // WPCS: XSS OK.
-				printf( '<span class="course-duration col-sm-7">' . 'Duration: 12m' . '</span>' ); // WPCS: XSS OK.
+				$value = get_post_meta(get_the_ID(),'learnarmor_duration_video_duration', true );
+				if(get_post_meta(get_the_ID(), 'learnarmor_duration_video_duration', true) ){
+				printf( '<span class="course-type-video col-sm-4">' . 'Video' . '</span>' ); // WPCS: XSS OK. 
+				printf( '<span class="course-duration col-sm-8">' . esc_html__( 'Duration: %1$s', 'learnarmor' ). '</span>', $value );// WPCS: XSS OK.
+				}
 			}
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
