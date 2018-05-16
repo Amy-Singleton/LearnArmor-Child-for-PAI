@@ -21,24 +21,33 @@ get_header(); ?>
 					the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
-
+		<div class="facetwp-template">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
-				if ( is_category() || is_archive() || is_search() || is_home() || class_exists( 'SFWD_LMS' ) && !is_singular('sfwd-courses')) {
+				if ( is_category() || is_tag() || is_archive() || class_exists( 'SFWD_LMS' ) && !is_singular('sfwd-courses')) {
 					?>
+			<div class="col-sm-4 post">
+				<div class="wrap-post">
+					<div class="post-thumbnail">
+					<?php if ( has_post_thumbnail() ) {
+					    the_post_thumbnail();
+					 } ?>
+					</div>
 					<div class="entry-summary">
-                            <?php    the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );?>
-                            <div class="post-thumbnail"><?php if ( has_post_thumbnail() ) {
-                                    the_post_thumbnail();
-                            } ?>
-                             <?php the_excerpt(35); ?>
-                        </div>
+					 <?php
+						the_title( sprintf( '<span class="semi-bold-font"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a> - </span>' );
+						$length = apply_filters('excerpt_length',20);
+						echo wp_trim_words(get_the_excerpt(),$length);
+						?>
+					</div>
 					<footer class="entry-footer">
 						<?php
-							learnarmor_entry_footer();
+							learnarmor_child_entry_footer();
 						?>
 					</footer><!-- .entry-footer -->
+				</div>
+			</div><!-- .col-sm-4 -->
 	<?php 
 				    } else {
 					/*
@@ -59,7 +68,7 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
-
+		</div><!-- .facetwp-template -->
 		</main><!-- #main -->
 	<?php
 get_sidebar(); ?>

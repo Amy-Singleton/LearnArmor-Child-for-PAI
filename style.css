@@ -613,8 +613,8 @@ div.home-featured > div.wrap-text > h3 {
     font-size: 20px;
 }
 .page-template-home-page #featured-content {
-    //background-image: url(css/images/dust_scratches.png);
-    //background-repeat: repeat;
+    /* background-image: url(css/images/dust_scratches.png); */
+    /* background-repeat: repeat; */
     
 }
 .page-template-home-page #statistics {
@@ -735,9 +735,9 @@ div.user-specific-links ul.nav > li > a:focus {
     clear: both;
 }
 .metrics-image {
-    //background-color: #e3e3e3;
+    /*background-color: #e3e3e3;*/
     width: 100%;
-    //height: 300px;
+    /*height: 300px;*/
 }
 .metrics-image img {
     margin: 0 auto;
@@ -1241,10 +1241,7 @@ div.ld-course-list-content > div.flex-container.ld-course-list-items > div.row >
 # BadgeOs
 --------------------------------------------------------------*/
 /* Fix Bad Behavior of BadgeOs Widget CSS */
-/*.widget {
-	float: left;
-	width: 25%;
-}*/
+
 /*--------------------------------------------------------------
 ## Posts
 --------------------------------------------------------------*/
@@ -1331,6 +1328,114 @@ div.nav-links div.nav-next a:hover,
 	text-align: right;
 	width: 49%;
 }
+
+/*--------------------------------------------------------------
+## Blog, Categories, Tags Archives
+--------------------------------------------------------------*/
+article.post,
+div.post {
+    padding: 0;
+    margin-bottom: 30px;
+}
+main article:odd {
+    margin-left: 0;
+}
+main article:odd {
+    margin-right: 0;
+}
+article.post div.wrap-post,
+div.post div.wrap-post {
+    background-color: #f3f3f3;
+    border: 2px solid #efefef;
+    border-radius: 3px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+article.post div.wrap-post:hover,
+div.post div.wrap-post:hover {
+    opacity: .75;
+}
+article.post div.wrap-post div.post-thumbnail,
+div.post div.wrap-post div.post-thumbnail{
+    margin: 0em auto;
+    padding: 0;
+    width: 100%;
+}
+article.post.badges div header div.post-thumbnail a img,
+div.post.badges div div.post-thumbnail a img {
+
+    width: 67%;
+    margin: 0 auto;
+    display: block;
+}
+article.post div.wrap-post header div.post-thumbnail a img,
+div.post div.wrap-post div.post-thumbnail a img {
+    width: 100%;
+}
+article.post div.wrap-post footer.entry-footer,
+div.post div.wrap-post footer.entry-footer{
+   padding: 0 15px;
+}
+article.post div.wrap-post div.entry-content,
+div.post div.wrap-post div.entry-summary{
+    padding: 15px;
+    border-bottom: 1px solid #e3e3e3;
+    height: 365px;
+}
+article.post div.wrap-post footer.entry-footer,
+div.post div.wrap-post footer.entry-footer{
+    height: 80px;
+    margin-bottom: 1em;
+    font-size: 14px;
+}
+article.post div.wrap-post footer.entry-footer span,
+div.post div.wrap-post footer.entry-footer span {
+	margin: 0;
+	padding: 0 0 5px;
+}
+.cat-links,
+.tags-links {
+	font-weight: 500;
+	color: #1c3a54;
+        padding: 0;
+}
+div.post div.wrap-post footer.entry-footer span .cat-links,
+div.post div.wrap-post footer.entry-footer span.tags-links {
+    padding: 0 15px;
+}
+.cat-links a,
+.tags-links a,
+.comments-link a{
+	color: #4a8bc3;
+        font-weight: 400
+}
+.tags-links {
+    margin-left: 0;
+}
+.posted-on a:before,
+.vcard:before,
+li.recentcomments .comment-author-link:before,
+.comments-link a:before,
+.post-edit-link:before,
+.cat-links:before,
+.tags-links:before,
+.comments-link:before {
+	color: #1c3a54;
+}
+.comments-link:before {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: bottom;
+    font-family: "Dashicons";
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    content: "\f101";
+    font-size: inherit;
+    width: 16px;
+    height: 16px;
+    vertical-align: top;
+}
 /*--------------------------------------------------------------
 ## Post Categories 
 --------------------------------------------------------------*/
@@ -1342,13 +1447,16 @@ body.archive.tag main {
 /*--------------------------------------------------------------
 ## Search Results
 --------------------------------------------------------------*/
+div.facetwp-template {
+    margin-left: -15px;
+    margin-right: -15px;
+}
 .search header.page-header {
     margin-top: 0;
     padding-bottom: 20px;
 }
 search header.page-header h1  {
     margin-bottom: 30px;
-    
 }
 article.search {
     padding: 0;
@@ -1394,30 +1502,13 @@ article.search div.entry-summary p {
     height: 200px;
 }
 article.search footer.entry-footer {
-    height: 60px;
+    height: 100px;
     margin-bottom: 1em;
     font-size: 14px;
 }
 article.search footer.entry-footer span {
-    padding: 0;
-}
-.comments-links {
-    font-weight: 400;
-    color: #777777;
-}
-.comments-link:before {
-    display: inline-block;
-    margin-right: 5px;
-    vertical-align: bottom;
-    font-family: "Dashicons";
-    -webkit-font-smoothing: antialiased;
-    color: #777777;
-    font-weight: 400;
-    content: "\f101";
-    font-size: inherit;
-    width: 16px;
-    height: 16px;
-    vertical-align: top;
+	margin: 0;
+	padding: 0 0 5px;
 }
 .cat-links p {
     padding-left: 20px;
@@ -1429,8 +1520,8 @@ article.search footer.entry-footer span {
     text-transform: lowercase;
 }
 .course-type-video {
-    font-weight: 400;
-    color: #777777;
+    font-weight: 500;
+    color: #1c3a54;
 }
 .course-type-video:before {
 	display: inline-block;
@@ -1438,7 +1529,7 @@ article.search footer.entry-footer span {
 	vertical-align: bottom;
 	font-family: "Dashicons";
 	-webkit-font-smoothing: antialiased;
-	color: #777777;
+	color: #1c3a54;
 	font-weight: 700;
 	content: "\f236";
 	font-size: inherit;
@@ -1450,8 +1541,8 @@ article.search footer.entry-footer span {
 	margin-left: 0;
 }
 .course-duration {
-    font-weight: 400;
-    color: #777777;
+    font-weight: 500;
+    color: #1c3a54;
     padding-left: 0;
 }
 .course-duration:before {
@@ -1460,16 +1551,15 @@ article.search footer.entry-footer span {
 	vertical-align: bottom;
 	font-family: "Dashicons";
 	-webkit-font-smoothing: antialiased;
-	color: #777777;
+	color: #1c3a54;
 	font-weight: 400;
 	content: "\f469";
 	font-size: inherit;
 	width: 16px;
 	height: 16px;
 	vertical-align: top;
-}
-.course-duration-link a {
-	margin-left: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 /*--------------------------------------------------------------
 ## Sidebar Widgets
@@ -1811,7 +1901,8 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	margin: 0 30%;
     }
     /* Search */
-    article.search header div.post-thumbnail a img {
+    article.search header div.post-thumbnail a img,
+    div.post div.wrap-post div.post-thumbnail a img{
         height: 273px;
     }
 }
@@ -1858,16 +1949,22 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     #statistics div#piechart2 {
 	margin: 0 2 0%;
     }
-        /* Search Results */
-    article.search header div.post-thumbnail a img {
+    /* Search Results */
+    article.search header div.post-thumbnail a img,
+    div.post div.wrap-post div.post-thumbnail a img,    
+    article.post div.post-thumbnail a img{
         height: 182px;
     }
-    article.search div.entry-summary p {
+    article.search div.entry-summary p,
+    article.post div.entry-summary p,
+    div.post div.wrap-post div.entry-summary p{
 	height: 250px;
         font-size: 14px;
     }
-    article.search footer.entry-footer {
-	height: 65px;
+    article.search footer.entry-footer,
+    article.post div.wrap-post footer.entry-footer,
+    div.post div.wrap-post footer.entry-footer {
+	height: 115px;
     }
      /* Sidebar Widgets */
     .widget-title, .widgettitle {

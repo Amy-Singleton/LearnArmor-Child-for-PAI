@@ -184,7 +184,10 @@ require get_stylesheet_directory() . '/inc/login-registration.php';
  * Featured Content Shortcode by Taxonomy 
  */
 require get_stylesheet_directory() . '/inc/featured-content-shortcode.php';
-
+/**
+ * Include Custom Template Tags
+ */
+require get_stylesheet_directory() . '/inc/custom-template-tags.php';
 
 /**
  * LearnDash Vidoe Duration
@@ -236,7 +239,7 @@ if (class_exists( 'SFWD_LMS')) {
             }
         }
     }
-    add_action('pre_get_posts','learnarmor_child_search_filter');
+    //add_action('pre_get_posts','learnarmor_child_search_filter');
 
     function learnarmor_child_add_excerpt_support_for_cpt() {
         add_post_type_support( 'sfwd-courses', 'excerpt' );

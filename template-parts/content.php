@@ -8,28 +8,41 @@
  */
 
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php if(!is_singular() && is_home()) { ?>
+<div class="facetwp-template">
+<?php } ?>
+<article id="post-<?php the_ID(); ?>"
+	<?php
+	if(!is_singular() && is_home()) {
+		post_class('col-sm-4 post');
+	} else {
+		post_class(); 	
+	}
+	?>>
+	<?php if(!is_singular() && is_home()) { ?>
+	<div class="wrap-post">
+	<?php }
+	if( is_singular() ) { ?>
 	<header class="entry-header">
 		<?php 
-		if ( is_singular() ) {
 			the_title( '<h1 class="entry-title">', '</h1>' );
-		}
-		else {
-			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-		}
-		?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
+	}
+	if (is_home() && !is_singular()) { ?>
+	<header class="entry-header">
 		<?php
-		if (is_home()) {
 			if ( has_post_thumbnail()) {
 				echo '<div class="post-thumbnail">';
 					the_post_thumbnail();
 				echo '</div>';
-			} 
-			the_excerpt(35);
+			}
+	} ?>
+	</header><!-- .entry-header -->
+	<div class="entry-content">
+		<?php
+		if (is_home()) {
+			the_title( sprintf( '<span class="semi-bold-font"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a> - </span>' );
+			$length = apply_filters('excerpt_length',20);
+			echo wp_trim_words(get_the_excerpt(),$length); 
 		} else {
 			if (class_exists( 'SFWD_LMS' ) && is_singular('sfwd-courses')) {
 				if ( has_post_thumbnail()) {?>
@@ -76,10 +89,15 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-
 	<footer class="entry-footer">
 	<?php
-		learnarmor_entry_footer();
+		learnarmor_child_entry_footer();
 	?>
 	</footer><!-- .entry-footer -->
+	<?php if(!is_singular() && is_home()) { ?>
+	 </div><!-- End .wrap-post -->
+	<?php } ?>
 </article><!-- #post-<?php the_ID(); ?> -->
+<?php if(!is_singular() && is_home()) { ?>
+</div><!-- End .facetwp-template -->
+<?php } ?>
