@@ -1272,6 +1272,31 @@ div.sharedaddy h3.sd-title:before {
 	color: #1c3a54 !important;
 }
 
+a.jp-relatedposts-post-a {
+	background-color: #efefef;
+	border: 2px solid #e3e3e3;
+	border-bottom: 0;
+        display: flex;
+}
+a.jp-relatedposts-post-a img {
+    margin: 0 auto;
+    display: block;
+    float: none;
+}
+#jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+    border: 2px solid #e3e3e3;
+    border-radius: 0 0 3px 3px;
+    padding: 15px;
+    background-color: #efefef;
+}
+
+ h4.jp-relatedposts-post-title a.jp-relatedposts-post-a {
+    border: none;
+}
+#jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title a.jp-relatedposts-post-a {
+    font-weight: 500;
+    display: flex;
+}
 .nav-previous a:before {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -1965,6 +1990,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     article.post div.wrap-post footer.entry-footer,
     div.post div.wrap-post footer.entry-footer {
 	height: 115px;
+    }
+    #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+        height: 95px;
     }
      /* Sidebar Widgets */
     .widget-title, .widgettitle {
