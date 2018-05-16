@@ -766,6 +766,9 @@ div.user-specific-links ul.nav > li > a:focus {
 /*--------------------------------------------------------------
 ## About Page
 --------------------------------------------------------------*/
+#post-8582 div.border-right {
+	border-right: 1px solid #e3e3e3;
+}
 .blue-blockquote {
     margin-top: 2em;
     color: #ffffff;
@@ -2313,7 +2316,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 ##  Media Queries - Handheld Device 720px
 --------------------------------------------------------------*/
 @media screen and (max-width: 720px){
-    
+    #post-8582 div.border-right {
+	border-right: none;
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Handheld Device 667px
