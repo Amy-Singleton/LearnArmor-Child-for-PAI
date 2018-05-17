@@ -13,7 +13,10 @@ function custom_query_shortcode($atts = [], $content = null, $tag = '') {
             "taxonomy"          =>'',
             "term"              => '',
             "class"             => '',
-            "posts_per_page"    => ''
+            "posts_per_page"    => '',
+            "order"             => '',
+            "orderby"          => '',
+            "excerpt_length"    => '',
     ), $atts, $tag);
     // normalize attribute keys, lowercase
     $atts = array_change_key_case((array)$atts, CASE_LOWER);
@@ -25,7 +28,9 @@ function custom_query_shortcode($atts = [], $content = null, $tag = '') {
             "taxonomy"          => $a['taxonomy'],
             "term"              => $a['term'],
             "class"             => $a['class'],
-            "posts_per_page"    => $a['posts_per_page']
+            "posts_per_page"    => $a['posts_per_page'],
+            "orderby"           => $a['orderby'],
+            "order"             => $a['order']
             //'caller_get_posts'  => 1
         ) );
     $content = '';   
