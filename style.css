@@ -766,9 +766,6 @@ div.user-specific-links ul.nav > li > a:focus {
 /*--------------------------------------------------------------
 ## About Page
 --------------------------------------------------------------*/
-#post-8582 div.border-right {
-	border-right: 1px solid #e3e3e3;
-}
 .blue-blockquote {
     margin-top: 2em;
     color: #ffffff;
@@ -779,7 +776,10 @@ div.user-specific-links ul.nav > li > a:focus {
 .blockquote-footer {
     color: #ffffff;
 }
-
+#helping-you {
+    font-size:44px;
+    font-weight: 800;
+}
 /*--------------------------------------------------------------
 ## Contact Page
 --------------------------------------------------------------*/
@@ -1280,6 +1280,7 @@ a.jp-relatedposts-post-a {
 	border: 2px solid #e3e3e3;
 	border-bottom: 0;
         display: flex;
+        max-width: 350px;
 }
 a.jp-relatedposts-post-a img {
     margin: 0 auto;
@@ -1292,8 +1293,10 @@ a.jp-relatedposts-post-a img {
     padding: 15px;
     background-color: #efefef;
 }
-
- h4.jp-relatedposts-post-title a.jp-relatedposts-post-a {
+#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post { 
+	max-width: 350px;
+}
+h4.jp-relatedposts-post-title a.jp-relatedposts-post-a {
     border: none;
 }
 #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title a.jp-relatedposts-post-a {
@@ -1527,7 +1530,6 @@ article.search footer.entry-footer {
 article.search div.entry-summary p {
     padding: 15px 0;
     border-bottom: 1px solid #e3e3e3;
-    height: 200px;
 }
 article.search footer.entry-footer {
     height: 100px;
@@ -1632,6 +1634,10 @@ button.donate:hover {
 }
 .widget-achievements-listing .widget-badgeos-item-title {
     ont-weight: 300;
+}
+/* Popular Posts */
+ul#menu-footer-widget-menu li a.bumb-view:before, section.widget_top-posts ul li a.bump-view:before {
+	display: none;
 }
 /*--------------------------------------------------------------
 ## Course, Lessons, Topic Sidebar Widgets
@@ -1870,7 +1876,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 /*--------------------------------------------------------------
 ##  Classes
 --------------------------------------------------------------*/
-
+.roboto-slab {
+    font-family: "Roboto Slab", serif;
+}
 .txt-align-center {
     text-align: center;
 }
@@ -1894,6 +1902,21 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 }
 .text-shadow {
     text-shadow: 1px 1px 3px rgba(55,55,55, .7);
+}
+.border-right {
+	border-right: 1px solid #e3e3e3;
+}
+.txt-shadow-1 {
+    text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5, -2px 3px #808d93, -3px 2px #cdd2d5, -3px 4px #808d93, -4px 3px #cdd2d5, -4px 5px #808d93, -5px 4px #cdd2d5, -5px 6px #808d93, -6px 5px #cdd2d5, -6px 7px #808d93, -7px 6px #cdd2d5, -7px 8px #808d93, -8px 7px #cdd2d5;
+}
+.txt-shadow-2 {
+    color: #1c3a54;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+.txt-shadow-3 {
+	color: #1c3a54;
+	font: italic 800 100px "Roboto Slab", Serif;
+	text-shadow: -2px 1px 1px #f3f3f3, -3px 2px 3px #3e3e3e;
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Desktop 1920px
@@ -1932,6 +1955,15 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     article.search header div.post-thumbnail a img,
     div.post div.wrap-post div.post-thumbnail a img{
         height: 273px;
+    }
+    article.search div.entry-summary p {
+        height: 225px;
+    }
+    article.search footer.entry-footer {
+        height: 85px;
+    }
+    #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+        height: 85px;
     }
 }
 /*--------------------------------------------------------------
@@ -1992,10 +2024,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     article.search footer.entry-footer,
     article.post div.wrap-post footer.entry-footer,
     div.post div.wrap-post footer.entry-footer {
-	height: 115px;
+	height: 100px;
     }
     #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
-        height: 95px;
+        height: 100px;
     }
      /* Sidebar Widgets */
     .widget-title, .widgettitle {
@@ -2258,7 +2290,7 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         margin: .5em auto;
     }
     #legal-nav {
-        display: inline;
+        display: block;
     }
      #footer-links {
 	padding: 2.75em 0;
