@@ -61,8 +61,8 @@ function learnarmor_child_enqueue_scripts() {
     wp_enqueue_style( 'dashicons' );
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ), filemtime(get_stylesheet_directory() .'/style.css'), 'all' );
     wp_enqueue_script( 'learnarmor-child-bootstrap-js', get_stylesheet_directory_uri() . '/js/bootstrap.js', array(), '20180411', true );
-    if (is_page('my-dashboard') || get_post_type() == 'sfwd-courses') {
-        wp_enqueue_script( 'learnarmor-child-ld-customizations', get_stylesheet_directory_uri() . '/js/custom-learndash-scripts.js', array(), '20180501', true );
+    if (is_page('my-dashboard') || get_post_type() == 'sfwd-courses' || get_post_type() == 'sfwd-lessons') {
+        wp_enqueue_script( 'learnarmor-child-ld-customizations', get_stylesheet_directory_uri() . '/js/custom-learndash-scripts.js', array(), '20180518', true );
     }
     if(is_page(95515) && !is_user_logged_in()){
         wp_enqueue_script( 'learnarmor-child-ld-shrm', get_stylesheet_directory_uri() . '/js/shrm-scripts.js', array(), '20180501', true );

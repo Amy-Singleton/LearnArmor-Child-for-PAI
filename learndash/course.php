@@ -176,18 +176,33 @@
 							<?php $topics = @$lesson_topics[ $lesson['post']->ID ]; ?>
 							<?php if ( ! empty( $topics ) ) : ?>
 								<div id='learndash_topic_dots-<?php echo esc_attr( $lesson['post']->ID ); ?>' class="learndash_topic_dots type-list">
+									
 									<ul>
 										<?php $odd_class = ''; ?>
 										<?php foreach ( $topics as $key => $topic ) : ?>
 											<?php $odd_class       = empty( $odd_class ) ? 'nth-of-type-odd' : ''; ?>
 											<?php $completed_class = empty( $topic->completed ) ? 'topic-notcompleted' : 'topic-completed'; ?>												
 											<li class='<?php echo esc_attr( $odd_class ); ?>'>
-												<span class="topic_item col-sm-12">
+												<span class="topic_item col-sm-11">
 													<a class='topic-lesson-link <?php echo esc_attr( $completed_class ); ?>' href='<?php echo esc_attr( learndash_get_step_permalink( $topic->ID, $course_id ) ); ?>' title='<?php echo esc_attr( $topic->post_title ); ?>'>
 														<span class="col-sm-11"><?php echo $topic->post_title; ?></span>
 													</a>
 												</span>
-												<span class="<?php echo esc_attr( $completed_class ); ?> col-sm-1 glyphicon glyphicon-unchecked" aria-hidden="true"></span>
+												<span class="<?php echo esc_attr( $completed_class ); ?> col-sm-1 glyphicon" aria-hidden="true"></span>
+												<?php				
+													$value = 'learnarmor_duration_video_duration';
+													if (!empty (get_post_meta( $topic->ID, $value, true ))){
+														echo '<div class="lesson-info col-sm-11">';
+														echo '<hr>';
+														echo '<p>';
+														echo '<span class="dashicons dashicons-video-alt3"></span>';
+														echo 'Video' . ' ' . '<span class="dashicons dashicons-clock"></span>';
+														echo 'Duration' . ' ' . get_post_meta( $topic->ID, $value, true );
+														echo '</p>';
+														echo '</div>';
+														echo '<div class="lesson-info col-sm-1"></div>';
+												} ?>
+												
 											</li>
 										<?php endforeach; ?>
 									</ul>

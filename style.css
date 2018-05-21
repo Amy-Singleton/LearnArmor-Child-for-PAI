@@ -30,11 +30,11 @@ textarea {
     font-size: 16px;
 }
 h1, h2, h3, h4, h5, h6 {
-	margin: 20px 0 10px;
+	margin: 20px 0 .5em;
 	text-transform: none; 
 }
 h1.entry-title {
-    padding-bottom: 1em;
+    padding-bottom: .5em;
 }
 h2 {
     font-size: 30px;
@@ -614,15 +614,13 @@ div.home-featured > div.wrap-text > h3 {
 }
 .page-template-home-page #featured-content {
     /* background-image: url(css/images/dust_scratches.png); */
-    /* background-repeat: repeat; */
-    
+    /* background-repeat: repeat; */   
 }
 .page-template-home-page #statistics {
     background-image: url(css/images/business.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .page-template-home-page #statistics {
     padding: 0 12.5%;
     margin: 0 auto;
@@ -657,22 +655,21 @@ div.user-specific-links {
     padding: 0;
     margin-bottom: 2em;
 }
-
 div.user-specific-links ul.navbar-nav {
-	float: none;
-	margin: 1.5em auto 0;
-	list-style: none;
-	display: block;
-        width: 65%;
+    float: none;
+    margin: 1.5em auto 0;
+    list-style: none;
+    display: block;
+    width: 65%;
 }
 div.user-specific-links ul.navbar-nav > li {
     float: left;
     margin-left: 1em;
+    border-bottom: none;
 }
 div.user-specific-links ul.navbar-nav > li:first-child {
     margin-left: 7px;
 }
-
 div.user-specific-links ul.navbar-nav > li > a {
     font-weight: 500;
     padding: .5em;
@@ -705,6 +702,23 @@ div.user-specific-links ul.nav > li > a:hover,
 div.user-specific-links ul.nav > li > a:focus {
     opacity: .65;
 }
+div.explore {
+    margin: 3em auto;
+    padding: 0;
+}
+a.btn-course-library {
+    background-color: #ffffff;
+    border: 2px solid #1c3a54;
+    padding: 10px 15px;
+    color: #1c3a54;
+    border-radius: 3px;
+}
+a.btn-course-library:hover{
+    background-color: #1c3a54;
+    border: 2px solid #1c3a54;
+    color: #ffffff;
+    opacity: 1;
+}
 #statistics .col-sm-6,
 #metrics .col-sm-4 {
     margin-top: 2em;
@@ -714,7 +728,16 @@ div.user-specific-links ul.nav > li > a:focus {
 	width: 80%;
 	margin: 0 auto;
 }
-
+  #statistics div#piechart > div,
+    #statistics div#piechart2 > div {
+	position: relative;
+	width: auto;
+	display: block;
+    }
+    #statistics div#piechart > div > div,
+    #statistics div#piechart2 > div > div{
+	margin: 0 auto;
+    }
 #statistics p {
     font-size: 22px;
 }
@@ -760,8 +783,34 @@ div.user-specific-links ul.nav > li > a:focus {
     margin-right: 15px;
     margin-left: 0;
 }
-#sponsors div .col-sm-10 {
-    margin-top: 2em;
+#sponsors div.row {
+    margin: 2em auto;
+}
+#sponsors div {
+    padding: 0;
+}
+#sponsors div img {
+    width: 50%;
+}
+#sponsors div:first-child img {
+    margin-right: -45px;
+}
+#sponsors div:nth-child(3) img{
+    width: 65%;
+    margin-top: -30px;
+    margin-left: -45px;
+}
+#sponsors div:nth-child(4) img{
+    margin-right: -75px;
+    margin-top: -60px;
+    width: 45%;
+}
+#sponsors div:nth-child(5) img{
+    margin-top: -60px;
+}
+#sponsors div:nth-child(6) img{
+    margin-left: -75px;
+    margin-top: -60px;
 }
 /*--------------------------------------------------------------
 ## About Page
@@ -1017,12 +1066,61 @@ iframe {
     width: 100% !important;
     height: 100% !important;
 }
+
+
+/*--------------------------------------------------------------
+# LearnDash ULessons with topics 
+--------------------------------------------------------------*/
+
+div#learndash_lesson_topics_list div div.lesson-topics,
+div#learndash_lesson_topics_list div div.status {
+    font-size: 18px;
+    border-radius: 0;
+    padding: 10px 15px;
+    background-color: #1c3a54;
+    color: #ffffff;
+}
+div.learndash_post_sfwd-lessons { 
+    margin-top: 20px;
+}
+div#learndash_lesson_topics_list div div.status {
+    padding-right: 30px;
+}
+span.topic-item a:hover {
+    color: #4a8bc3;
+    opacity: 1;
+}
+#learndash_lessons h4 > a:hover, #learndash_quizzes h4 > a:hover, #learndash_lesson_topics_list ul > li > span.topic_item:hover {
+    background-color: inherit;
+}
+#learndash_lesson_topics_list span.dashicons {
+    padding: 0;
+    width: auto;
+}
+#learndash_lesson_topics_list span.glyphicon {
+    padding: 10px 15px 0 0;
+    float: left;
+    margin-left: 0;
+    width: auto;
+}
+#learndash_lesson_topics_list ul > li {
+    display: inline-block;
+}
+.learndash_navigation_lesson_topics_list > div {
+    /* display: inline-block; */
+}
+hr.topics {
+    background-color: #ccc;
+    border: 0;
+    height: 1px;
+    margin: .5em 0 1em;
+}
 /*--------------------------------------------------------------
 # LearnDash User Profile i.e. My Dashboard
 --------------------------------------------------------------*/
 
 .sfwd-lessons .entry-header h1 {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1032,11 +1130,11 @@ div.course-button > a.learndash-resume-button {
     border: none;
 }
 #learndash_profile .list_arrow.collapse {
-	background-position: center;
-	padding: 0 15px;
+    background-position: center;
+    padding: 0 15px;
 }
 #learndash_profile .list_arrow.expand{
-	background-position: center;
+    background-position: center;
 }
 #course_list > div {
     border-bottom: 1px solid #cccccc;
@@ -1048,34 +1146,34 @@ div.course-button > a.learndash-resume-button {
     background-color: #f3f3f3;
 }
 div.flip {
-	clear: both;
-	background-color: rgba(55,55,55, .25);
-	border-radius: 3px;
-	padding: 15px;
-        margin-bottom: 15px;
+    clear: both;
+    background-color: rgba(55,55,55, .25);
+    border-radius: 3px;
+    padding: 15px;
+    margin-bottom: 15px;
 }
 #learndash_lessons #lesson_heading,
 #learndash_profile .learndash_profile_heading,
 #learndash_quizzes #quiz_heading,
 #learndash_lesson_topics_list div > strong {
-	background-color: #f3f3f3;
-	color: #333333;
-	padding: 1% 2%;
-	padding: 1% 3%\9;
-	font-weight: normal;
-	margin: 0;
-	display: block;
-	border-radius: 3px;
+    background-color: #f3f3f3;
+    color: #333333;
+    padding: 1% 2%;
+    padding: 1% 3%\9;
+    font-weight: normal;
+    margin: 0;
+    display: block;
+    border-radius: 3px;
 }
 #learndash_profile .learndash-course-link {
-	width: 88%;
+    width: 88%;
 }
 #learndash_profile .learndash-course-certificate {
-	width: auto;
-	float: left;
-	text-align: center;
-	margin: 0;
-        min-width: 5%;
+    width: auto;
+    float: left;
+    text-align: center;
+    margin: 0;
+    min-width: 5%;
 }
 div.learndash-course-status > span.glyphicon {
     padding: 0 15px;
@@ -1395,7 +1493,6 @@ div.post div.wrap-post div.post-thumbnail{
 }
 article.post.badges div header div.post-thumbnail a img,
 div.post.badges div div.post-thumbnail a img {
-
     width: 67%;
     margin: 0 auto;
     display: block;
@@ -1413,6 +1510,7 @@ div.post div.wrap-post div.entry-summary{
     padding: 15px;
     border-bottom: 1px solid #e3e3e3;
     height: 365px;
+    margin: 0 0 1.5em;
 }
 article.post div.wrap-post footer.entry-footer,
 div.post div.wrap-post footer.entry-footer{
@@ -1687,6 +1785,10 @@ div.list_lessons > div > a {
 .course_navigation .learndash-current-menu-item a {
     font-weight: 500;
 }
+
+div#course_navigation.course_navigation div.ld-course-navigation-widget-content-contaiiner div.learndash_navigation_lesson_topics_list div div.list_lessons div.flip.learndash_topic_widget_list { 
+    background-color: transparent    
+}
 .widget_course_return {
     font-weight: 500;
     padding-left: 5px;
@@ -1732,6 +1834,7 @@ p.sme {
 .sme-author-img > img {
     border-radius: 50%;
 }
+
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
@@ -1929,10 +2032,15 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .page-template-home-page .content-area {
 	margin-top: 6em;
     }
+    #featured-content div.post-wrap {
+	height: 425px;
+    }
     .page-template-home-page #introduction,
-    .page-template-home-page #metrics,
-    .page-template-home-page #sponsors {
+    .page-template-home-page #metrics {
         height: 500px;
+    }
+     .page-template-home-page #sponsors {
+        height: 700px;
     }
     .page-template-home-page #featured-content,
     .page-template-home-page #statistics {
@@ -1948,8 +2056,14 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         width: 44.5%;
         margin: 4.5em auto;        
     }
-    #statistics div#piechart, #statistics div#piechart2 {
-	margin: 0 30%;
+    article.post div.wrap-post div.entry-content,
+    div.post div.wrap-post div.entry-summary {
+	height: 225px;
+    }
+     article.search header div.post-thumbnail a img,
+    div.post div.wrap-post div.post-thumbnail a img,    
+    article.post div.post-thumbnail a img{
+        height: 265px;
     }
     /* Search */
     article.search header div.post-thumbnail a img,
@@ -1973,6 +2087,14 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     /* Home Page */
     div.user-specific-links ul.navbar-nav {
 	width: 56%;
+    }
+    .page-template-home-page #sponsors {
+	height: 600px;
+    }
+    article.search header div.post-thumbnail a img,
+    div.post div.wrap-post div.post-thumbnail a img,    
+    article.post div.post-thumbnail a img{
+        height: 200px;
     }
 }
 /*--------------------------------------------------------------
@@ -2005,9 +2127,12 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     #featured-content div.post-wrap {
 	height: 375px;
     }
-    #statistics div#piechart,
-    #statistics div#piechart2 {
-	margin: 0 2 0%;
+    .page-template-home-page #sponsors {
+	height: 500px;
+    }
+    article.post div.wrap-post div.entry-content,
+    div.post div.wrap-post div.entry-summary {
+	height: 350px;
     }
     /* Search Results */
     article.search header div.post-thumbnail a img,
@@ -2210,16 +2335,6 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .dropdown-submenu:hover>.dropdown-menu{
         display: none;
     }
-    /* Content */
-    .page-template-home-page .content-area {
-	margin-top: 0;
-    }
-    .content-area {
-	width: 85%;
-	margin: 0 auto;
-	background-color: #FFFFFF;
-	background-color: rgb(255,255,255);
-    }
     /* Home */
     .page-template-home-page #introduction,
     .page-template-home-page #featured-categories,
@@ -2248,14 +2363,78 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     #searchform.col-sm-6 {
         width: 100%;
     }
+   div.user-specific-links ul.navbar-nav {
+	width: 100%;
+        margin: 2.5em auto;
+    }
     div.user-specific-links > ul.navbar-nav > li {
-	padding-bottom: 5px;
-	border-bottom: none;
+	padding-bottom: 15px;
 	float: left;
-	margin: .5em auto auto auto;
+        width: 45%;
+    }
+    div.user-specific-links ul.navbar-nav > li:first-child {
+	margin-left: 0;
     }
     div.user-specific-links ul.navbar-nav > li > a {
         padding: 15px 8px;
+    }
+    div.home-featured {
+	width: 50%;
+    }
+    .nav-tabs.nav-justified > li {
+        display: inline-block;
+        width: 50%;
+        margin: 15px auto 5px;
+        float: left;
+    }
+    /* Home */
+    #statistics div#piechart, #statistics div#piechart2 {
+	width: auto;
+	margin: 0 auto;
+    }
+    .page-template-home-page #introduction p,
+    .page-template-home-page #statistics p,
+    .page-template-home-page #metrics p {
+	font-size: 15px;
+	opacity: 1;
+    }
+    #metrics .col-sm-4 {
+	width: 33.3333333% !important;
+        padding: 0;
+    }
+    #metrics .dashicons {
+        font-size: 25px;
+        width: 35px;
+        height: 35px;
+        padding: 5px 4px;
+    }
+    #metrics .col-sm-4 .col-sm-7 {
+	padding: 4.75em 0 1.5em;
+    }
+    #metrics p.text-align-right span.dashicons {
+            margin: 5px 45px;
+            float: right;
+    }
+     #metrics p.text-align-left span.dashicons {
+            margin: 5px 25px;
+            float: left;
+    }
+    #metrics p span.dashicons {
+	float: left;
+	margin: 5px 45px;
+    }
+    #sponsors div img {
+	margin: 0 auto !important;
+    }
+    /* Content */
+    .page-template-home-page .content-area {
+	margin-top: 0;
+    }
+    .content-area {
+	width: 85%;
+	margin: 0 auto;
+	background-color: #FFFFFF;
+	background-color: rgb(255,255,255);
     }
     /* SHRM */
     .shrm-course h2 {
@@ -2307,6 +2486,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .navbar-header {
 	padding-bottom: 0;
     }
+    #statistics div#piechart, #statistics div#piechart2 {
+	width: 50%;
+	margin-left: -5%;
+    }
     /* Footer */
     #copyright p {
 	padding: 3em 0;
@@ -2319,6 +2502,12 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 ##  Media Queries - Handheld Device 736px
 --------------------------------------------------------------*/
 @media screen and (max-width: 736px){
+    #sponsors div img.alignright,
+    #sponsors div img.aligncenter,
+    #sponsors div img.alignlefst { 
+	width: 25%;
+	margin: 0 auto !important;
+    }
     /* Footer */
     .below-footer-container {
         font-size: 16px;
@@ -2348,7 +2537,7 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 ##  Media Queries - Handheld Device 720px
 --------------------------------------------------------------*/
 @media screen and (max-width: 720px){
-    #post-8582 div.border-right {
+    .border-right {
 	border-right: none;
     }
 }
@@ -2394,7 +2583,7 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	font-size: 24px;
 	text-align: center;
         color: #1c3a54;
-        padding: 15px 0;
+        padding: 15px;
     }
     .page-template-home-page #introduction p {
 	padding: 15px;
@@ -2457,7 +2646,7 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     }
     #featured-content > div#topic-navigation > .nav-tabs.nav-justified > li {
 	float: left;
-	width: 50%;
+	width: 100%;
     }
     #featured-content > div > .nav-tabs > li a,
     #featured-content > div > .nav-tabs > li.active > a,
@@ -2465,6 +2654,12 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     #featured-content > div > .nav-tabs > li.active > a:focus,
     #featured-content > div > .nav-tabs > li.active > a {
 	margin: 7px 15px; 
+    }
+    /* Home Stats */
+    #statistics div#piechart,
+    #statistics div#piechart2 {
+	width: 130%;
+	margin-left: -15%;
     }
     /* Footer */
     .back-to-top {
@@ -2547,6 +2742,8 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         float: left;
         width: 100%;
     }
+    /* Home */
+
     /* SHRM */
     .shrm-course h2 {
         font-size: 28px;
@@ -2605,7 +2802,11 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .navbar-toggle {
 	margin-top: 1.75em;
     }
-    
+    /* Home */
+    #statistics div#piechart,
+    #statistics div#piechart2 {
+	margin-left: -15%;
+    }
     /* SHRM */
     .shrm-course h2 {
 	margin-bottom: 1em;
@@ -2655,6 +2856,11 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .navbar-toggle {
         margin-top: 1.5em;
     }
-    /* Footer */
+    /* Home */
+        /* Home */
+    #statistics div#piechart,
+    #statistics div#piechart2 {
+	margin-left: -20%;
+    }
 
 }

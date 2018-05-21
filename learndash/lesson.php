@@ -75,7 +75,10 @@
 	<?php if ( ! empty( $topics ) ) : ?>
 		<div id="learndash_lesson_topics_list" class="learndash_lesson_topics_list">
             <div id='learndash_topic_dots-<?php echo esc_attr( $post->ID ); ?>' class="learndash_topic_dots type-list">
-                <strong><?php printf( esc_html_x( '%1$s %2$s', 'Lesson Topics Label', 'learndash'), LearnDash_Custom_Label::get_label( 'lesson' ), LearnDash_Custom_Label::get_label( 'topics' ) ); ?></strong>
+                <div class="col-sm-6 lesson-topics"><?php printf( esc_html_x( '%1$s %2$s', 'Lesson Topics Label', 'learndash'), LearnDash_Custom_Label::get_label( 'lesson' ), LearnDash_Custom_Label::get_label( 'topics' ) ); ?></div>
+		<div class="colo-sm-6 text-align-right status">
+			<?php esc_html_e( 'Status', 'learndash' ); ?>
+		</div>
                 <ul>
                     <?php $odd_class = ''; ?>
 
@@ -84,12 +87,27 @@
                         <?php $odd_class = empty( $odd_class ) ? 'nth-of-type-odd' : ''; ?>
                         <?php $completed_class = empty( $topic->completed ) ? 'topic-notcompleted' : 'topic-completed'; ?>
 
-                        <li class='<?php echo esc_attr( $odd_class ); ?>'>
-                            <span class="topic_item">
+                        <li class='col-sm-12 <?php echo esc_attr( $odd_class ); ?>'>
+                            <span class="topic_item col-sm-11">
                                 <a class='<?php echo esc_attr( $completed_class ); ?>' href='<?php echo learndash_get_step_permalink( $topic->ID, $course_id ); ?>' title='<?php echo esc_attr( $topic->post_title ); ?>'>
                                     <span><?php echo $topic->post_title; ?></span>
                                 </a>
                             </span>
+			    <span class="<?php echo esc_attr( $completed_class ); ?> col-sm-1 glyphicon" aria-hidden="true"></span>
+				<?php
+								
+				$value = 'learnarmor_duration_video_duration';
+				if (!empty (get_post_meta( $topic->ID, $value, true ))){
+					echo '<div class="col-sm-12">';
+					echo '<hr class="topics"><div class="lesson-info col-sm-11">';
+					echo '<p>';
+					echo '<span class="dashicons dashicons-video-alt3"></span>';
+					echo 'Video' . ' ' . '<span class="dashicons dashicons-clock"></span>';
+					echo 'Duration' . ' ' . get_post_meta( $topic->ID, $value, true );
+					echo '</p>';
+					echo '</div>';
+					echo '<div class="lesson-info col-sm-1"></div></div>';
+				} ?>
                         </li>
 
                     <?php endforeach; ?>
