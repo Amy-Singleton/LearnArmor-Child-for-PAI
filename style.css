@@ -563,7 +563,8 @@ div.home-featured {
 div.home-featured h3 {
     margin-top: 0;
 }
-#featured-content div.post-wrap {
+#featured-content div.post-wrap,
+div.post-wrap {
 	padding: 0;
 	width: 100%;
 	background-color: #ffffff;
@@ -571,7 +572,8 @@ div.home-featured h3 {
         border-radius: 3px;
         height: 400px;
 }
-#featured-content div.post-wrap:hover {
+#featured-content div.post-wrap:hover,
+div.post-wrap:hover {
     border: 2px solid rgba(55,55,55, .35);
     transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -579,24 +581,28 @@ div.home-featured h3 {
     -o-transition: all 0.5s ease-in-out;
     cursor: pointer;
 }
-#featured-content div.post-wrap div.post-thumbnail {
+#featured-content div.post-wrap div.post-thumbnail,
+div.post-wrap div.post-thumbnail{
     margin: 0 auto;
     width: 100%;
 }
-#featured-content div.post-wrap div.post-thumbnail img:hover {
+#featured-content div.post-wrap div.post-thumbnail img:hover,
+div.post-wrap div.post-thumbnail img:hover {
     opacity: .75;
     transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
 }
-div.home-featured > div.post-thumbnail > a > img.attachment-post-thumbnail:hover {
+div.home-featured > div.post-thumbnail > a > img.attachment-post-thumbnail:hover,
+div.post-thumbnail > a > img.attachment-post-thumbnail:hover{
     transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
 }
-div.home-featured > div.post-thumbnail > a:focus > img.attachment-post-thumbnail {
+div.home-featured > div.post-thumbnail > a:focus > img.attachment-post-thumbnail,
+div.post-thumbnail > a:focus > img.attachment-post-thumbnail { 
     opacity: .75;
     -moz-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
@@ -828,6 +834,53 @@ a.btn-course-library:hover{
 #helping-you {
     font-size:44px;
     font-weight: 800;
+}
+/*Staff Images*/
+div.staff-img {
+    padding: 0;
+    margin-right: 30px;
+}
+div.staff-img img {
+    margin-bottom: 15px;
+}
+/* About Broadcast Post Media Grid */
+div.about-print a {
+    height: auto;
+}
+div.about-print div.post-wrap {
+    height: 265px;
+    margin-bottom: 30px;
+    background-color: #efefef;
+}
+div.about-print div.post-wrap div.wrap-text {
+    padding: 15px;
+}
+div.about-print div.post-wrap div.wrap-text span.bold-font {
+    font-weight: 500;
+}
+div.about-print div.post-wrap div.wrap-text span.light-font {
+    display: none;
+}
+
+div.about-broadcast {
+    margin-bottom: 30pxem;
+}
+div.about-broadcast a {
+    height: auto;
+}
+div.about-broadcast div.post-wrap {
+    height: 235px;
+    margin-bottom: 30px;
+    background-color: #efefef;
+}
+div.about-broadcast div.post-wrap div.wrap-text {
+    padding: 15px;
+}
+div.about-broadcast div.post-wrap div.wrap-text span.bold-font {
+    font-weight: 500;
+}
+div.about-broadcast div.post-wrap div.wrap-text span.light-font {
+    display: none;
 }
 /*--------------------------------------------------------------
 ## Contact Page
