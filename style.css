@@ -863,7 +863,7 @@ div.about-print div.post-wrap div.wrap-text span.light-font {
 }
 
 div.about-broadcast {
-    margin-bottom: 30pxem;
+    margin-bottom: 30px;
 }
 div.about-broadcast a {
     height: auto;
@@ -1062,6 +1062,8 @@ body #learndash_lesson_topics_list div > strong {
     font-weight: 300;
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    z-index: 9999;
 }
 
 .course-lesson-link,
@@ -1863,6 +1865,10 @@ div#course_navigation.course_navigation div.ld-course-navigation-widget-content-
 .learndash_navigation_lesson_topics_list > div {
     border-bottom: none;
 }
+#course-sidebar div.learndash_navigation_lesson_topics_list > div {
+    border-bottom: none;
+    width: 100%;
+}
 div.lesson  learndash-current-menu-item > a {
     color: #1c3a54;
 }
@@ -1887,7 +1893,14 @@ p.sme {
 .sme-author-img > img {
     border-radius: 50%;
 }
-
+p.sponsor {
+    text-align: center;
+}
+.sponsor-img img {
+    margin: 0 auto;
+    display: block;
+    padding: 15px;
+}
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
@@ -1958,6 +1971,7 @@ p.sme {
 /*--------------------------------------------------------------
 ##  Footer Widgets
 --------------------------------------------------------------*/
+
 .textwidget > i.glyphicon:before {
     padding-right: 5px;
 }
@@ -2113,10 +2127,18 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     div.post div.wrap-post div.entry-summary {
 	height: 225px;
     }
-     article.search header div.post-thumbnail a img,
+    article.search header div.post-thumbnail a img,
     div.post div.wrap-post div.post-thumbnail a img,    
     article.post div.post-thumbnail a img{
         height: 265px;
+    }
+    /* Courses */
+    div.lesson-info > p.topic-duration {
+	padding: 0 45px;
+    }
+    /* Lessons */
+     div.lesson-info > p.lesson-topic-duration {
+	padding: 0 25px;
     }
     /* Search */
     article.search header div.post-thumbnail a img,
@@ -2149,6 +2171,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     article.post div.post-thumbnail a img{
         height: 200px;
     }
+    /* Lessons */
+     div.lesson-info > p.lesson-topic-duration {
+	padding: 0 22px;
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Desktop 1440px
@@ -2157,7 +2183,11 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     /* Home Page */
     div.user-specific-links ul.navbar-nav {
 	width: 59.5%;
-    }    
+    }
+    /* Lessons */
+     div.lesson-info > p.lesson-topic-duration {
+	padding: 0 20px;
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Desktop 1366px
@@ -2227,17 +2257,58 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 @media screen and (max-width: 1024px){
     /* Masthead */    
     .navbar-brand {
-	float: left;
-	padding: 15px 30px;
-	height: auto;
-	margin-top: .75em;
+	padding: 15px 10px 15px 30px;
     }
-      .search-form label {
+    ul#menu-primary li.login-logout,
+    ul#menu-primary li.register {
+	padding-bottom: 0;
+    }
+    .nav > li > a {
+	padding: 6px;
+	font-size: 14px;
+    }
+    .search-form label {
         width: 90%;
     }
     .search-submit {
 	width: 10%;
 	float: right;
+    }
+    /* Courses */
+    .course-thumbnail {
+        width: 70%;
+        margin: 0 auto;
+        display: block;
+        float: none;
+    }
+    div.course-excerpt {
+        padding: 15px;
+        width: 100%;
+    }
+    /* Lessons */
+    #learndash_lesson_topics_list span.glyphicon {
+	padding: 15px 0px 0 0;
+    }
+    div.lesson-info > p.lesson-topic-duration {
+	padding: 0 15px;
+    }
+    /* JetPack Sharing */
+    .jp-sharing-input-touch div.sd-content ul li {
+	padding-left: 5px;
+    }
+    /* Course Sidebar */
+    #course-sidebar {
+	padding: 0;
+	margin-top: 5.25em;
+    }
+    #course-sidebar section h2 {
+        font-size: 16px;
+    }
+    p.sme {
+	text-align: center;
+    }
+    .sme-author-img {
+	margin-top: 30px;
     }
     /* Footer */
     #footer-sidebar aside {
@@ -2251,16 +2322,28 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     }
 }
 /*--------------------------------------------------------------
-##  Media Queries - Tablet 966px
+##  Media Queries - Tablet 960px
 --------------------------------------------------------------*/
-@media screen and (max-width: 966px){
+@media screen and (max-width: 960px){
     /* Masthead */
     .navbar-brand {
         margin-top: .25em;
     }
+    .navbar-header {
+	width: 20%;
+	float: left;
+    }
+    #header-menus {
+	width: 80%;
+	float: left;
+	padding: 15px 30px 15px 0;
+    }
+    ul#menu-primary.nav.navbar-nav {
+	margin-top: 0;
+    }
     #search-in-header {
         margin-top: 0;
-        width: 32.25%;
+        width: 30%;
     }
     .search-form label {
         padding: 0;
@@ -2281,7 +2364,7 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         height: 24px;
     }
     #header-menu-primary {
-        width: 67.75%;
+        width: 70%;
         margin-top: 0;
     }
     .nav > li > a {
@@ -2297,11 +2380,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 ##  Media Queries - Tablet 800px
 --------------------------------------------------------------*/
 @media screen and (max-width: 800px){
-    .navbar-toggle {
-	    margin-top: 0;
-	    display: block;
-    }
     .navbar-header {
+	width: 85%;
+	float: none;
 	padding-bottom: 0em;
     }
     #header-menus {
@@ -2388,6 +2469,7 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .dropdown-submenu:hover>.dropdown-menu{
         display: none;
     }
+    /* Content */
     /* Home */
     .page-template-home-page #introduction,
     .page-template-home-page #featured-categories,
@@ -2489,6 +2571,14 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	background-color: #FFFFFF;
 	background-color: rgb(255,255,255);
     }
+    /* Courses */
+    .single-sfwd-courses h1 {
+	font-size: 24px;
+    }
+    #course-sidebar {
+	padding: 0;
+	margin-top: 4.35em;
+    }
     /* SHRM */
     .shrm-course h2 {
 	text-align: left;
@@ -2543,6 +2633,90 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	width: 50%;
 	margin-left: -5%;
     }
+    /* Content */
+    .site-main {
+	width: 100%;
+    }
+    /* Articles */
+    article.post div.wrap-post div.entry-content,
+    div.post div.wrap-post div.entry-summary {
+	height: 515px;
+    }
+    /* Sidebar */
+    #secondary {
+	width: 100%;
+    }
+    #secondary section.widget {
+	width: 45%;
+	float: left;
+	padding: 0 30px;
+        height: 450px;
+    }
+    #secondary section#twitter_timeline-4 {
+        height: auto;
+    }
+    #secondary section.widget:nth-child(odd) {
+	padding-left: 0;
+    }
+    .widget-area h2 {
+	font-size: 18px;
+    }
+    /* Courses */
+    .single-sfwd-courses h1 {
+	font-size: 30px;    
+    }
+    #learndash_lessons a,
+    #learndash_quizzes a,
+    .learndash_topic_dots a,
+    .learndash_topic_dots a > span,
+    #learndash_lesson_topics_list span a,
+    #learndash_profile a,
+    #learndash_profile a span {
+	line-height: 1.5;
+	padding: 10px 15px 10px 0;
+        font-size: 14px;
+    }
+    div.learndash_topic_dots ul li span.topic_item { 
+	padding: 0;
+	width: 89%;
+    }
+    div.lesson-info > p.topic-duration {
+	padding: 5px;
+    }
+    /* Course Sidebar */
+    #course-sidebar {
+	margin-top: 2em;
+	width: 100%;
+    }
+    #course-sidebar section {
+	width: 100%;
+    }
+    #course-sidebar section h2 {
+	font-size: 30px;
+    }
+    #course-sidebar {
+	margin: 2.5em auto;
+    }
+    .comment-wrap {
+        width: 100%;
+    }
+    p.sme {
+	font-size: 25px;
+	text-align: left;
+	padding: 0 0 0 15px;
+    }
+    .sme-author-img {
+	padding: 0;
+	margin-top: 0;
+	height: 90px;
+	width: 90px;
+    }
+    .sme-author-img > img {
+	width: 85px;
+	padding: 4px 4px 0;
+	display: block;
+	margin: 2px auto;
+    }
     /* Footer */
     #copyright p {
 	padding: 3em 0;
@@ -2560,6 +2734,63 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     #sponsors div img.alignlefst { 
 	width: 25%;
 	margin: 0 auto !important;
+    }
+    /* Courses */
+    #lesson_heading > div.status, #quiz_heading > div.status,
+    #lesson_heading > div.col-sm-6:nth-child(2n+1),
+    #quiz_heading > div.col-sm-6:nth-child(2n+1){
+	width: 50%;
+	float: left;
+    }
+    #learndash_lessons a,
+    #learndash_quizzes a,
+    .learndash_topic_dots a,
+    .learndash_topic_dots a > span,
+    #learndash_lesson_topics_list span a,
+    #learndash_profile a,
+    #learndash_profile a span {
+        width: 91%;
+        float: left;
+    }
+    div.lessons_list > div > span.course-lesson-link span.col-sm-1 {
+	padding: 0 10px;
+    }
+    div.lesson-info > p.topic-duration {
+	padding: 0 30px;
+    }
+    #lessons_list > div > div, #quiz_list > div > div {
+	width: 80px;
+    }
+   #learndash_course_content .learndash_topic_dots ul > li:nth-of-type(2n+1) {
+	background: #ffffff;
+    }
+    span.course-lesson-link div.lesson-info > hr {
+	margin: 0 15px 15px 0;
+    }
+    #learndash_course_content div.learndash_topic_dots div.lesson-info hr {
+        width: 98%;
+        display: inline-block;
+    }
+    .jp-sharing-input-touch div.sd-content ul li {
+	margin: 0;
+    }
+    /* Course Sidebar */
+    div.sme {
+	width: 75%;
+	float: left;
+    }
+    .sme-author-img {
+	float: left;
+    }
+    #lessons_list > div,
+    #quiz_list > div,
+    .learndash_profile_quizzes > div,
+    #learndash_lesson_topics_list ul > li,
+    .learndash_navigation_lesson_topics_list > div {
+	width: 100%;
+    }
+    .course-lesson-link, .course-quiz-link {
+	width: 100%;
     }
     /* Footer */
     .below-footer-container {
@@ -2598,6 +2829,20 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 ##  Media Queries - Handheld Device 667px
 --------------------------------------------------------------*/
 @media screen and (max-width: 667px){
+    .course-thumbnail {
+        width: 80%;
+    }
+    div.course-excerpt {
+	padding: 15px 45px;
+	width: 100%;
+    }
+    #lessons_list > div > div, #quiz_list > div > div {
+	padding: 0;
+	width: 35px;
+    }
+    .learndash_topic_dots a {
+	width: 85%;
+    }
     /* Footer */
     #footer-links {
 	padding: 1em 0 2em;
@@ -2714,6 +2959,35 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	width: 130%;
 	margin-left: -15%;
     }
+    /* Courses */
+    .learndash_topic_dots a.topic-lesson-link {
+	width: 91%;
+    }
+    span.course-lesson-link div.lesson-info > hr {
+            display: inline-block;
+            width: 100%;
+            float: none;
+    }
+    div.lessons_list > div > span.course-lesson-link span.col-sm-1 {
+	padding: 0 7px;
+	line-height: 2;
+    }
+    .learndash .learndash_topic_dots.type-list a > span {
+	min-width: 80%;
+	margin: 0;
+    }
+    #main #sharing_email .sharing_send,
+    #main .sd-content ul li .option a.share-ustom,
+    #main .sd-content ul li a.sd-button,
+    #main .sd-content ul li.advanced a.share-more,
+    #main .sd-content ul li.preview-item div.option.option-smart-off a,
+    #main .sd-social-icon .sd-content ul li a.sd-button,
+    #main .sd-social-icon-text .sd-content ul li a.sd-button,
+    #main .sd-social-official .sd-content > ul > li .digg_button > a,
+    #main .sd-social-official .sd-content > ul > li > a.sd-button,
+    #main .sd-social-text .sd-content ul li a.sd-button {
+	margin-bottom: 15px;
+    }
     /* Footer */
     .back-to-top {
             bottom: 11em;
@@ -2739,6 +3013,13 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 ##  Media Queries - Handheld Device 568px
 --------------------------------------------------------------*/
 @media screen and (max-width: 568px){
+    /* Courses */
+    div.lessons_list > div > span.course-lesson-link span.col-sm-1 {
+	padding: 0;
+    }
+    p.sme {
+        font-size: 22px;
+    }
     /* Footer */
     #footer-sidebar aside {
         width: 100%;
@@ -2757,12 +3038,11 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	bottom: 6em;
         right: 1em;
     }
-    .dashicons, .dashicons-before::before {
+    .dashicons, .dashicons-before:before {
 	width: 14px;
 	height: 14px;
 	font-size: 14px;
-    }
-    
+    }    
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Handheld Device 533px
@@ -2770,6 +3050,31 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 @media screen and (max-width: 533px){
     .navbar-header {
 	padding-bottom: 0; 
+    }
+    div.lesson-info p span.dashicons, div.lesson-info p span.dashicons-before:before {
+	font-size: 16px;
+	vertical-align: text-top;
+	padding-right: 10px;
+    }
+    div.lessons_list > div > span.course-lesson-link span.col-sm-1, div.quiz_list > div > span.course-quiz-link span.col-sm-1 {
+	text-align: center;
+	line-height: 2;
+    }
+    .learndash_topic_dots ul .topic-completed span, .learndash_topic_dots ul .topic-notcompleted span {
+	line-height: 1.75;
+	padding-top: 0;
+    }
+    #learndash_lessons a,
+    #learndash_quizzes a,
+    .learndash_topic_dots a,
+    .learndash_topic_dots a > span,
+    #learndash_lesson_topics_list span a,
+    #learndash_profile a,
+    #learndash_profile a span {
+	width: 87%;
+	float: left;
+	height: auto;
+	padding: 10px 0;
     }
     /* Login Modal */
     div.modal form {
@@ -2796,7 +3101,19 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         width: 100%;
     }
     /* Home */
-
+    /* JetPack Related Posts */
+    #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+	width: 100%;
+	padding: 0;
+	margin: 15px 0;
+    }
+    /* Courses */
+    div.lesson-info > p.topic-duration {
+	padding: 0px;
+    }
+    #jp-relatedposts .jp-relatedposts-items-visual {
+	margin-right: 0;
+    }
     /* SHRM */
     .shrm-course h2 {
         font-size: 28px;
@@ -2812,9 +3129,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     }
 }
 /*--------------------------------------------------------------
-##  Media Queries - Handheld Device 412px
+##  Media Queries - Handheld Device 414px
 --------------------------------------------------------------*/
-@media screen and (max-width: 412px){
+@media screen and (max-width: 414px){
     /* Masthead */
     .navbar-brand {
 	width: 75%;
@@ -2822,17 +3139,85 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .navbar-toggle {
         margin-top: 2em;
     }
+    /* Courses */
+    .single-sfwd-courses h1 {
+	font-size: 28px;
+    }
+    .sfwd-lessons .entry-header h1 {
+        font-size: 28px;
+    }
+    .course-thumbnail {
+        width: 100%;
+    }
+    div.course-excerpt {
+	padding: 15px 0;
+	width: 100%;
+    }
+    div.course-excerpt > div.excerpt > p {
+	padding: 0;
+	font-size: 14px;
+    }
+    span.course-lesson-link div.lesson-info > hr {
+	display: inline-block;
+	width: 100%;
+	float: none;
+    }
+    div#jp-relatedposts .jp-relatedposts-items-visual {
+	margin-right: 0;
+    }
+    div#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+	width: 100%;
+        padding-right: 0;
+    }
+    /* Course Sidebar */
+    #course-sidebar section h2 {
+	font-size: 26px;
+	text-align: center;
+    }
+    div.sme {
+	width: 100%;
+	float: none;
+    }
+    p.sme {
+        font-size: 20px;
+        text-align: center;
+    }
+    .sme-author-img > img {
+	margin: 15px auto;
+	float: none;
+    }
+    .sme-author-img {
+	float: none;
+        margin: 0 auto;
+    }
+    p.sponsor {
+        text-align: center;
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Handheld Device 384px
 --------------------------------------------------------------*/
 @media screen and (max-width: 384px){
+    /* Courses */
+    .single-sfwd-courses h1 {
+	font-size: 26px;
+    }
+    .sfwd-lessons .entry-header h1 {
+        font-size: 26px;
+    }
 	
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Handheld Device 375px
 --------------------------------------------------------------*/
 @media screen and (max-width: 375px){
+        /* Courses */
+    .single-sfwd-courses h1 {
+	font-size: 24px;
+    }
+    .sfwd-lessons .entry-header h1 {
+        font-size: 24px;
+    }
     /* Login Modal */
     .center-button button.btn-primary {
 	width: 100%;
@@ -2873,6 +3258,13 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     div.shrm-course p.shrm-course-duration {
 	font-size: 16px;
 	color: #1c3a54;
+    }
+    /* Courses */
+    .single-sfwd-courses h1 {
+	font-size: 20px;
+    }
+    .sfwd-lessons .entry-header h1 {
+        font-size: 20px;
     }
     /* Footer */
     a.sow-social-media-button{

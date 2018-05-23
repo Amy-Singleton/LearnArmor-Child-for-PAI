@@ -21,25 +21,25 @@ get_header(); ?>
                         */
                        get_template_part( 'template-parts/content', get_post_format() );
              				
-			if ( function_exists( 'sharing_display' ) ) {
+			if ( is_singular( array( 'sfwd-lessons' ) ) || is_singular( array( 'sfwd-topic' ) ) && function_exists( 'sharing_display' ) ) {
+				sharing_display( '', false );
+			} elseif(function_exists( 'sharing_display' )) {
 				sharing_display( '', true );
-			}    
-			if ( class_exists( 'Jetpack_Likes' ) ) {
+			}
+			if ( is_singular( array( 'post' ) ) && class_exists( 'Jetpack_Likes' ) ) {
 				$custom_likes = new Jetpack_Likes;
 				echo $custom_likes->post_likes( '' );
 			}
-
-			if ( !is_singular( array( 'sfwd-lessons' ) ) || is_singular( array( 'post', 'sfwd-courses' ) ) || get_post_type( get_the_ID() ) == 'sfwd-courses' && class_exists( 'Jetpack_RelatedPosts' ) ) {
+			if ( is_singular( array( 'post', 'sfwd-courses' ) ) && class_exists( 'Jetpack_RelatedPosts' ) ) {
 			    echo do_shortcode( '[jetpack-related-posts]' );
 			}
-
-                   the_post_navigation();
-		                      
-                   // If comments are open or we have at least one comment, load up the comment template.
-                   if ( comments_open() || get_comments_number() ) :
-                           comments_template();
-                   endif;
-
+			the_post_navigation();
+			if ( is_singular( array( 'post' )) ) {                     
+			 // If comments are open or we have at least one comment, load up the comment template.
+			      if ( comments_open() || get_comments_number() ) :
+				 comments_template();
+			      endif;
+			}
 		endwhile; // End of the loop.
 		?>
 
@@ -52,8 +52,14 @@ if ( get_post_type( get_the_ID() ) == 'sfwd-courses' || get_post_type( get_the_I
 	<div id="course-sidebar" class="widget-area col-sm-3" role="complementary">
 		<?php dynamic_sidebar( 'ld-sidebar' ); ?>
 		</div><!-- #secondary -->
-	<?php	endif; 
-}
+	<?php	endif; ?>
+	<div class="comment-wrap col-sm-9">
+		<?php  // If comments are open or we have at least one comment, load up the comment template.
+                  if ( is_singular( array( 'sfwd-courses' )) || get_post_type( get_the_ID() ) == 'sfwd-courses' && comments_open() || get_comments_number() ) :
+                           comments_template();
+                   endif; ?>
+	</div>
+<?php }
 else {
 	get_sidebar();
 } ?>

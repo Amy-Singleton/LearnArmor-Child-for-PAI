@@ -193,8 +193,8 @@
 													$value = 'learnarmor_duration_video_duration';
 													if (!empty (get_post_meta( $topic->ID, $value, true ))){
 														echo '<div class="lesson-info col-sm-11">';
-														echo '<hr>';
-														echo '<p>';
+														echo '<hr class="topic-sep">';
+														echo '<p class="topic-duration">';
 														echo '<span class="dashicons dashicons-video-alt3"></span>';
 														echo 'Video' . ' ' . '<span class="dashicons dashicons-clock"></span>';
 														echo 'Duration' . ' ' . get_post_meta( $topic->ID, $value, true );

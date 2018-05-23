@@ -100,7 +100,7 @@
 				if (!empty (get_post_meta( $topic->ID, $value, true ))){
 					echo '<div class="col-sm-12">';
 					echo '<hr class="topics"><div class="lesson-info col-sm-11">';
-					echo '<p>';
+					echo '<p class="lesson-topic-duration">';
 					echo '<span class="dashicons dashicons-video-alt3"></span>';
 					echo 'Video' . ' ' . '<span class="dashicons dashicons-clock"></span>';
 					echo 'Duration' . ' ' . get_post_meta( $topic->ID, $value, true );
