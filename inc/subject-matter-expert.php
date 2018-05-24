@@ -22,14 +22,15 @@ class subject_matter_expert_Widget extends WP_Widget {
   public function widget( $args, $instance ) {
     $title = apply_filters( 'widget_title', $instance[ 'title' ] );
     $author = get_the_author_meta();
-    $author_first_name = get_the_author_meta('first_name');
-    $author_last_name = get_the_author_meta('last_name');
-    $author_img =  get_avatar( get_the_author_meta( 'ID' ), 55 );
+    $author_nickname = get_the_author_meta('nickname');
+    //$author_first_name = get_the_author_meta('first_name');
+    //$author_last_name = get_the_author_meta('last_name');
+    $author_img =  get_avatar( get_the_author_meta( 'ID' ), 100 );
     
     echo $args['before_widget'] . $args['before_title'] . $title . $args['after_title']; ?>
     <div class="sme col-sm-9">
         <p class="sme light-font">Subject Matter Expert</p>
-        <p class="sme light-font"><?php echo $author_first_name . ' ' .  $author_last_name ?></p>
+        <p class="sme light-font"><?php echo $author_nickname ?></p>
     </div>
     <div class="sme-author-img col-sm-3">
         <?php echo $author_img ?>
