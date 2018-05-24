@@ -1124,7 +1124,7 @@ iframe {
 
 
 /*--------------------------------------------------------------
-# LearnDash ULessons with topics 
+# LearnDash Lessons with topics 
 --------------------------------------------------------------*/
 
 div#learndash_lesson_topics_list div div.lesson-topics,
@@ -1255,24 +1255,9 @@ div.col-sm-1.learndash-course-certificate {
 /*--------------------------------------------------------------
 # Lessons
 --------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 # Videos
 --------------------------------------------------------------*/
-.player .vp-controls .play-bar button:focus,
-.js-prefs:focus {
-	border: 1px dotted;
-}
-
-.player-a11c3cbe-d4ab-4abf-bee3-4cff76bff17e .play-bar a:hover .fill,
-.player-a11c3cbe-d4ab-4abf-bee3-4cff76bff17e .play-bar button:not(.toggle):hover .fill,
-.player-a11c3cbe-d4ab-4abf-bee3-4cff76bff17e .controls-outro a:hover .fill,
-.player-a11c3cbe-d4ab-4abf-bee3-4cff76bff17e .play-bar a:focus .fill,
-.player-a11c3cbe-d4ab-4abf-bee3-4cff76bff17e .play-bar button:not(.toggle):focus .fill,
-.player-a11c3cbe-d4ab-4abf-bee3-4cff76bff17e .controls-outro a:focus .fill{
-	fill: #ffffff;
-        border: 1px dotted;
-}
 /*--------------------------------------------------------------
 # Uncanny Transcripts
 --------------------------------------------------------------*/
@@ -1947,8 +1932,8 @@ p.sponsor {
 #footer-sidebar .widget_nav_menu li a,
 #footer-sidebar .widget_nav_menu li a:hover,
 #footer-sidebar .widget_nav_menu li a:before{
-	font-size: 16px;
-	color: #ffffff;
+    font-size: 16px;
+    color: #ffffff;
 }
 #footer-links li {
 	padding: 0.5em 1em 0.5em 0;
@@ -1959,19 +1944,25 @@ p.sponsor {
 #footer-links li a:hover, #footer-links li a:focus,
 #footer-sidebar .widget_nav_menu li a:hover,
 #footer-sidebar .widget_nav_menu li a:focus {
-        color: #ffffff;
-        opacity: .75;
+    color: #ffffff;
+    opacity: .75;
 }
 #footer-sidebar .widget_nav_menu li a:hover:before {
-	padding-left: 5px;
-        color: #ffffff;
-        opacity: .75;
+    padding-left: 5px;
+    color: #ffffff;
+    opacity: .75;
 }
 
 /*--------------------------------------------------------------
 ##  Footer Widgets
 --------------------------------------------------------------*/
-
+/* Business Info Widget */
+a.info-phone {
+    color: #ffffff;
+}
+a.info-phone:hover {
+    opacity: .75;
+}
 .textwidget > i.glyphicon:before {
     padding-right: 5px;
 }
@@ -3307,5 +3298,17 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     #statistics div#piechart2 {
 	margin-left: -20%;
     }
+    ul#menu-footer-widget-menu li a:before, section.widget_top-posts ul li a:before {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 14px;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: '\f101';
+	margin-right: 10px;
+	color: #ffffff;
+}
 
 }
