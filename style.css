@@ -1560,24 +1560,26 @@ div.post div.wrap-post footer.entry-footer{
 }
 article.post div.wrap-post footer.entry-footer span,
 div.post div.wrap-post footer.entry-footer span {
-	margin: 0;
-	padding: 0 0 5px;
+    margin: 0;
+    padding: 0 0 5px;
 }
 .cat-links,
 .tags-links {
-	font-weight: 500;
-	color: #1c3a54;
-        padding: 0;
+    font-weight: 500;
+    color: #1c3a54;
+    padding: 0;
+    width: 100%;
+    display: inline-block;
 }
 div.post div.wrap-post footer.entry-footer span .cat-links,
 div.post div.wrap-post footer.entry-footer span.tags-links {
-    padding: 0 15px;
+    padding: 0;
 }
 .cat-links a,
 .tags-links a,
 .comments-link a{
-	color: #4a8bc3;
-        font-weight: 400
+    color: #4a8bc3;
+    font-weight: 400;
 }
 .tags-links {
     margin-left: 0;
@@ -1662,7 +1664,7 @@ article.search header  h2 {
     height: 115px;
 }
 article.search div.entry-summary,
-article.search footer.entry-footer {
+article.search footer.entry-footer{
     padding: 0 15px;
 }
 article.search div.entry-summary p {
@@ -1677,7 +1679,10 @@ article.search footer.entry-footer {
 article.search footer.entry-footer span {
 	margin: 0;
 	padding: 0 0 5px;
+	float: none;
+	display: block;
 }
+
 .cat-links p {
     padding-left: 20px;
     text-transform: uppercase;
@@ -1728,6 +1733,27 @@ article.search footer.entry-footer span {
 	vertical-align: top;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+/*--------------------------------------------------------------
+## Pagination
+--------------------------------------------------------------*/
+
+.pagination a,
+div.col-sm-12 ul.pagination a,
+.pagination li.current {
+	z-index: 9999;
+        cursor: pointer;
+}
+ul.pagination {
+	margin: 0 auto !important;
+        width: 86.85%;
+	display: inline-block;
+	float: none;
+}
+.pagination > li {
+	display: inline;
+	margin-bottom: 30px;
 }
 /*--------------------------------------------------------------
 ## Sidebar Widgets
@@ -2265,6 +2291,13 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	width: 10%;
 	float: right;
     }
+    /* Home Page */
+        div.home-featured {
+	width: 50%;
+    }
+    #featured-content div.post-wrap {
+	height: 430px;
+    }
     /* Courses */
     .course-thumbnail {
         width: 70%;
@@ -2365,6 +2398,50 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     ul#menu-primary li.register {
         padding-bottom: 0px;
     }
+    .page-template-home-page #introduction,
+    .page-template-home-page #featured-categories,
+    .page-template-home-page #featured-content,
+    .page-template-home-page #statistics,
+    .page-template-home-page #metrics,
+    .page-template-home-page #sponsors {
+        height: auto;
+    }
+    #introduction div.col-sm-6:nth-child(even) {
+	padding: 0;
+	width: 100%;
+	float: right;
+        margin: 15px auto;
+        background-color: rgba(255,255,255, .75);
+        border-radius: 3px;
+    }
+    .page-template-home-page #introduction h1 {
+        color: #1c3a54;
+        padding: 0 15px 15px 0;
+    }
+    .page-template-home-page #introduction p {
+	padding: 15px;
+        color: #1c3a54;
+    }
+    #searchform.col-sm-6 {
+        width: 100%;
+    }
+    .page-template-home-page div.banner-search {
+	margin: 1em 0;
+    }
+    .page-template-home-page #searchform {
+	float: right;
+	width: 100%;
+    }
+    div.user-specific-links ul.navbar-nav {
+	width: 80%;
+        margin: 2.5em auto;
+    }
+    div.home-featured {
+	width: 50%;
+    }
+    #featured-content div.post-wrap {
+	height: 430px;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -2460,52 +2537,21 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .dropdown-submenu:hover>.dropdown-menu{
         display: none;
     }
-    /* Content */
     /* Home */
-    .page-template-home-page #introduction,
-    .page-template-home-page #featured-categories,
-    .page-template-home-page #featured-content,
-    .page-template-home-page #statistics,
-    .page-template-home-page #metrics,
-    .page-template-home-page #sponsors {
-        height: auto;
-    }
-    #introduction div.col-sm-6:nth-child(even) {
-	padding: 0;
-	width: 100%;
-	float: right;
-        margin: 15px auto;
-        background-color: rgba(255,255,255, .75);
-        border-radius: 3px;
-    }
-    .page-template-home-page #introduction h1 {
-        color: #1c3a54;
-        padding: 0 15px 15px 0;
-    }
-    .page-template-home-page #introduction p {
-	padding: 15px;
-        color: #1c3a54;
-    }
-    #searchform.col-sm-6 {
-        width: 100%;
-    }
    div.user-specific-links ul.navbar-nav {
 	width: 100%;
         margin: 2.5em auto;
     }
     div.user-specific-links > ul.navbar-nav > li {
-	padding-bottom: 15px;
-	float: left;
-        width: 45%;
+        padding-bottom: 15px;
+        float: left;
+        width: 48.5%;
     }
-    div.user-specific-links ul.navbar-nav > li:first-child {
+    div.user-specific-links ul.navbar-nav > li:nth-child(odd) {
 	margin-left: 0;
     }
     div.user-specific-links ul.navbar-nav > li > a {
         padding: 15px 8px;
-    }
-    div.home-featured {
-	width: 50%;
     }
     .nav-tabs.nav-justified > li {
         display: inline-block;
@@ -2513,7 +2559,7 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         margin: 15px auto 5px;
         float: left;
     }
-    /* Home */
+    /* Home Stats */
     #statistics div#piechart, #statistics div#piechart2 {
 	width: auto;
 	margin: 0 auto;
@@ -2541,7 +2587,7 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
             margin: 5px 45px;
             float: right;
     }
-     #metrics p.text-align-left span.dashicons {
+    #metrics p.text-align-left span.dashicons {
             margin: 5px 25px;
             float: left;
     }
@@ -2620,6 +2666,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .navbar-header {
 	padding-bottom: 0;
     }
+    /* Home */
+    #featured-content div.post-wrap {
+	height: 400px;
+    }
     #statistics div#piechart, #statistics div#piechart2 {
 	width: 50%;
 	margin-left: -5%;
@@ -2647,7 +2697,14 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         height: auto;
     }
     #secondary section.widget:nth-child(odd) {
+        width: 50%;
 	padding-left: 0;
+        padding-right: 15px;
+    }
+    #secondary section.widget:nth-child(even) {
+        width: 50%;
+	padding-left: 15px;
+        padding-right: 0;
     }
     .widget-area h2 {
 	font-size: 18px;
@@ -2707,6 +2764,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	padding: 4px 4px 0;
 	display: block;
 	margin: 2px auto;
+    }
+    /* Articles */
+    .archive.category div #main header.page-header h1.page-title{ 
+        font-size: 30px;
     }
     /* Footer */
     #copyright p {
@@ -2783,6 +2844,24 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .course-lesson-link, .course-quiz-link {
 	width: 100%;
     }
+    /* Articles */
+    article.post, div.post,
+    article.search {
+	width: 50%;
+	float: left;
+    }
+    article.post div.wrap-post header div.post-thumbnail a img,
+    div.post div.wrap-post div.post-thumbnail a img {
+	width: 100%;
+	height: 175px;
+    }
+    article.post div.wrap-post div.entry-content,
+    div.post div.wrap-post div.entry-summary {
+	height: 325px;
+    }
+    ul.pagination {
+	margin: 0 0 3.5em;
+    }
     /* Footer */
     .below-footer-container {
         font-size: 16px;
@@ -2812,6 +2891,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 ##  Media Queries - Handheld Device 720px
 --------------------------------------------------------------*/
 @media screen and (max-width: 720px){
+    .page-template-home-page #search-field {
+        width: 60%;
+    }
     .border-right {
 	border-right: none;
     }
@@ -2820,6 +2902,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 ##  Media Queries - Handheld Device 667px
 --------------------------------------------------------------*/
 @media screen and (max-width: 667px){
+    /* Home Page */
+    #featured-content div.post-wrap {
+	height: 385px;
+    }
     .course-thumbnail {
         width: 80%;
     }
@@ -2833,6 +2919,12 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     }
     .learndash_topic_dots a {
 	width: 85%;
+    }
+    /* Articles */
+    article.post div.wrap-post div.entry-content,
+    div.post div.wrap-post div.entry-summary {
+	height: 275px;
+	font-size: 14px;
     }
     /* Footer */
     #footer-links {
@@ -2854,11 +2946,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	float: left;
     }
         
-   /* Home */
+    /* Home Page */
     .page-template-home-page #introduction div.col-sm-6:nth-child(even) {
         background: rgba(255,255,255, .75);
         border-radius: 3px;
-        
     }
     .page-template-home-page #introduction { 
         padding: 0 12.5%;
@@ -2943,6 +3034,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     #featured-content > div > .nav-tabs > li.active > a:focus,
     #featured-content > div > .nav-tabs > li.active > a {
 	margin: 7px 15px; 
+    }
+    /* Featured Content Grid */
+    #featured-content div.post-wrap {
+	height: 415px;
     }
     /* Home Stats */
     #statistics div#piechart,
@@ -3042,6 +3137,14 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .navbar-header {
 	padding-bottom: 0; 
     }
+    /* Home Page */
+    div.home-featured {
+	width: 100%;
+    }
+    #featured-content div.post-wrap {
+	height: auto;
+    }
+    /* Courses */
     div.lesson-info p span.dashicons, div.lesson-info p span.dashicons-before:before {
 	font-size: 16px;
 	vertical-align: text-top;
@@ -3067,6 +3170,23 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	height: auto;
 	padding: 10px 0;
     }
+    /* Articles */
+    div.post div.wrap-post div.entry-summary,
+    article.post, div.post, article.search {
+	width: 100%;
+	float: none;
+        height: auto;
+    }
+    article.post div.wrap-post div.entry-content,
+    article.post div.wrap-post div.entry-content, 
+    .post div.wrap-post div.entry-summary {
+        font-size: 14px;
+	height: auto;
+    }
+    /* Archives */
+    .archive.category div #main header.page-header h1.page-title{ 
+        font-size: 28px;
+    }
     /* Login Modal */
     div.modal form {
 	width: 75%;
@@ -3078,6 +3198,11 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .center-button button.btn-primary {
         margin-top: 0;
         width: 100%;
+    }
+    article.search footer.entry-footer,
+    article.post div.wrap-post footer.entry-footer,
+    div.post div.wrap-post footer.entry-footer {
+	height: auto;
     }
 }
 /*--------------------------------------------------------------
@@ -3092,6 +3217,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         width: 100%;
     }
     /* Home */
+    /* Content */
+    .blue-blockquote {
+	margin: 1em auto;
+    }
     /* JetPack Related Posts */
     #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
 	width: 100%;
@@ -3117,6 +3246,42 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .shrm-course > div.course-button > a {
         width: 100%;
         display: block;
+    }
+    /* Archives */
+    .archive.category div #main header.page-header h1.page-title {
+	font-size: 24px;
+    }
+    article.search div.entry-summary p, article.post div.entry-summary p, div.post div.wrap-post div.entry-summary p {
+	height: auto;
+    }
+    /* Sidebar Widgets */
+    .widget-area h2 {
+	font-size: 22px;
+	text-align: center;
+    }
+     #secondary section.widget:nth-child(odd) {
+        width: 100%;
+        height: auto;
+	padding: 0;
+    }
+    #secondary section.widget:nth-child(even) {
+        width: 100%;
+        height: auto;
+	padding: 0;
+    }
+    /* Jetpack Popular Courses */
+    #secondary .widgets-list-layout .widgets-list-layout-blavatar {
+        width: 21.276596%;
+        max-width: 40px;
+        height: auto;
+        border-radius: 3px;
+        padding: 3px;
+        background-color: #cccccc;
+    }
+    #secondary .widgets-list-layout-links {
+	width: 85%;
+	padding: 10px 0;
+	font-weight: 500;
     }
 }
 /*--------------------------------------------------------------
@@ -3196,7 +3361,21 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .sfwd-lessons .entry-header h1 {
         font-size: 26px;
     }
-	
+    /* Articles */
+    article.post div.wrap-post header div.post-thumbnail a img,
+    div.post div.wrap-post div.post-thumbnail a img {
+	height: 150px;
+    }
+    /* Sidebar Widgets */
+    #secondary .widgets-list-layout-links {
+	width: 78%;
+	padding: 0;
+	font-weight: 500;
+	line-height: 1;
+    }
+    #secondary ul li a {
+        font-size: 16px;
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Handheld Device 375px
@@ -3208,6 +3387,11 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     }
     .sfwd-lessons .entry-header h1 {
         font-size: 24px;
+    }
+    /* Sidebar Widgets */
+    #secondary p,
+    #secondary ul li a {
+        font-size: 14px;
     }
     /* Login Modal */
     .center-button button.btn-primary {
