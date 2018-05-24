@@ -6,6 +6,6 @@ jQuery(document).ready(function($){
         $('span.topic-completed.glyphicon').removeClass('glyphicon-unchecked');
         $('span.topic-completed.glyphicon' ).addClass('glyphicon-check');
         $('span.topic-notcompleted.glyphicon').addClass('glyphicon-unchecked');
-        $('span.topic-notcompleted.glyphicon' ).removeClass('glyphicon-check');
-        $('div.vp-controls > button').attr('tabindex', '0');
+        $('span.topic-notcompleted.glyphicon' ).removeClass('glyphicon-check');     
 });
+
