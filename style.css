@@ -656,6 +656,7 @@ div.stats h2 {
     font-weight: 700;
     text-transform: lowercase;
     font-size: 20px;
+    padding-top: 5px;
 }
 div.user-specific-links {
     padding: 0;
@@ -752,11 +753,13 @@ a.btn-course-library:hover{
 	margin: 0 auto;
 	overflow: hidden;
 }
-#metrics .col-sm-4 .col-sm-7 {
-    padding: 4.75em 0 1.5em;
+div.row.metrics {
+    margin-top: 3em;
 }
-#metrics .col-sm-4 .col-sm-5  {
-    padding-top: 4.95em;
+
+#metrics .col-sm-4 .col-sm-5,
+#metrics .col-sm-4 .col-sm-2{
+    padding-top: 1.5em;
     padding-bottom: 1.5em;
 }
 
@@ -794,29 +797,6 @@ a.btn-course-library:hover{
 }
 #sponsors div {
     padding: 0;
-}
-#sponsors div img {
-    width: 50%;
-}
-#sponsors div:first-child img {
-    margin-right: -45px;
-}
-#sponsors div:nth-child(3) img{
-    width: 65%;
-    margin-top: -30px;
-    margin-left: -45px;
-}
-#sponsors div:nth-child(4) img{
-    margin-right: -75px;
-    margin-top: -60px;
-    width: 45%;
-}
-#sponsors div:nth-child(5) img{
-    margin-top: -60px;
-}
-#sponsors div:nth-child(6) img{
-    margin-left: -75px;
-    margin-top: -60px;
 }
 /*--------------------------------------------------------------
 ## About Page
@@ -2402,7 +2382,6 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .page-template-home-page #featured-categories,
     .page-template-home-page #featured-content,
     .page-template-home-page #statistics,
-    .page-template-home-page #metrics,
     .page-template-home-page #sponsors {
         height: auto;
     }
@@ -2441,6 +2420,22 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     }
     #featured-content div.post-wrap {
 	height: 430px;
+    }
+    .page-template-home-page #metrics {
+        height: 400px;
+    }
+    div.row.metrics {
+	margin-top: 1em;
+    }
+    #metrics .col-sm-4 .col-sm-2 {
+	padding: 1.5em 0;
+    }
+    .page-template-home-page #metrics p {
+	font-size: 16px;
+	padding-top: 5px;
+	line-height: 1;
+	text-align: center;
+	padding: 0 5px;
     }
 }
 
@@ -2560,28 +2555,41 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         float: left;
     }
     /* Home Stats */
-    #statistics div#piechart, #statistics div#piechart2 {
-	width: auto;
-	margin: 0 auto;
-    }
     .page-template-home-page #introduction p,
     .page-template-home-page #statistics p,
     .page-template-home-page #metrics p {
 	font-size: 15px;
 	opacity: 1;
     }
+    #statistics div#piechart, #statistics div#piechart2 {
+	width: auto;
+	margin: 0 auto;
+    }
+    .page-template-home-page #metrics {
+        height: 380px;
+    }
+    div.row.metrics {
+	margin-top: 2.75em;
+    }
     #metrics .col-sm-4 {
 	width: 33.3333333% !important;
         padding: 0;
+    }
+    #metrics .col-sm-4 .col-sm-5, #metrics .col-sm-4 .col-sm-2 {
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+	padding: 0 5px 0 10px;
+	line-height: 1;
+    }
+    .page-template-home-page #metrics p {
+	font-size: 16px;
+	opacity: 1;
     }
     #metrics .dashicons {
         font-size: 25px;
         width: 35px;
         height: 35px;
         padding: 5px 4px;
-    }
-    #metrics .col-sm-4 .col-sm-7 {
-	padding: 4.75em 0 1.5em;
     }
     #metrics p.text-align-right span.dashicons {
             margin: 5px 45px;
@@ -2594,9 +2602,6 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     #metrics p span.dashicons {
 	float: left;
 	margin: 5px 45px;
-    }
-    #sponsors div img {
-	margin: 0 auto !important;
     }
     /* Content */
     .page-template-home-page .content-area {
@@ -2781,11 +2786,31 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 ##  Media Queries - Handheld Device 736px
 --------------------------------------------------------------*/
 @media screen and (max-width: 736px){
-    #sponsors div img.alignright,
-    #sponsors div img.aligncenter,
-    #sponsors div img.alignlefst { 
-	width: 25%;
-	margin: 0 auto !important;
+    /* Home Page */
+    div.row.metrics {
+	margin-top: 2em;
+    }
+    #metrics .col-sm-4 .col-sm-5, #metrics .col-sm-4 .col-sm-2 {
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+	padding: 0 5px 0 10px;
+	line-height: 1;
+	text-align: center;
+    }
+    #metrics .col-sm-4 .col-sm-5.metrics-line {
+        display: none;
+    }
+    #metrics.row div.col-sm-4 {
+            width: 50%;
+            float: left;
+    }
+    #metrics.row div.col-sm-4.metrics-image {
+            width: 50%;
+            float: right;
+    }
+    .page-template-home-page #metrics p {
+	text-align: center;
+        margin: 5px auto;
     }
     /* Courses */
     #lesson_heading > div.status, #quiz_heading > div.status,
@@ -2955,8 +2980,11 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         padding: 0 12.5%;
         margin: 0;
     }
-    .page-template-home-page #introduction, .page-template-home-page #featured-content, .page-template-home-page #statistics,
-    .page-template-home-page #metrics, .page-template-home-page #sponsors {
+    .page-template-home-page #introduction,
+    .page-template-home-page #featured-content,
+    .page-template-home-page #statistics,
+    .page-template-home-page #metrics,
+    .page-template-home-page #sponsors {
 	height: auto;
     }
     .page-template-home-page #introduction h1 {
@@ -3144,6 +3172,7 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     #featured-content div.post-wrap {
 	height: auto;
     }
+ 
     /* Courses */
     div.lesson-info p span.dashicons, div.lesson-info p span.dashicons-before:before {
 	font-size: 16px;
@@ -3420,6 +3449,16 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     #statistics div#piechart2 {
 	margin-left: -15%;
     }
+    #metrics .col-sm-4 .col-sm-5,
+    #metrics .col-sm-4 .col-sm-2 {
+	padding: 0 10px;
+	line-height: 1;
+	text-align: center;
+    }
+    div.row.metrics {
+	margin-top: .5em;
+	padding: 0 10px;
+    }
     /* SHRM */
     .shrm-course h2 {
 	margin-bottom: 1em;
@@ -3477,10 +3516,13 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         margin-top: 1.5em;
     }
     /* Home */
-        /* Home */
     #statistics div#piechart,
     #statistics div#piechart2 {
 	margin-left: -20%;
+    }
+    .page-template-home-page #metrics p {
+	font-weight: 600;
+	font-size: 12px;
     }
     ul#menu-footer-widget-menu li a:before, section.widget_top-posts ul li a:before {
 	display: inline-block;
