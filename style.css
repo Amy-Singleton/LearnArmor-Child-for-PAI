@@ -979,6 +979,31 @@ div.about-broadcast div.post-wrap div.wrap-text span.light-font {
 /*--------------------------------------------------------------
 ## Contact Page
 --------------------------------------------------------------*/
+#post-826 article div.entry-content {
+    margin-bottom: 0;
+}
+div.support .dashicons, div.support .dashicons-before:before {
+    font-size: 30px;
+}
+div.support div.col-sm-4 {
+    height: 300px;
+    padding-top: 3.5em;
+}
+.business-info {
+    margin: 2em -12.5% 0;
+    background-color: #f3f3f3;
+    padding: 0;
+    display: flex;
+}
+.business-info div.col-sm-6 p.col-sm-2 {
+    padding: 0 0 0 15px;
+}
+.business-info div.col-sm-6 p.col-sm-10 {
+    padding: 0;
+}
+.dashicons, .dashicons-before:before {
+    line-height: 1.5;
+}
 
 /*--------------------------------------------------------------
 ## SHRM Page
@@ -2265,6 +2290,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
         height: 85px;
     }
+    /* Contact */
+    div.support div.col-sm-4 p {
+        font-size: 24px;
+    }
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Desktop 1536px
@@ -2298,6 +2327,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     /* Lessons */
      div.lesson-info > p.lesson-topic-duration {
 	padding: 0 20px;
+    }
+        /* Contact */
+    div.support div.col-sm-4 p {
+        font-size: 22px;
     }
 }
 /*--------------------------------------------------------------
@@ -2348,7 +2381,11 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
         height: 100px;
     }
-     /* Sidebar Widgets */
+    /* Contact */
+    div.support div.col-sm-4 p {
+        font-size: 20px;
+    }
+    /* Sidebar Widgets */
     .widget-title, .widgettitle {
         font-size: 1.4em;
     }
@@ -2428,6 +2465,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .sme-author-img {
 	margin-top: 30px;
     }
+    /* Contact */
+    div.support div.col-sm-4 p {
+        font-size: 18px;
+    }    
     /* Footer */
     #footer-sidebar aside {
         width: 50%;
@@ -2551,6 +2592,10 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	text-align: center;
 	padding: 0 5px;
     }
+    /* Contact */
+    div.support div.col-sm-4 p {
+        font-size: 16px;
+    } 
 }
 
 /*--------------------------------------------------------------
