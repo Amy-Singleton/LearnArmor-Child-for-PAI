@@ -12,5 +12,11 @@ jQuery(document).ready(function($){
         .addClass("cloneditem-"+(i))
         .appendTo($(this));
     }
-  }); 
+  });
+    $('.carousel').carousel({
+        interval: 2000,
+        keyboard: true,
+        wrap: true
+})
+    
 });  
