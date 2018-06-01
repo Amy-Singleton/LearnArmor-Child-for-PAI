@@ -274,6 +274,6 @@ function remove_additional_p($content){
   $content = force_balance_tags($content);
   return preg_replace('#<p>\s*+(<br\s*/*>)?|s*</p>#i','',$content);
 }
-add_filter('the_content','remove_additional_p',20,1);
+//add_filter('the_content','remove_additional_p',20,1);
 
 ?>
