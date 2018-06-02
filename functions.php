@@ -151,7 +151,7 @@ remove_filter( 'wp_nav_menu_items','learnarmor_add_search_box', 10, 2 );
 function learnarmor_child_admin_css() {
     wp_enqueue_style('admin_styles' , get_template_directory_uri().'/css/admin.css');
 }
-
+add_action('admin_enqueue_scripts', 'learnarmor_child_admin_css');
 /**
  * Register widget area.
  *
@@ -208,7 +208,7 @@ require get_stylesheet_directory() . '/inc/sponsored-by.php';
  */
 require get_stylesheet_directory() . '/inc/wp-from-email-address.php';
 /**
- * Change WP Default From Name and Email Address for Emails
+ * Add a Search Form with a Shortcode
  */
 require get_stylesheet_directory() . '/inc/home-page-banner-searchform.php';
 
