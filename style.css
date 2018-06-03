@@ -420,7 +420,6 @@ span.fa.fa-sign-in:before {
 /*--------------------------------------------------------------
 ## Breadcrumbs
 --------------------------------------------------------------*/
-
 #breadcrumbs {
     padding: 0 0 4em;
 }
@@ -535,10 +534,10 @@ span.fa.fa-sign-in:before {
 #featured-content > div > .nav-tabs > li.active > a:hover,
 #featured-content > div > .nav-tabs > li.active > a:focus,
 #featured-content > div > .nav-tabs > li.active > a {
-	background-color: transparent;
-	border: 2px solid #1c3a54;
-	margin-right: 15px;
-	border-radius: 3px;
+    background-color: transparent;
+    border: 2px solid #1c3a54;
+    margin-right: 15px;
+    border-radius: 3px;
 }
 #featured-content > div > .nav-tabs > li a:hover,
 #featured-content > div > .nav-tabs > li a:focus {
@@ -556,20 +555,19 @@ span.fa.fa-sign-in:before {
     margin-top: 3em;
 }
 div.home-featured {
-	display: inline-flex;
-	margin-bottom: 30px;
+    display: inline-flex;
+    margin-bottom: 30px;
 }
 div.home-featured h3 {
     margin-top: 0;
 }
 #featured-content div.post-wrap,
 div.post-wrap {
-	padding: 0;
-	width: 100%;
-	background-color: #ffffff;
-        border: 2px solid transparent;
-        border-radius: 3px;
-        height: 400px;
+    padding: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border: 2px solid transparent;
+    border-radius: 3px;
 }
 #featured-content div.post-wrap:hover,
 div.post-wrap:hover {
@@ -778,7 +776,7 @@ div.row.metrics {
     color: #ffffff;
     width: 50px;
     height: 50px;
-    padding: 8px 10px;
+    padding: 3px 10px;
 }
 #metrics p span.dashicons {
     margin-right: 0px;
@@ -795,6 +793,9 @@ div.row.metrics {
     padding: 0;
 }
 /* Sponsors Carousel */
+div#sponsors h3 {
+    margin: 1em auto;
+}
 .carousel-showmanymoveone .carousel-control {
    width: 4%;
    background-image: none;
@@ -807,17 +808,19 @@ div.row.metrics {
 .carousel-showmanymoveone .carousel-control.right {
    margin-right: 0;
 }
-
-.carousel-showmanymoveone .cloneditem-1,
-.carousel-showmanymoveone .cloneditem-2,
-.carousel-showmanymoveone .cloneditem-3 {
-   display: none;
-}
-
 .carousel .item .col-sm-12 {
    padding: 0;
 }
-
+.carousel-inner div div a {
+    background-color: #efefef;
+    display: flex;
+}
+.carousel-inner div div a img {
+    background-color: #efefef;
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+}
 
 /* Medium Devices, Desktops */
 
@@ -853,12 +856,22 @@ all and (min-width: 768px) and (-webkit-transform-3d) {
    .carousel-showmanymoveone .carousel-inner > .item.next {
       -webkit-transform: translate3d(50%, 0, 0);
       transform: translate3d(50%, 0, 0);
+      
+      transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
       left: 0;
    }
    .carousel-showmanymoveone .carousel-inner > .item.active.left,
    .carousel-showmanymoveone .carousel-inner > .item.prev {
       -webkit-transform: translate3d(-50%, 0, 0);
       transform: translate3d(-50%, 0, 0);
+      
+      transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
       left: 0;
    }
    .carousel-showmanymoveone .carousel-inner > .item.left,
@@ -866,6 +879,11 @@ all and (min-width: 768px) and (-webkit-transform-3d) {
    .carousel-showmanymoveone .carousel-inner > .item.active {
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
+      
+      transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
       left: 0;
    }
 }
@@ -884,8 +902,8 @@ all and (min-width: 768px) and (-webkit-transform-3d) {
    .carousel-showmanymoveone .carousel-inner > .active {
       left: 0;
    }
-   .carousel-showmanymoveone .carousel-inner .cloneditem-2,
-   .carousel-showmanymoveone .carousel-inner .cloneditem-3 {
+   .carousel-showmanymoveone .carousel-inner .cloneditem-1,
+   .carousel-showmanymoveone .carousel-inner .cloneditem-2{
       display: block;
    }
 }
@@ -1004,7 +1022,10 @@ div.support div.col-sm-4 {
 .dashicons, .dashicons-before:before {
     line-height: 1.5;
 }
-
+.contact-link {
+    color:  #2b5981;
+    font-weight: 700;
+}
 /*--------------------------------------------------------------
 ## SHRM Page
 --------------------------------------------------------------*/
@@ -1853,7 +1874,30 @@ article.search footer.entry-footer span {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+/*--------------------------------------------------------------
+## Post Grid
+--------------------------------------------------------------*/
+div.featured a {
+    display: flex;
+}
+div.featured div.post-wrap {
+    padding: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    margin-bottom: 30px;
+}
+div.featured div.wrap-text {
+    padding: 15px;
+    background-color: #efefef;
+    height: 215px;
+}
 
+.paypal-donation input{
+    margin: 0 auto;
+    display: block;
+}
 /*--------------------------------------------------------------
 ## Pagination
 --------------------------------------------------------------*/
@@ -2058,7 +2102,7 @@ p.sponsor {
 #footer-sidebar aside:nth-child(3) {
         padding-left: 30px;
 }
- #footer-sidebar h2 {
+#footer-sidebar h2 {
 	font-family: "Roboto", sans-serif;
 }
 #footer p,
@@ -2361,6 +2405,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     div.post div.wrap-post div.entry-summary {
 	height: 350px;
     }
+    .page-template-home-page #metrics p { 
+        font-size: 18px;
+    }
     /* Search Results */
     article.search header div.post-thumbnail a img,
     div.post div.wrap-post div.post-thumbnail a img,    
@@ -2423,11 +2470,60 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	float: right;
     }
     /* Home Page */
-        div.home-featured {
+    #introduction div.col-sm-6:nth-child(even) {
+	padding: 0;
+	width: 100%;
+	float: right;
+        margin: 15px auto;
+        background-color: rgba(255,255,255, .75);
+        border-radius: 3px;
+    }
+    .page-template-home-page #introduction h1 {
+        color: #1c3a54;
+        padding: 0 15px 15px 0;
+        text-align: center;
+    }
+    .page-template-home-page #introduction p {
+	padding: 15px;
+	color: #1c3a54;
+	text-shadow: 1px 2px 2px #efefef;
+	text-align: center;
+    }
+    #searchform.col-sm-6 {
+        width: 100%;
+    }
+    .page-template-home-page div.banner-search {
+	float: none;
+        width: 100%;
+        padding: 0;
+    }
+    .page-template-home-page div.banner-search,
+    .page-template-home-page div.banner-search div {
+	padding: 0;
+    }
+    .page-template-home-page #searchform {
+	float: none;
+	width: 100%;
+	padding: 0;
+    }
+    div.user-specific-links ul.navbar-nav {
+	width: 75%;
+    }
+    div.home-featured {
 	width: 50%;
     }
     #featured-content div.post-wrap {
 	height: 430px;
+    }
+    .page-template-home-page #metrics p {
+	font-size: 16px;
+	text-align: center;
+    }
+    /* Post Grid */
+    div.featured {
+        width: 50%;
+        padding: 0;
+        float: left;
     }
     /* Courses */
     .course-thumbnail {
@@ -2536,35 +2632,8 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .page-template-home-page #introduction,
     .page-template-home-page #featured-categories,
     .page-template-home-page #featured-content,
-    .page-template-home-page #statistics,
-    .page-template-home-page #sponsors {
+    .page-template-home-page #statistics {
         height: auto;
-    }
-    #introduction div.col-sm-6:nth-child(even) {
-	padding: 0;
-	width: 100%;
-	float: right;
-        margin: 15px auto;
-        background-color: rgba(255,255,255, .75);
-        border-radius: 3px;
-    }
-    .page-template-home-page #introduction h1 {
-        color: #1c3a54;
-        padding: 0 15px 15px 0;
-    }
-    .page-template-home-page #introduction p {
-	padding: 15px;
-        color: #1c3a54;
-    }
-    #searchform.col-sm-6 {
-        width: 100%;
-    }
-    .page-template-home-page div.banner-search {
-	margin: 1em 0;
-    }
-    .page-template-home-page #searchform {
-	float: right;
-	width: 100%;
     }
     div.user-specific-links ul.navbar-nav {
 	width: 80%;
@@ -2591,6 +2660,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	line-height: 1;
 	text-align: center;
 	padding: 0 5px;
+    }
+    .page-template-home-page #sponsors {
+        height: 400px;
     }
     /* Contact */
     div.support div.col-sm-4 p {
@@ -2745,10 +2817,11 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	opacity: 1;
     }
     #metrics .dashicons {
-        font-size: 25px;
+	font-size: 20px;
         width: 35px;
         height: 35px;
-        padding: 5px 4px;
+	line-height: 1.5;
+	padding: 3px 5px;
     }
     #metrics p.text-align-right span.dashicons {
             margin: 5px 45px;
@@ -2761,6 +2834,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     #metrics p span.dashicons {
 	float: left;
 	margin: 5px 45px;
+    }
+    .page-template-home-page #sponsors {
+        height: 400px;
     }
     /* Content */
     .page-template-home-page .content-area {
@@ -2835,8 +2911,8 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
 	height: 400px;
     }
     #statistics div#piechart, #statistics div#piechart2 {
-	width: 50%;
-	margin-left: -5%;
+	width: 100%;
+	margin-left: 0;
     }
     /* Content */
     .site-main {
@@ -3078,6 +3154,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .page-template-home-page #search-field {
         width: 60%;
     }
+    div.item div.col-sm-4 {
+        width: 100%;
+    }
     .border-right {
 	border-right: none;
     }
@@ -3090,6 +3169,7 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     #featured-content div.post-wrap {
 	height: 385px;
     }
+    /* Courses */
     .course-thumbnail {
         width: 80%;
     }
