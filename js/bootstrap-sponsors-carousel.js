@@ -1,4 +1,25 @@
 jQuery(document).ready(function($){
+if (screen.width < 720) {
+    $('.carousel-showmanymoveone .item').each(function(){
+    var itemToClone = $(this);
+    for (var i=1;i<1;i++) {
+      itemToClone = itemToClone.next();
+      // wrap around if at end of item collection
+      if (!itemToClone.length) {
+        itemToClone = $(this).siblings(':first');
+      }
+      // grab item, clone, add marker class, add to collection
+        itemToClone.children(':first-child').clone()
+        .addClass("cloneditem-"+(i))
+        .appendTo($(this));
+    }
+    });
+    $('.carousel').carousel({
+       interval: 5000,
+       keyboard: true,
+       wrap: true
+    })
+} else {
     $('.carousel-showmanymoveone .item').each(function(){
     var itemToClone = $(this);
     for (var i=1;i<3;i++) {
@@ -8,15 +29,15 @@ jQuery(document).ready(function($){
         itemToClone = $(this).siblings(':first');
       }
       // grab item, clone, add marker class, add to collection
-      itemToClone.children(':first-child').clone()
+        itemToClone.children(':first-child').clone()
         .addClass("cloneditem-"+(i))
         .appendTo($(this));
     }
-  });
+    });
     $('.carousel').carousel({
-        interval: 2000,
-        keyboard: true,
-        wrap: true
-})
-    
+       interval: 5000,
+       keyboard: true,
+       wrap: true
+    })
+}
 });  
