@@ -46,7 +46,7 @@ get_header(); ?>
 		</main><!-- #main -->
 
 <?php
-if ( get_post_type( get_the_ID() ) == 'sfwd-courses' || get_post_type( get_the_ID() ) == 'sfwd-lessons'|| get_post_type( get_the_ID() ) == 'sfwd-topic' ) {
+if ( get_post_type( get_the_ID() ) == 'sfwd-courses' || get_post_type( get_the_ID() ) == 'sfwd-lessons'|| get_post_type( get_the_ID() ) == 'sfwd-topic'|| get_post_type( get_the_ID() ) == 'sfwd-quiz' ) {
     //if is true
 	if ( is_active_sidebar( 'ld-sidebar' ) ) : ?>
 	<div id="course-sidebar" class="widget-area col-sm-3" role="complementary">
