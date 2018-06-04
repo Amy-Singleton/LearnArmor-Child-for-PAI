@@ -2305,7 +2305,7 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         padding-left: 7em;
     }
     div.user-specific-links ul.navbar-nav {
-        width: 44.5%;
+        width: 49%;
         margin: 4.5em auto;        
     }
     article.post div.wrap-post div.entry-content,
@@ -2345,6 +2345,22 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     }
     div.support div.col-sm-4 p {
         font-size: 24px;
+    }
+}
+/*--------------------------------------------------------------
+##  Media Queries - Desktop 1680px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1680px){
+    div.user-specific-links ul.navbar-nav {
+            width: 51%;
+    }
+}
+/*--------------------------------------------------------------
+##  Media Queries - Desktop 1600px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1600px){
+    div.user-specific-links ul.navbar-nav {
+            width: 55%;
     }
 }
 /*--------------------------------------------------------------
@@ -2460,6 +2476,14 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     /* Home Page */
     div.user-specific-links ul.navbar-nav {
 	width: 69%;
+    }
+}
+/*--------------------------------------------------------------
+##  Media Queries - Tablet 1080px
+--------------------------------------------------------------*/
+@media screen and (max-width: 1080px){
+    div.user-specific-links ul.navbar-nav {
+            width: 80%;
     }
 }
 /*--------------------------------------------------------------
@@ -3782,6 +3806,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         margin-top: 1.5em;
     }
     /* Home */
+    a.btn-course-library {
+	font-size: 14px;
+    }
     #statistics div#piechart,
     #statistics div#piechart2 {
 	margin-left: -20%;
