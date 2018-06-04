@@ -1008,7 +1008,6 @@ div.support div.col-sm-4 {
     padding-top: 3.5em;
 }
 .business-info {
-    margin: 2em -12.5% 0;
     background-color: #f3f3f3;
     padding: 0;
     display: flex;
@@ -1025,6 +1024,9 @@ div.support div.col-sm-4 {
 .contact-link {
     color:  #2b5981;
     font-weight: 700;
+}
+.gform_wrapper div.charleft {
+	color: #333333!important;
 }
 /*--------------------------------------------------------------
 ## SHRM Page
@@ -1111,8 +1113,9 @@ div.course-excerpt > div.excerpt > p > a:hover {
 	background-color: rgba(255,255,255, .7);
 	margin: 0 auto;
 }
-.course-thumbnail img.attachment-post-thumbnail {
+.course-thumbnail img {
 	margin: 0 auto;
+        display: block;
 }
 
 .status {
@@ -1229,9 +1232,11 @@ div.lesson-info > p > span:before {
 }
 div.lesson-info > p > span.dashicons-video-alt3 {
     margin: 0 5px 0 0;
+    line-height: 1;
 }
 div.lesson-info > p > span.dashicons-clock{
-        margin: 0 5px 0 10px;
+    margin: 0 5px 0 10px;
+    line-height: 1;
 }
 div.lesson-info > p > span.dashicons-clock:before {
     vertical-align: bottom;
@@ -2335,6 +2340,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         height: 85px;
     }
     /* Contact */
+    .business-info {
+        margin: 2em -11% 0;
+    }
     div.support div.col-sm-4 p {
         font-size: 24px;
     }
@@ -2408,6 +2416,11 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .page-template-home-page #metrics p { 
         font-size: 18px;
     }
+    /* Contact */
+    div.support div.col-sm-4 p {
+	font-size: 20px;
+    }
+    
     /* Search Results */
     article.search header div.post-thumbnail a img,
     div.post div.wrap-post div.post-thumbnail a img,    
@@ -2429,6 +2442,9 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
         height: 100px;
     }
     /* Contact */
+    .business-info {
+        margin: 2em -12.5% 0;
+    |
     div.support div.col-sm-4 p {
         font-size: 20px;
     }
@@ -3157,6 +3173,22 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     div.item div.col-sm-4 {
         width: 100%;
     }
+    /* Contact */
+    div.support div.col-sm-4 {
+	height: auto;
+        padding-top: 2em;
+    }
+    div.business-info {
+        display: block;
+    }
+    div.business-info div.col-sm-6 {
+	width: 100%;
+    }
+    .business-info div.col-sm-6 p.col-sm-2 {
+	padding: 0 0 0 15px;
+	width: 25%;
+	float: left;
+    }
     .border-right {
 	border-right: none;
     }
@@ -3390,12 +3422,7 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     .back-to-top {
 	bottom: 6em;
         right: 1em;
-    }
-    .dashicons, .dashicons-before:before {
-	width: 14px;
-	height: 14px;
-	font-size: 14px;
-    }    
+    }  
 }
 /*--------------------------------------------------------------
 ##  Media Queries - Handheld Device 533px
@@ -3634,6 +3661,12 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     div.post div.wrap-post div.post-thumbnail a img {
 	height: 150px;
     }
+    /* Contact */
+    .business-info div.col-sm-6 p.col-sm-2 {
+	padding: 0 0 0 15px;
+	width: 100%;
+	float: none;
+    }
     /* Sidebar Widgets */
     #secondary .widgets-list-layout-links {
 	width: 78%;
@@ -3735,12 +3768,6 @@ ul#menu-footer-widget-menu li a::before, section.widget_top-posts ul li a::befor
     }
     .back-to-top {
         bottom: 9em;
-    }
-    .dashicons, .dashicons-before::before {
-	display: inline-block;
-	width: 12px;
-	height: 12px;
-	font-size: 12px;
     }
 }
 /*--------------------------------------------------------------
