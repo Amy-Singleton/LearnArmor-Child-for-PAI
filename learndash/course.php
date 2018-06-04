@@ -249,9 +249,9 @@
 					<div id="learndash_quizzes" class="learndash_quizzes">
 						<div id="quiz_heading" class="col-sm-12">
 								<div class="col-sm-6"><?php echo LearnDash_Custom_Label::get_label( 'quizzes' ); ?></div>
-								<div class="col-sm-6 text-align-right status"><?php esc_html_e( 'Status', 'learndash' ); ?></span>
+								<div class="col-sm-6 text-align-right status"><?php esc_html_e( 'Status', 'learndash' ); ?></div>
 						</div>
-						<div id="quiz_list" class="quiz_list">
+						<div id="quiz_list" class="quiz_list col-sm-12">
 							<?php foreach ( $quizzes as $quiz ) : ?>
 								<div id='post-<?php echo esc_attr( $quiz['post']->ID ); ?>' class='col-sm-12 <?php echo esc_attr( $quiz['sample'] ); ?>'>
 									<div class="list-count col-sm-1"><?php echo $quiz['sno']; ?></div>
