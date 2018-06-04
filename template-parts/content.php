@@ -47,7 +47,7 @@
 			if (class_exists( 'SFWD_LMS' ) && is_singular('sfwd-courses')) {
 				if ( has_post_thumbnail()) {?>
 					<div class="col-sm-12 course-description">
-						<div class="course-thumbnail col-sm-6">
+						<div class="course-thumbnail col-sm-4">
 						<?php 						   
 						/* grab the url for the full size featured image */
 						$featured_img_url = get_the_post_thumbnail_url($query->ID, 'full');
@@ -56,7 +56,7 @@
 							<img src="<?php echo $featured_img_url; ?>" alt="<?php echo $the_title . ' ' . 'Course' ?>" />
 						</div>
 				<?php } ?>
-						<div class="course-excerpt col-sm-6">
+						<div class="course-excerpt col-sm-8">
 							<?php the_excerpt(); ?>
 						</div>
 					</div>
